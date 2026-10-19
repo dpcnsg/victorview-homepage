@@ -12,6 +12,7 @@
 <title>victorview 출판사</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Nanum+Myeongjo:wght@700;800&display=swap">
 <style>
 /* Layout: 고객 안내형 기업 사이트 틀. 알림 띠 → 두 줄 머리(보조 메뉴 + 주 메뉴) → 넘어가는 첫 화면 → 찾기 상자 → 분류 아이콘 → 주요 안내 카드 → 신뢰 띠 → 기업형 바닥글, 오른쪽에 떠 있는 바로가기. 흰 바탕, 남색 주색, 다홍은 한 점만. */
@@ -447,6 +448,75 @@ footer .sitemap a:hover { color: #fff; }
 .lform .key { margin: 16px 0 0; padding: 12px 14px; border-left: 3px solid #d7263d; background: var(--ivory); font-family: 'Nanum Myeongjo', serif; font-weight: 700; line-height: 1.7; }
 .lform .btn { margin-top: 18px; width: 100%; justify-content: center; }
 @media (max-width: 820px) { .lroom { grid-template-columns: 1fr; } }
+
+/* 선명한 책방 (2026-10-20): 뚜렷한 글씨(Pretendard), 큰 글자, 진한 대비, 종이와 책장 느낌 */
+:root {
+  --bg: #fffdf8; --soft: #f5efe3; --ink: #10151f; --sub: #2f3744; --line: #d6cab3;
+  --primary: #1e3a2f; --accent: #b4231f; --ivory: #fbf6ea; --gold: #9a7428;
+  --font: "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+}
+html { font-size: 17px; }
+body { font-weight: 500; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+header.site { background: var(--bg); border-bottom: 2px solid var(--ink); }
+.util { color: var(--ink); font-size: .85rem; font-weight: 600; }
+.logo b { font-size: 1.6rem; font-weight: 900; color: var(--primary); }
+.logo span { color: var(--ink); font-weight: 700; border: 1.5px solid var(--ink); border-radius: 4px; padding: 0 6px; font-size: .78rem; }
+.gnb nav a { font-weight: 800; font-size: 1.05rem; }
+.gnb nav a:hover { background: var(--soft); color: var(--primary); }
+.drawer li a { color: var(--ink); font-weight: 600; }
+
+.s1 { background: linear-gradient(180deg, #f3ecdd, #fbf7ee); }
+.slide .kicker { font-weight: 800; letter-spacing: .02em; }
+.slide h2, .sec-title, .sub-h, .freebox h2 { font-family: var(--font); font-weight: 900; letter-spacing: -.03em; }
+.slide h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.slide p.sub { color: var(--sub); font-weight: 500; }
+.sec-title { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+.sec-title small { color: var(--sub); font-weight: 500; font-size: 1rem; }
+/* 제목 위 작은 책장: 꽂힌 책 세 권 */
+.sec-title::before { width: 40px; height: 18px; margin-bottom: 16px; border-bottom: 3px solid var(--ink);
+  background: linear-gradient(90deg, var(--primary) 0 9px, transparent 9px 14px, var(--accent) 14px 22px, transparent 22px 27px, var(--gold) 27px 37px, transparent 37px); }
+.btn { font-weight: 800; }
+.guide, .finder { background: var(--soft); }
+
+/* 책방 서가: 표지는 선반 위에, 시리즈 제목은 서가 이름표 */
+.books { gap: 34px 20px; }
+.book .cv { box-shadow: 0 18px 20px -14px rgba(48, 30, 10, .6); }
+.book { position: relative; isolation: isolate; }
+.book::before { content: ""; position: absolute; left: -10px; right: -10px; top: 0; height: 0; padding-top: calc(100% * 909 / 642); border-bottom: 8px solid #c8a777; box-shadow: 0 6px 6px -4px rgba(48, 30, 10, .35); pointer-events: none; z-index: -1; }
+.series-head { border-bottom: 0; margin-top: 26px; }
+.series-head b { background: var(--primary); color: #fff; padding: 4px 14px; border-radius: 4px; font-size: 1.05rem; }
+.series-head span { color: var(--ink); font-weight: 700; }
+.series-head p { color: var(--sub); font-size: .95rem; }
+.book .meta { color: var(--sub); font-size: .82rem; font-weight: 600; }
+.book .name { font-size: 1rem; font-weight: 800; }
+.book .fmt em { color: var(--ink); border-color: var(--ink); font-size: .76rem; font-weight: 600; }
+.cat span { color: var(--ink); font-size: .92rem; font-weight: 600; }
+.cat:hover, .cat[aria-pressed="true"] { border-color: var(--ink); background: #fff; }
+.tags button { color: var(--ink); font-weight: 600; border-color: var(--ink); }
+.searchbox { border-width: 3px; }
+.list-head span { color: var(--ink); font-weight: 600; }
+
+/* 작은 글씨를 키우고 진하게 */
+.need small { font-size: .85rem; }
+.need span, .people p, .notice-box p, .consumer ul, .tabpanel details p, .disclaimer, .money-intro cite, .steps span { color: var(--sub); font-size: .97rem; }
+.need b, .people h3, .steps strong { font-weight: 800; }
+.people .yr { color: var(--gold); font-weight: 700; font-size: .85rem; }
+.people article, .need, .consumer, .lform { border-color: var(--line); }
+.lroom .letter { font-weight: 700; color: var(--ink); }
+.lroom .letter .meta, .lroom .letter .src, .lform .hint { font-family: var(--font); color: var(--sub); font-weight: 500; font-size: .88rem; }
+.lform .q { font-size: .98rem; }
+.lform .q b { font-size: .88rem; font-weight: 800; }
+.freebox { border: 2px solid var(--ink); border-left: 8px solid var(--gold); background: #fff; }
+.freebox p { color: var(--sub); font-size: 1rem; }
+.mtag { background: var(--accent); color: #fff; font-weight: 800; }
+.tabs { border-bottom-width: 3px; }
+.tabs button { color: var(--ink); }
+.tabpanel li span { color: var(--ink); font-weight: 600; }
+footer { background: #151b24; color: #e3e7ee; font-size: .92rem; }
+footer .sitemap a { color: #e3e7ee; }
+footer .copy { color: #b9c1cd; }
+.quickbar a { color: var(--ink); font-weight: 700; }
+.lform .key, .money-intro q { font-family: var(--font); font-weight: 800; }
 </style>
 </head>
 <body>
@@ -910,7 +980,7 @@ footer .sitemap a:hover { color: #fff; }
   <li>두 가지 모두 출판사로 보내지 않고 이 기기의 브라우저에만 남습니다. 브라우저 설정에서 이 사이트의 데이터를 지우면 함께 지워집니다.</li></ul>
   <h3>사이트를 보여 주는 곳</h3>
   <ul><li>사이트는 Netlify(미국)를 통해 전달됩니다. 페이지를 여는 과정에서 접속 기록(IP 주소, 브라우저 종류 등)이 Netlify에 남을 수 있습니다.</li>
-  <li>글꼴은 Google Fonts에서 불러옵니다. 이때 브라우저가 Google 서버에 접속합니다.</li>
+  <li>글꼴은 jsDelivr와 Google Fonts에서 불러옵니다. 이때 브라우저가 두 곳의 서버에 접속합니다.</li>
   <li>출판사는 방문자를 따로 추적하는 분석 도구나 광고 쿠키를 쓰지 않습니다.</li></ul>
   <p>이 내용이 바뀌면 공지사항에 먼저 알립니다.</p>
   <p><small>시행일 2026년 10월 19일 · 발행처 victorview · 출판사 신고 제582-2026-000025호</small></p>
