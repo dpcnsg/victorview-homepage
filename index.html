@@ -89,7 +89,7 @@ header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
 .slide[aria-hidden="true"] { opacity: 0; visibility: hidden; }
 .slide .wrap { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-block: 64px 96px; }
 .slide .kicker { font-size: .9rem; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
-.slide h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 14px; }
+.slide h2 { font-family: var(--font-book); font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; letter-spacing: -.01em; line-height: 1.3; margin-bottom: 16px; }
 .slide p.sub { color: var(--sub); font-size: 1.08rem; max-width: 30em; margin-bottom: 26px; }
 .btn { display: inline-flex; align-items: center; gap: 6px; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .95rem; border: 1px solid var(--primary); background: var(--primary); color: #fff; cursor: pointer; }
 .s1 { background: linear-gradient(180deg, #eef1f6, #f7f8fb); }
@@ -129,9 +129,12 @@ header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
 }
 
 /* 공통 섹션 */
-.sec { padding-block: 72px; }
-.sec-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.02em; text-align: center; margin-bottom: 28px; }
-.sec-title small { display: block; font-size: .95rem; font-weight: 400; color: var(--sub); margin-top: 8px; letter-spacing: 0; }
+.sec { padding-block: 88px; }
+@media (max-width: 700px) { .sec { padding-block: 60px; } }
+.sec-title { font-family: var(--font-book); font-size: clamp(1.6rem, 3.2vw, 2.15rem); font-weight: 800; letter-spacing: -.01em; text-align: center; margin-bottom: 36px; }
+.sec-title::before { content: ""; display: block; width: 28px; height: 2px; background: var(--gold); margin: 0 auto 18px; }
+.sub-h { font-family: var(--font-book); font-size: 1.15rem; font-weight: 800; margin: 48px 0 16px; }
+.sec-title small { display: block; font-family: var(--font); font-size: .95rem; font-weight: 400; color: var(--sub); margin-top: 10px; letter-spacing: 0; }
 
 /* 찾기 */
 .finder { background: var(--soft); }
@@ -349,7 +352,7 @@ footer .sitemap a:hover { color: #fff; }
 
 /* 나에게 맞는 책 (보험사형 상황별 안내) */
 .needs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.need { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 10px; align-content: start; text-align: left; cursor: pointer; }
+.need { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 22px; transition: box-shadow .2s, border-color .2s; display: grid; gap: 10px; align-content: start; text-align: left; cursor: pointer; }
 .need:hover, .need[aria-pressed="true"] { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary) inset; }
 .need small { color: var(--accent); font-weight: 700; font-size: .8rem; }
 .need b { font-size: 1.05rem; line-height: 1.4; }
@@ -404,7 +407,7 @@ footer .sitemap a:hover { color: #fff; }
 @media (max-width: 640px) { .quickbar { grid-auto-flow: column; padding: 4px; } .quickbar a { width: 48px; } .quickbar a:not(.top):not(.find) { display: none; } }
 /* 미리 읽기 · 사람들 · 연표 · 한 줄 */
 .people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.people article { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+.people article { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: 0 1px 2px rgba(27,42,65,.04); display: grid; gap: 8px; align-content: start; }
 .people .yr { font-size: .78rem; color: #8a6d3b; }
 .people h3 { font-size: 1.05rem; margin: 0; }
 .people p { margin: 0; font-size: .88rem; color: var(--sub); line-height: 1.75; }
@@ -422,8 +425,9 @@ footer .sitemap a:hover { color: #fff; }
 .linelist li::before { content: attr(data-n) ". "; color: #8a6d3b; font-size: .8rem; }
 @media (max-width: 960px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .people, .linelist { grid-template-columns: 1fr; } .today blockquote { font-size: 1.15rem; } }
-.freebox { display: flex; align-items: center; justify-content: space-between; gap: 22px; background: var(--ivory); border: 1px solid var(--line); border-radius: 18px; padding: 26px 28px; }
-.freebox h2 { font-size: 1.3rem; margin: 6px 0 8px; }
+.freebox { display: flex; align-items: center; justify-content: space-between; gap: 22px; background: var(--ivory); border: 1px solid #e6dcc8; border-left: 4px solid var(--gold); border-radius: 18px; padding: 30px 32px; }
+@media (max-width: 700px) { .freebox { flex-direction: column; align-items: flex-start; padding: 24px; } }
+.freebox h2 { font-family: var(--font-book); font-size: 1.4rem; margin: 8px 0 8px; }
 .freebox p { margin: 0; color: var(--sub); font-size: .92rem; line-height: 1.75; }
 .freebox .btn { flex-shrink: 0; }
 @media (max-width: 640px) { .freebox { flex-direction: column; align-items: flex-start; } }
@@ -455,16 +459,8 @@ footer .sitemap a:hover { color: #fff; }
   </defs>
 </svg>
 
-<div class="topbar" id="topbar">
-  <div class="wrap">
-    <a href="#money">새 시리즈 &lsquo;돈의 편지&rsquo;를 준비하고 있습니다<b>미리 보기 ›</b></a>
-    <button class="week" id="topbar-week">일주일 동안 보지 않기</button>
-    <button class="x" id="topbar-x" aria-label="알림 닫기">✕</button>
-  </div>
-</div>
-
 <header class="site">
-  <div class="util"><div class="wrap"><a href="free-seven-days.html">무료 워크북</a><a href="#how">이용 안내</a><a href="#notice">공지사항</a><a href="#contact">문의</a></div></div>
+  <div class="util"><div class="wrap"><a href="free-seven-days.html">무료 워크북</a><a href="#notice">공지사항</a><a href="#contact">문의</a></div></div>
   <div class="gnb">
     <div class="wrap">
       <a class="logo" href="#top"><b>victorview</b><span>출판사</span></a>
@@ -474,7 +470,6 @@ footer .sitemap a:hover { color: #fff; }
           <li><a href="#books">책 찾기</a></li>
           <li><a href="#how">쓰는 법</a></li>
           <li><a href="#free">읽어 보기</a></li>
-          <li><a href="#letters">편지방</a></li>
           <li><a href="#money">돈의 편지</a></li>
           <li><a href="#contact">출판사 소개</a></li>
         </ul>
@@ -491,7 +486,7 @@ footer .sitemap a:hover { color: #fff; }
   <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
     <div class="drawer-head"><b>전체 메뉴</b><button class="icon-btn" id="drawer-x" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24"><path d="M6 6 L18 18 M18 6 L6 18"/></svg></button></div>
     <div><h3>책</h3><ul><li><a href="#books" data-cat="세네카 4색">세네카 4색</a></li><li><a href="#books" data-cat="세네카 골드">세네카 골드</a></li><li><a href="#books" data-cat="플리니우스">플리니우스 기록</a></li><li><a href="#books" data-cat="애덤스">애덤스 부부</a></li><li><a href="#money">돈의 편지 (준비 중)</a></li></ul></div>
-    <div><h3>읽어 보기</h3><ul><li><a href="free-seven-days.html">무료 워크북</a></li><li><a href="#preview">미리 읽기</a></li><li><a href="#letters">이번 주 편지방</a></li><li><a href="#people">편지를 쓴 사람들</a></li></ul></div>
+    <div><h3>읽어 보기</h3><ul><li><a href="free-seven-days.html">무료 워크북</a></li><li><a href="#preview">미리 읽기</a></li><li><a href="#people">편지를 쓴 사람들</a></li></ul></div>
     <div><h3>출판사</h3><ul><li><a href="#how">쓰는 법</a></li><li><a href="#board" data-faq>자주 묻는 질문</a></li><li><a href="#notice">공지사항</a></li><li><a href="#contact">출판사 소개 · 문의</a></li></ul></div>
   </div>
 </div>
@@ -601,7 +596,7 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec" id="how">
+  <section class="sec guide" id="how">
     <div class="wrap">
       <h2 class="sec-title">쓰는 법: 한 통은 두 쪽입니다<small>읽기만 하면 금방 잊힙니다. 왼쪽에서 편지를 읽고 오른쪽에 내 말로 답장을 쓰면, 생각이 내 것으로 남습니다.</small></h2>
       <div class="how">
@@ -637,19 +632,15 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec guide" id="free">
+  <section class="sec" id="free">
     <div class="wrap">
+      <h2 class="sec-title">읽어 보기<small>사기 전에 먼저 읽고, 한 줄이라도 답장을 써 보세요.</small></h2>
       <div class="freebox">
         <div><span class="mtag">무료</span><h2>삶은 짧은 것이 아니라 우리가 짧게 만든다</h2>
           <p>세네카가 바쁜 벗 파울리누스에게 보낸 글 『인생의 짧음에 대하여』에서 고른 일곱 대목, 『일곱 날의 시간』을 홈페이지에서 바로 읽고 답장을 씁니다. 가입이 없고, 쓴 글은 이 기기에만 저장됩니다. 일곱 날을 마치면 내 이름이 들어간 책을 PDF로 받습니다.</p></div>
         <a class="btn" href="free-seven-days.html">무료로 시작하기</a>
       </div>
-    </div>
-  </section>
-
-  <section class="sec" id="preview">
-    <div class="wrap">
-      <h2 class="sec-title">미리 읽기<small>블루 세네카 &lsquo;나의 시간&rsquo;의 첫 편지와 풀이 일부를 옮겼습니다.</small></h2>
+      <h3 class="sub-h" id="preview">미리 읽기 · 블루 세네카 &lsquo;나의 시간&rsquo; 첫 편지</h3>
       <div class="lroom">
         <article class="letter" aria-label="미리 읽기 편지">
           <p class="meta">블루 세네카 · 편지 1 · 『도덕 서한』 1번</p>
@@ -670,52 +661,6 @@ footer .sitemap a:hover { color: #fff; }
           <a class="btn" href="#books" data-cat="세네카">세네카에게 쓰는 답장 보기</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="sec guide" id="letters">
-    <div class="wrap">
-      <h2 class="sec-title">이번 주 편지방<small>출판사가 한 통의 편지를 함께 읽자고 올립니다. 읽고 나서 그 사람에게 내 답장을 써 보세요.</small></h2>
-      <div class="lroom">
-        <article class="letter" aria-label="이번 주 편지">
-          <p class="meta">애덤스 부부 · 애비게일이 존에게 · 1775년 9월, 브레인트리</p>
-          <h3>집이 온통 병원입니다</h3>
-          <p>당신이 떠난 뒤로 나는 몸과 마음의 큰 괴로움을 지나왔습니다. 더 큰 괴로움이 내 몫으로 남아 있는지는 하늘만이 압니다.</p>
-          <p>이토록 병이 돌고 사람이 많이 죽는 때는 가장 나이 든 어른도 기억하지 못합니다. 나는 당신이 걱정입니다. 부디 곧 소식을 주세요.</p>
-          <p>몸이 몹시 약해서 쓸 수 있는 만큼만 썼습니다. 편지를 닫기 전에 더 반가운 소식을 보탤 수 있기를 바랍니다.</p>
-          <p class="sig">더없는 애정으로, 당신의 포샤</p>
-          <p class="src">원문은 1876년 판 『존 애덤스와 애비게일 애덤스의 편지』에서 가려 옮겼습니다. 전문은 「나의 가장 사랑스러운 벗에게」에 실려 있습니다.</p>
-        </article>
-        <div class="lform">
-          <h3>애비게일에게 답장을 써 보세요</h3>
-          <p class="hint">답장은 이 사이트로 보내지 않습니다. 종이 한 장이나 워크북의 답장 칸에 나만을 위해 씁니다.</p>
-          <p class="q"><b>생각해 볼 것</b>당신이 존이라면, 이 편지를 받고 무엇부터 쓰겠습니까?</p>
-          <p class="q"><b>그때는</b>편지가 브레인트리에서 필라델피아까지 가는 데 두 주에서 세 주가 걸렸습니다. 이 편지는 10월 1일에 닿았습니다.</p>
-          <p class="key">걱정시키기 싫은 마음과 알리고 싶은 마음은 한 편지에 함께 있습니다.</p>
-          <a class="btn" href="#books" data-cat="애덤스">애덤스 부부 워크북 보기</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="lines">
-    <div class="wrap">
-      <h2 class="sec-title">오늘의 한 줄<small>워크북의 &lsquo;핵심 한 줄&rsquo;에서 날마다 한 줄씩 골라 보여 드립니다.</small></h2>
-      <figure class="today"><blockquote id="today-line">시간을 아끼려면 먼저 시간이 어디로 새는지 알아야 합니다.</blockquote><figcaption id="today-src">블루 세네카 &lsquo;나의 시간&rsquo; · 편지 1</figcaption></figure>
-      <ul class="linelist" id="line-list" hidden>
-        <li data-n="1">시간을 아끼려면 먼저 시간이 어디로 새는지 알아야 합니다.</li>
-        <li data-n="2">돌아보면 한순간이니, 꼭 필요한 일부터 합니다.</li>
-        <li data-n="3">삶은 길이가 아니라 채운 것으로 잽니다.</li>
-        <li data-n="4">일이 나를 붙든 것인지, 내가 일을 붙든 것인지 물어봅니다.</li>
-        <li data-n="5">자꾸 새로 시작하지 말고, 한 길을 꾸준히 갑니다.</li>
-        <li data-n="6">넉넉해질 때를 기다리면 시작은 늘 뒤로 밀립니다.</li>
-        <li data-n="7">두려워하던 것을 미리 겪어 보면 두려움이 줄어듭니다.</li>
-        <li data-n="8">돈 말고 무엇을 내주는지까지 셈해야 제값입니다.</li>
-        <li data-n="9">바라는 것이 줄수록 가진 것이 커집니다.</li>
-        <li data-n="10">멈추는 자리를 아는 사람이 가장 빨리 부자가 됩니다.</li>
-        <li data-n="11">벗으로 삼기 전엔 살피고, 벗이 된 뒤엔 믿습니다.</li>
-        <li data-n="12">좋은 것은 나눌 때 기쁨이 되고, 사람은 본보기로 배웁니다.</li>
-      </ul>
     </div>
   </section>
 
@@ -743,7 +688,7 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec" id="contact">
+  <section class="sec guide" id="contact">
     <div class="wrap">
       <h2 class="sec-title">출판사 소개<small>victorview는 고전 편지를 읽고 직접 답장을 쓰는 워크북을 펴냅니다. 검소하되 누추하지 않고, 화려하되 사치스럽지 않게 만듭니다.</small></h2>
       <div class="board" id="board">
@@ -785,7 +730,7 @@ footer .sitemap a:hover { color: #fff; }
   <div class="wrap">
     <div class="sitemap">
       <div><b>책</b><a href="#books" data-cat="세네카 4색">세네카 4색</a><a href="#books" data-cat="세네카 골드">세네카 골드</a><a href="#books" data-cat="플리니우스">플리니우스 기록</a><a href="#books" data-cat="애덤스">애덤스 부부</a><a href="#money">돈의 편지</a></div>
-      <div><b>읽어 보기</b><a href="free-seven-days.html">무료 워크북</a><a href="#preview">미리 읽기</a><a href="#letters">이번 주 편지방</a><a href="#lines">오늘의 한 줄</a><a href="#people">편지를 쓴 사람들</a></div>
+      <div><b>읽어 보기</b><a href="free-seven-days.html">무료 워크북</a><a href="#preview">미리 읽기</a><a href="#people">편지를 쓴 사람들</a></div>
       <div><b>출판사</b><a href="#how">쓰는 법</a><a href="#board" data-faq>자주 묻는 질문</a><a href="#notice">공지사항</a><a href="#contact">출판사 소개 · 문의</a></div>
     </div>
     <div class="policy"><button type="button" class="linkbtn" data-pol="pol-privacy">개인정보처리방침</button><button type="button" class="linkbtn" data-pol="pol-terms">이용약관</button><button type="button" class="linkbtn" data-pol="pol-copy">저작권 안내</button></div>
@@ -802,15 +747,13 @@ footer .sitemap a:hover { color: #fff; }
 <nav class="quickbar" aria-label="바로가기">
   <a href="#books" class="find"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20 L16 16"/></svg>책 찾기</a>
   <a href="#needs"><svg viewBox="0 0 24 24"><path d="M12 3 L14.5 9 H21 L15.8 12.8 L17.8 19 L12 15.2 L6.2 19 L8.2 12.8 L3 9 H9.5 Z"/></svg>맞는 책</a>
-  <a href="#letters"><svg viewBox="0 0 24 24"><path d="M4 5 H20 V16 H11 L6 20 V16 H4 Z"/></svg>편지방</a>
+  <a href="#free"><svg viewBox="0 0 24 24"><path d="M4 5 H20 V16 H11 L6 20 V16 H4 Z"/></svg>무료</a>
   <a href="#contact"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 8 L12 14 L21 8"/></svg>문의</a>
   <a href="#top" class="top"><svg viewBox="0 0 24 24"><path d="M6 14 L12 8 L18 14"/></svg>맨 위</a>
 </nav>
 
 <script>
 (function () {
-  // 알림 띠
-  document.getElementById('topbar-x').addEventListener('click', function () { document.getElementById('topbar').hidden = true; });
 
   // 전체 메뉴
   var drawer = document.getElementById('drawer'), menuBtn = document.getElementById('menu-btn');
@@ -843,13 +786,6 @@ footer .sitemap a:hover { color: #fff; }
   hero.addEventListener('focusin', function () { clearInterval(timer); });
   show(0); setPlay(playing);
 
-  // 알림 띠 일주일 숨김
-  var tb = document.getElementById('topbar');
-  try { if (+localStorage.getItem('vv-topbar-until') > Date.now()) tb.hidden = true; } catch (e) {}
-  document.getElementById('topbar-week').addEventListener('click', function () {
-    tb.hidden = true;
-    try { localStorage.setItem('vv-topbar-until', String(Date.now() + 7 * 864e5)); } catch (e) {}
-  });
 
   // 소식 탭
   var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
@@ -970,9 +906,8 @@ footer .sitemap a:hover { color: #fff; }
   <p>이 사이트에는 회원 가입, 결제, 이름·연락처·글을 보내는 기능이 없습니다. 책 찾기에 넣은 검색어는 서버로 보내지 않습니다.</p>
   <h3>이 기기 브라우저에만 남는 것</h3>
   <ul><li>최근 찾은 말: 책 찾기에서 찾은 말을 최대 5개까지 기억합니다. 검색 칸 아래 &lsquo;지우기&rsquo;를 누르면 지워집니다.</li>
-  <li>맨 위 알림: &lsquo;일주일 동안 보지 않기&rsquo;를 누르면 7일 동안 다시 표시하지 않습니다.</li>
   <li>무료 워크북: 책에 적을 이름과 쓴 답장, 쓴 날짜를 이어 쓰도록 기억합니다. 워크북 화면의 &lsquo;이 기기에서 모두 지우기&rsquo;로 지울 수 있습니다.</li>
-  <li>세 가지 모두 출판사로 보내지 않고 이 기기의 브라우저에만 남습니다. 브라우저 설정에서 이 사이트의 데이터를 지우면 함께 지워집니다.</li></ul>
+  <li>두 가지 모두 출판사로 보내지 않고 이 기기의 브라우저에만 남습니다. 브라우저 설정에서 이 사이트의 데이터를 지우면 함께 지워집니다.</li></ul>
   <h3>사이트를 보여 주는 곳</h3>
   <ul><li>사이트는 Netlify(미국)를 통해 전달됩니다. 페이지를 여는 과정에서 접속 기록(IP 주소, 브라우저 종류 등)이 Netlify에 남을 수 있습니다.</li>
   <li>글꼴은 Google Fonts에서 불러옵니다. 이때 브라우저가 Google 서버에 접속합니다.</li>
@@ -1006,15 +941,6 @@ footer .sitemap a:hover { color: #fff; }
     var t = e.target; if (t.tagName === 'DIALOG' && t.classList.contains('pol')) { var r = t.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) t.close(); }
   });
   document.querySelectorAll('dialog.pol').forEach(function (d) { d.addEventListener('close', function () { if (opener) { opener.focus(); opener = null; } }); });
-})();
-</script>
-<script>
-(function () {
-  // 오늘의 한 줄: 날짜에 따라 12줄 가운데 하나(블루 세네카 '나의 시간' 편지 1~12의 핵심 한 줄)
-  var li = document.querySelectorAll('#line-list li'); if (!li.length) return;
-  var d = new Date(), k = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5) % li.length;
-  document.getElementById('today-line').textContent = li[k].textContent;
-  document.getElementById('today-src').textContent = '블루 세네카 \u2018나의 시간\u2019 · 편지 ' + li[k].getAttribute('data-n');
 })();
 </script>
 </body>
