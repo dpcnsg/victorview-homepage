@@ -144,7 +144,7 @@ header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
 .tags button:hover { color: var(--ink); border-color: var(--sub); }
 
 /* 분류 아이콘 */
-.cats { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; }
+.cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 560px; }
 .cat { background: none; border: 1px solid transparent; border-radius: 12px; padding: 14px 6px 12px; cursor: pointer; display: grid; justify-items: center; gap: 10px; text-align: center; }
 .cat:hover, .cat[aria-pressed="true"] { border-color: var(--line); background: var(--soft); }
 .cat[aria-pressed="true"] span { font-weight: 700; color: var(--ink); }
@@ -152,13 +152,16 @@ header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
 .cat .chip i { width: 30px; height: 42px; border-radius: 2px 4px 4px 2px; display: block; box-shadow: 0 4px 8px -4px rgba(0,0,0,.4); }
 .cat .chip svg { width: 30px; height: 30px; stroke: var(--ink); fill: none; stroke-width: 1.8; }
 .cat span { font-size: .88rem; color: var(--sub); line-height: 1.35; }
-@media (max-width: 900px) { .cats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* 책 목록 */
 .list-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 36px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); }
 .list-head h3 { font-size: 1.15rem; }
 .list-head span { color: var(--sub); font-size: .9rem; }
 .books { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 24px 18px; }
+.series-head { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; margin: 18px 0 -6px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.series-head:first-child { margin-top: 0; }
+.series-head b { font-size: 1.05rem; color: var(--ink); }
+.series-head span { color: var(--sub); font-size: .88rem; }
 .book { display: grid; gap: 10px; align-content: start; }
 .book .meta { font-size: .78rem; color: var(--sub); }
 .book .name { font-weight: 700; font-size: .95rem; line-height: 1.4; }
@@ -609,13 +612,9 @@ footer .sitemap a:hover { color: #fff; }
       <h2 class="sec-title">궁금하신 시리즈를 선택하세요</h2>
       <div class="cats" id="cats">
         <button class="cat" data-cat="전체" aria-pressed="true"><span class="chip"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></span><span>전체</span></button>
-        <button class="cat" data-cat="세네카 블루" aria-pressed="false"><span class="chip"><img src="covers/01.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>블루</span></button>
-        <button class="cat" data-cat="세네카 레드" aria-pressed="false"><span class="chip"><img src="covers/02.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>레드</span></button>
-        <button class="cat" data-cat="세네카 퍼플" aria-pressed="false"><span class="chip"><img src="covers/03.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>퍼플</span></button>
-        <button class="cat" data-cat="세네카 그린" aria-pressed="false"><span class="chip"><img src="covers/04.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>그린</span></button>
-        <button class="cat" data-cat="세네카 골드" aria-pressed="false"><span class="chip"><img src="covers/09.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>골드</span></button>
-        <button class="cat" data-cat="플리니우스" aria-pressed="false"><span class="chip"><img src="covers/10.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>플리니우스<br>기록</span></button>
-        <button class="cat" data-cat="애덤스" aria-pressed="false"><span class="chip"><img src="covers/15.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>애덤스<br>부부</span></button>
+        <button class="cat" data-cat="세네카" aria-pressed="false"><span class="chip"><img src="covers/01.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카<br>9종</span></button>
+        <button class="cat" data-cat="플리니우스" aria-pressed="false"><span class="chip"><img src="covers/10.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>플리니우스<br>5종</span></button>
+        <button class="cat" data-cat="애덤스" aria-pressed="false"><span class="chip"><img src="covers/15.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>애덤스<br>1종</span></button>
       </div>
       <div class="list-head"><h3 id="list-title">전체 책</h3><span id="list-count"></span></div>
       <div class="books" id="book-list"></div>
@@ -1041,43 +1040,52 @@ footer .sitemap a:hover { color: #fff; }
   // 책 목록
   var Q = '<svg class="sym"><use href="#quill"/></svg>', C = '<svg class="sym"><use href="#cloud"/></svg>', E = '<svg class="sym"><use href="#env"/></svg>';
   var W2 = ['쓰는 책 입력형', '쓰는 책 필기형'], W3 = W2.concat(['읽는 책']);
+  // 시리즈 순서: 세네카(9) → 플리니우스(5) → 애덤스(1)
+  var SERIES = [{ key: '세네카', title: '세네카에게 쓰는 답장' }, { key: '플리니우스', title: '플리니우스 기록' }, { key: '애덤스', title: '애덤스 부부' }];
   var books = [
-    { img: '01', cat: '세네카 블루', name: '세네카 블루 · 나의 시간', cls: 'sen sen-blue', t: '나의<br>시간', sym: Q, band: ['세네카', '답장 · 블루'], fmt: W2, kw: '시간 루킬리우스 30통' },
-    { img: '02', cat: '세네카 레드', name: '세네카 레드 · 잠시 멈춤', cls: 'sen sen-red', t: '잠시<br>멈춤', sym: Q, band: ['세네카', '답장 · 레드'], fmt: W2, kw: '멈춤 쉼' },
-    { img: '03', cat: '세네카 퍼플', name: '세네카 퍼플 · 일곱 밤의 편지', cls: 'sen sen-purple', t: '일곱<br>밤의<br>편지', sym: Q, band: ['세네카', '답장 · 퍼플'], fmt: W2, kw: '밤 일곱' },
-    { img: '04', cat: '세네카 그린', name: '세네카 그린 · 어머니, 저는 괜찮습니다', cls: 'sen sen-green', t: '어머니,<br>저는<br>괜찮<br>습니다', sym: Q, band: ['세네카', '답장 · 그린'], fmt: W2, kw: '어머니 가족' },
-    { img: '05', cat: '세네카 골드', name: '세네카 골드 · 1권', cls: 'sen sen-gold', t: '골드<br>1권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
-    { img: '06', cat: '세네카 골드', name: '세네카 골드 · 2권', cls: 'sen sen-gold', t: '골드<br>2권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
-    { img: '07', cat: '세네카 골드', name: '세네카 골드 · 3권', cls: 'sen sen-gold', t: '골드<br>3권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
-    { img: '08', cat: '세네카 골드', name: '세네카 골드 · 4권', cls: 'sen sen-gold', t: '골드<br>4권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
-    { img: '09', cat: '세네카 골드', name: '세네카 골드 · 124일의 답장 (합본)', cls: 'sen sen-gold', t: '124일의<br>답장', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W3, kw: '124통 합본 완결' },
-    { img: '10', cat: '플리니우스', name: '플리니우스 첫째 · 그날, 삼촌은 배를 띄웠다', cls: 'pli', t: '그날,<br>삼촌은<br>배를<br>띄웠다', sym: C, band: ['플리니우스', '기록 · 첫째'], fmt: W2, kw: '화산 베수비오 삼촌' },
-    { img: '11', cat: '플리니우스', name: '플리니우스 둘째 · 폐하, 어떻게 할까요', cls: 'pli', t: '폐하,<br>어떻게<br>할까요', sym: C, band: ['플리니우스', '기록 · 둘째'], fmt: W2, kw: '황제 총독' },
-    { img: '12', cat: '플리니우스', name: '플리니우스 셋째 · 잘 지내나, 소식 좀 주게', cls: 'pli', t: '잘 지내나,<br>소식 좀<br>주게', sym: C, band: ['플리니우스', '기록 · 셋째'], fmt: W2, kw: '벗 안부 친구' },
-    { img: '13', cat: '플리니우스', name: '플리니우스 넷째 · 삼촌의 밤, 세상을 적다', cls: 'pli', t: '삼촌의<br>밤,<br>세상을<br>적다', sym: C, band: ['플리니우스', '기록 · 넷째'], fmt: W2, kw: '삼촌' },
-    { img: '14', cat: '플리니우스', name: '플리니우스 단행본 (완결본)', cls: 'pli', t: '플리니우스<br>단행본', sym: C, band: ['플리니우스', '기록 · 완결본'], fmt: ['읽는 책'], kw: '합본 완결 화산' },
-    { img: '15', cat: '애덤스', name: '애덤스 부부 · 나의 가장 사랑스러운 벗에게', cls: 'ada', t: '나의<br>가장<br>사랑스러운<br>벗에게', sym: E, band: ['애덤스 부부', '존과 애비게일'], fmt: W3, kw: '부부 사랑 존 애비게일' }
+    { img: '01', series: '세네카', cat: '세네카 블루', name: '세네카 블루 · 나의 시간', cls: 'sen sen-blue', t: '나의<br>시간', sym: Q, band: ['세네카', '답장 · 블루'], fmt: W2, kw: '시간 루킬리우스 30통' },
+    { img: '02', series: '세네카', cat: '세네카 레드', name: '세네카 레드 · 잠시 멈춤', cls: 'sen sen-red', t: '잠시<br>멈춤', sym: Q, band: ['세네카', '답장 · 레드'], fmt: W2, kw: '멈춤 쉼' },
+    { img: '03', series: '세네카', cat: '세네카 퍼플', name: '세네카 퍼플 · 일곱 밤의 편지', cls: 'sen sen-purple', t: '일곱<br>밤의<br>편지', sym: Q, band: ['세네카', '답장 · 퍼플'], fmt: W2, kw: '밤 일곱' },
+    { img: '04', series: '세네카', cat: '세네카 그린', name: '세네카 그린 · 어머니, 저는 괜찮습니다', cls: 'sen sen-green', t: '어머니,<br>저는<br>괜찮<br>습니다', sym: Q, band: ['세네카', '답장 · 그린'], fmt: W2, kw: '어머니 가족' },
+    { img: '05', series: '세네카', cat: '세네카 골드', name: '세네카 골드 · 1권', cls: 'sen sen-gold', t: '골드<br>1권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
+    { img: '06', series: '세네카', cat: '세네카 골드', name: '세네카 골드 · 2권', cls: 'sen sen-gold', t: '골드<br>2권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
+    { img: '07', series: '세네카', cat: '세네카 골드', name: '세네카 골드 · 3권', cls: 'sen sen-gold', t: '골드<br>3권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
+    { img: '08', series: '세네카', cat: '세네카 골드', name: '세네카 골드 · 4권', cls: 'sen sen-gold', t: '골드<br>4권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
+    { img: '09', series: '세네카', cat: '세네카 골드', name: '세네카 골드 · 124일의 답장 (합본)', cls: 'sen sen-gold', t: '124일의<br>답장', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W3, kw: '124통 합본 완결' },
+    { img: '10', series: '플리니우스', cat: '플리니우스', name: '플리니우스 첫째 · 그날, 삼촌은 배를 띄웠다', cls: 'pli', t: '그날,<br>삼촌은<br>배를<br>띄웠다', sym: C, band: ['플리니우스', '기록 · 첫째'], fmt: W2, kw: '화산 베수비오 삼촌' },
+    { img: '11', series: '플리니우스', cat: '플리니우스', name: '플리니우스 둘째 · 폐하, 어떻게 할까요', cls: 'pli', t: '폐하,<br>어떻게<br>할까요', sym: C, band: ['플리니우스', '기록 · 둘째'], fmt: W2, kw: '황제 총독' },
+    { img: '12', series: '플리니우스', cat: '플리니우스', name: '플리니우스 셋째 · 잘 지내나, 소식 좀 주게', cls: 'pli', t: '잘 지내나,<br>소식 좀<br>주게', sym: C, band: ['플리니우스', '기록 · 셋째'], fmt: W2, kw: '벗 안부 친구' },
+    { img: '13', series: '플리니우스', cat: '플리니우스', name: '플리니우스 넷째 · 삼촌의 밤, 세상을 적다', cls: 'pli', t: '삼촌의<br>밤,<br>세상을<br>적다', sym: C, band: ['플리니우스', '기록 · 넷째'], fmt: W2, kw: '삼촌' },
+    { img: '14', series: '플리니우스', cat: '플리니우스', name: '플리니우스 단행본 (완결본)', cls: 'pli', t: '플리니우스<br>단행본', sym: C, band: ['플리니우스', '기록 · 완결본'], fmt: ['읽는 책'], kw: '합본 완결 화산' },
+    { img: '15', series: '애덤스', cat: '애덤스', name: '애덤스 부부 · 나의 가장 사랑스러운 벗에게', cls: 'ada', t: '나의<br>가장<br>사랑스러운<br>벗에게', sym: E, band: ['애덤스 부부', '존과 애비게일'], fmt: W3, kw: '부부 사랑 존 애비게일' }
   ];
   var list = document.getElementById('book-list'), empty = document.getElementById('empty'), q = document.getElementById('q');
   var activeCat = '전체';
   function render() {
     var term = q.value.trim();
     var shown = books.filter(function (b) {
-      var inCat = activeCat === '전체' || b.cat === activeCat || (activeCat === '세네카' && b.cat.indexOf('세네카') === 0);
+      var inCat = activeCat === '전체' || b.cat === activeCat || b.series === activeCat;
       var hay = b.name + ' ' + b.cat + ' ' + b.kw + ' ' + b.fmt.join(' ');
       return inCat && (!term || hay.indexOf(term) !== -1);
     });
-    list.innerHTML = shown.map(function (b) {
+    var html = '';
+    SERIES.forEach(function (sr) {
+      var group = shown.filter(function (b) { return b.series === sr.key; });
+      if (!group.length) return;
+      html += '<div class="series-head"><b>' + sr.title + '</b><span>' + group.length + '종</span></div>' + group.map(card).join('');
+    });
+    list.innerHTML = html;
+    function card(b) {
       return '<div class="book"><img class="cv" src="covers/' + b.img + '.png" alt="' + b.name + ' 표지" loading="lazy">' +
         '<div><div class="meta">' + b.cat + '</div><div class="name">' + b.name + '</div></div><div class="fmt">' + b.fmt.map(function (f) { return '<em>' + f + '</em>'; }).join('') + '</div></div>';
-    }).join('');
+    }
     empty.hidden = shown.length > 0;
-    document.getElementById('list-title').textContent = term ? '‘' + term + '’ 찾은 결과' : (activeCat === '전체' ? '전체 책' : activeCat === '세네카' ? '세네카에게 쓰는 답장' : activeCat);
+    document.getElementById('list-title').textContent = term ? '‘' + term + '’ 찾은 결과' : (activeCat === '전체' ? '전체 책' : (SERIES.filter(function (sr) { return sr.key === activeCat; })[0] || { title: activeCat }).title);
     document.getElementById('list-count').textContent = '전자책 ' + shown.length + '종';
   }
   function setCat(c) {
     activeCat = c;
-    document.querySelectorAll('#cats .cat').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cat === c)); });
+    document.querySelectorAll('#cats .cat').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.cat === c || c.indexOf(b.dataset.cat + ' ') === 0)); });
     render();
   }
   document.getElementById('cats').addEventListener('click', function (e) { var b = e.target.closest('.cat'); if (b) { q.value = ''; setCat(b.dataset.cat); } });
