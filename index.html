@@ -40,6 +40,7 @@ p { margin: 0; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[hidden] { display: none !important; }
 .wrap { max-width: var(--wide); margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
@@ -163,6 +164,8 @@ header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
 .series-head:first-child { margin-top: 0; }
 .series-head b { font-size: 1.05rem; color: var(--ink); }
 .series-head span { color: var(--sub); font-size: .88rem; }
+.series-head { flex-wrap: wrap; }
+.series-head p { flex-basis: 100%; margin: 2px 0 0; color: var(--sub); font-size: .88rem; }
 .book { display: grid; gap: 10px; align-content: start; }
 .book .meta { font-size: .78rem; color: var(--sub); }
 .book .name { font-weight: 700; font-size: .95rem; line-height: 1.4; }
@@ -461,7 +464,7 @@ footer .sitemap a:hover { color: #fff; }
 </div>
 
 <header class="site">
-  <div class="util"><div class="wrap"><a href="free-seven-days.html">무료 워크북</a><a href="#guide">이용 안내</a><a href="#notice">공지사항</a><a href="#contact">문의</a></div></div>
+  <div class="util"><div class="wrap"><a href="free-seven-days.html">무료 워크북</a><a href="#how">이용 안내</a><a href="#notice">공지사항</a><a href="#contact">문의</a></div></div>
   <div class="gnb">
     <div class="wrap">
       <a class="logo" href="#top"><b>victorview</b><span>출판사</span></a>
@@ -469,11 +472,10 @@ footer .sitemap a:hover { color: #fff; }
         <ul>
           <li><a href="#needs">나만의 책 찾기</a></li>
           <li><a href="#books">책 찾기</a></li>
-          <li><a href="#lineup">시리즈</a></li>
-          <li><a href="#briefing">브리핑</a></li>
+          <li><a href="#how">쓰는 법</a></li>
+          <li><a href="#free">읽어 보기</a></li>
           <li><a href="#letters">편지방</a></li>
           <li><a href="#money">돈의 편지</a></li>
-          <li><a href="#guide">이용 안내</a></li>
           <li><a href="#contact">출판사 소개</a></li>
         </ul>
       </nav>
@@ -488,11 +490,9 @@ footer .sitemap a:hover { color: #fff; }
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
     <div class="drawer-head"><b>전체 메뉴</b><button class="icon-btn" id="drawer-x" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24"><path d="M6 6 L18 18 M18 6 L6 18"/></svg></button></div>
-    <div><h3>책 찾기</h3><ul><li><a href="#books" data-cat="세네카">세네카에게 쓰는 답장</a></li><li><a href="#books" data-cat="플리니우스">플리니우스 기록</a></li><li><a href="#books" data-cat="애덤스">애덤스 부부</a></li><li><a href="#money">돈의 편지 (준비 중)</a></li></ul></div>
-    <div><h3>쓰는 법</h3><ul><li><a href="#how">한 통 구성</a></li><li><a href="#guide">입력형과 필기형 PDF</a></li><li><a href="#guide">선물하기</a></li></ul></div>
-    <div><h3>돈의 편지</h3><ul><li><a href="#money">시리즈 소개</a></li><li><a href="#money">점검 칸 예시</a></li></ul></div>
-    <div><h3>출판사</h3><ul><li><a href="#contact">출판사 소개</a></li><li><a href="#notice">공지사항</a></li><li><a href="#contact">문의</a></li></ul></div>
-    <div class="quick"><a href="#needs">맞는 책 찾기</a><a href="#books">책 찾기</a><a href="#contact">문의</a></div>
+    <div><h3>책</h3><ul><li><a href="#books" data-cat="세네카 4색">세네카 4색</a></li><li><a href="#books" data-cat="세네카 골드">세네카 골드</a></li><li><a href="#books" data-cat="플리니우스">플리니우스 기록</a></li><li><a href="#books" data-cat="애덤스">애덤스 부부</a></li><li><a href="#money">돈의 편지 (준비 중)</a></li></ul></div>
+    <div><h3>읽어 보기</h3><ul><li><a href="free-seven-days.html">무료 워크북</a></li><li><a href="#preview">미리 읽기</a></li><li><a href="#letters">이번 주 편지방</a></li><li><a href="#people">편지를 쓴 사람들</a></li></ul></div>
+    <div><h3>출판사</h3><ul><li><a href="#how">쓰는 법</a></li><li><a href="#board" data-faq>자주 묻는 질문</a></li><li><a href="#notice">공지사항</a></li><li><a href="#contact">출판사 소개 · 문의</a></li></ul></div>
   </div>
 </div>
 
@@ -534,7 +534,7 @@ footer .sitemap a:hover { color: #fff; }
             <p class="kicker">선물하기</p>
             <h2>마음을 전하는<br>한 권의 편지책</h2>
             <p class="sub">책 맨 앞 &lsquo;이 책을 선물합니다&rsquo; 쪽에 받는 분 이름과 전하는 말을 적어 보내세요.</p>
-            <a class="btn" href="#guide">선물 안내 ›</a>
+            <a class="btn" href="#board" data-faq>선물 안내 ›</a>
           </div>
           <div class="art" aria-hidden="true">
             <img class="cv" src="covers/15.png" alt="애덤스 부부 나의 가장 사랑스러운 벗에게 표지" loading="lazy">
@@ -567,31 +567,9 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <nav class="journey" aria-label="책 고르기부터 받기까지">
-    <div class="wrap">
-      <ul>
-        <li><a href="#books"><svg viewBox="0 0 28 28"><circle cx="12" cy="12" r="7"/><path d="M22 22 L17 17"/></svg>책 고르기</a></li>
-        <li><a href="#lineup"><svg viewBox="0 0 28 28"><path d="M5 6 H11 V22 H5 Z M12 6 H18 V22 H12 Z M19 7 L24 8 L21 23 L17 22"/></svg>시리즈 보기</a></li>
-        <li><a href="#how"><svg viewBox="0 0 28 28"><path d="M4 7 H13 V22 H4 Z M15 7 H24 V22 H15 Z M17 12 H22 M17 16 H22"/></svg>쓰는 법</a></li>
-        <li><a href="#guide"><svg viewBox="0 0 28 28"><rect x="5" y="11" width="18" height="12"/><path d="M4 7 H24 V11 H4 Z M14 7 V23"/></svg>선물하기</a></li>
-        <li><a href="#board"><svg viewBox="0 0 28 28"><path d="M6 10 L8 4 H20 L22 10 M5 10 H23 V23 H5 Z M11 15 H17"/></svg>사는 곳</a></li>
-        <li><a href="#board"><svg viewBox="0 0 28 28"><path d="M5 6 H23 V18 H13 L8 22 V18 H5 Z"/></svg>자주 묻는 질문</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="figures" aria-label="숫자로 보는 victorview">
-    <div class="wrap">
-      <div><b>3</b><span>시리즈</span></div>
-      <div><b>15</b><span>전자책</span></div>
-      <div><b>124</b><span>세네카 편지 전편</span></div>
-      <div><b>2</b><span>쓰는 방식 (입력형 · 필기형)</span></div>
-    </div>
-  </div>
-
   <section class="sec finder" id="books">
     <div class="wrap">
-      <h2 class="sec-title">읽고 싶은 책이나 주제를 찾아보세요</h2>
+      <h2 class="sec-title">책 찾기<small>책 이름이나 주제로 찾거나, 아래 시리즈를 눌러 보세요.</small></h2>
       <form class="searchbox" id="search-form" role="search">
         <label class="sr" for="q">책 이름이나 주제</label>
         <input id="q" type="search" placeholder="예: 시간, 어머니, 화산, 부부" autocomplete="off">
@@ -610,7 +588,6 @@ footer .sitemap a:hover { color: #fff; }
 
   <section class="sec" style="padding-top:56px">
     <div class="wrap">
-      <h2 class="sec-title">궁금하신 시리즈를 선택하세요</h2>
       <div class="cats" id="cats">
         <button class="cat" data-cat="전체" aria-pressed="true"><span class="chip"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></span><span>전체</span></button>
         <button class="cat" data-cat="세네카 4색" aria-pressed="false"><span class="chip"><img src="covers/01.png" alt="" style="width:34px;height:auto;border-radius:2px;box-shadow:0 3px 6px -3px rgba(0,0,0,.5)"></span><span>세네카 4색<br>4종</span></button>
@@ -624,88 +601,9 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec" id="lineup">
-    <div class="wrap">
-      <h2 class="sec-title">시리즈 소개<small>같은 틀 안에서 색과 상징이 다릅니다. 표지는 모두 직접 그렸습니다.</small></h2>
-      <div class="lineup">
-        <article class="line-card">
-          <div class="line-art" style="background:#e9edf4" aria-hidden="true">
-            <img class="cv" src="covers/01.png" alt="세네카 블루 나의 시간 표지" loading="lazy">
-            <img class="cv" src="covers/09.png" alt="세네카 골드 124일의 답장 합본 표지" loading="lazy">
-          </div>
-          <div class="line-body"><h3>세네카에게 쓰는 답장</h3><p>세네카가 벗 루킬리우스에게 보낸 『도덕 서한』에 답장을 씁니다. 다섯 에디션과 124통 전편을 담은 골드가 있습니다.</p>
-            <div class="duo"><a class="btn sm" href="#how">더 알아보기</a><a class="btn sm ghost" href="#books" data-cat="세네카">책 모두 보기</a></div></div>
-        </article>
-        <article class="line-card">
-          <div class="line-art" style="background:#f6ece3" aria-hidden="true">
-            <img class="cv" src="covers/10.png" alt="플리니우스 첫째 그날, 삼촌은 배를 띄웠다 표지" loading="lazy">
-            <img class="cv" src="covers/12.png" alt="플리니우스 셋째 잘 지내나, 소식 좀 주게 표지" loading="lazy">
-          </div>
-          <div class="line-body"><h3>플리니우스 기록</h3><p>베수비오 화산이 터진 날, 황제에게 묻는 총독, 벗에게 보낸 안부. 소 플리니우스의 편지를 네 권과 단행본으로 엮었습니다.</p>
-            <div class="duo"><a class="btn sm" href="#hero">더 알아보기</a><a class="btn sm ghost" href="#books" data-cat="플리니우스">책 모두 보기</a></div></div>
-        </article>
-        <article class="line-card">
-          <div class="line-art" style="background:#f7efeb" aria-hidden="true">
-            <img class="cv" src="covers/15.png" alt="애덤스 부부 나의 가장 사랑스러운 벗에게 표지" loading="lazy">
-          </div>
-          <div class="line-body"><h3>애덤스 부부</h3><p>떨어져 지낸 존과 애비게일 애덤스가 주고받은 편지를 읽고 답장을 씁니다. 쓰는 판과 읽는 판을 함께 담았습니다.</p>
-            <div class="duo"><a class="btn sm" href="#how">더 알아보기</a><a class="btn sm ghost" href="#books" data-cat="애덤스">책 모두 보기</a></div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="briefing" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="sec-title">워크북 브리핑<small>사기 전에 알아 두시면 좋은 것을 세 가지로 정리했습니다.</small></h2>
-      <div class="brief">
-        <div><span class="bn">왜 필요할까요</span><h3>읽기만 하면 금방 잊힙니다</h3><p>편지를 읽고 내 말로 답장을 쓰면 생각이 내 것으로 남습니다. 필사보다 한 걸음 더 나아가는 방법입니다.</p></div>
-        <div><span class="bn">어떻게 쓸까요</span><h3>하루 한 통, 두 쪽이면 됩니다</h3><p>왼쪽에서 편지를 읽고, 오른쪽에서 풀이와 질문을 따라 답장을 씁니다. 입력형과 필기형 중 편한 쪽을 고르세요.</p></div>
-        <div><span class="bn">유의할 점</span><h3>상담이나 치료를 대신하지 않습니다</h3><p>스스로 돌아보는 글쓰기 자료입니다. 원문은 공공 영역 판본을 바탕으로 새로 옮기고 줄인 발췌입니다.</p></div>
-      </div>
-      <div class="brief-cta"><p>어떤 책이 맞을지 고르기 어려우신가요?</p><a class="btn" href="#needs">나만의 책 찾기</a><a class="btn ghost" href="#board">자주 묻는 질문</a></div>
-    </div>
-  </section>
-
-  <section class="sec" id="steps">
-    <div class="wrap">
-      <h2 class="sec-title">받아서 쓰기까지 세 단계</h2>
-      <ol class="stepper">
-        <li><b>1</b><div><h3>책 고르기</h3><p>나만의 책 찾기나 시리즈 소개에서 고릅니다.</p></div></li>
-        <li><b>2</b><div><h3>파일 받기</h3><p>판매처에서 사면 입력형과 필기형 PDF를 받습니다. 판매처는 준비 중입니다.</p></div></li>
-        <li><b>3</b><div><h3>하루 한 통 쓰기</h3><p>편지를 읽고 답장 칸을 채웁니다. 선물할 때는 맨 앞 쪽을 먼저 적습니다.</p></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="sec guide" id="guide">
-    <div class="wrap">
-      <h2 class="sec-title">주요 안내</h2>
-      <div class="cards">
-        <a class="card" href="#how"><b>한 통 구성</b><p>왼쪽은 편지 발췌, 오른쪽은 풀이와 질문, 나의 답장 칸입니다.</p><svg viewBox="0 0 40 40"><path d="M6 9 H19 V33 H6 Z M21 9 H34 V33 H21 Z"/><path d="M24 15 H31 M24 20 H31 M24 25 H29"/></svg></a>
-        <div class="card"><b>입력형 PDF</b><p>답장 칸을 눌러 자판으로 씁니다. Acrobat Reader로 열어 쓰고 저장합니다.</p><svg viewBox="0 0 40 40"><rect x="5" y="9" width="30" height="20" rx="2"/><path d="M10 33 H30 M11 15 H14 M17 15 H20 M23 15 H26 M11 21 H29"/></svg></div>
-        <div class="card"><b>필기형 PDF</b><p>줄이 그어진 판입니다. 필기 앱에서 쓰거나 A5로 인쇄해서 씁니다.</p><svg viewBox="0 0 40 40"><path d="M27 6 L34 13 L15 32 L7 34 L9 26 Z M23 10 L30 17"/></svg></div>
-        <div class="card"><b>선물하기</b><p>책 맨 앞 &lsquo;이 책을 선물합니다&rsquo; 쪽에 이름과 전하는 말을 적어 보냅니다.</p><svg viewBox="0 0 40 40"><rect x="7" y="16" width="26" height="17"/><path d="M5 11 H35 V16 H5 Z M20 11 V33 M20 11 C14 4 9 9 14 11 M20 11 C26 4 31 9 26 11"/></svg></div>
-        <div class="card"><b>종이책<span class="soon">준비 중</span></b><p>손에 쥐기 좋은 B6 판형으로 준비하고 있습니다.</p><svg viewBox="0 0 40 40"><path d="M8 8 H28 L32 12 V33 H8 Z M14 16 H26 M14 21 H26 M14 26 H22"/></svg></div>
-        <a class="card" href="#money"><b>돈의 편지<span class="soon">준비 중</span></b><p>고전 편지와 한 달 살림 점검을 함께 담는 새 시리즈입니다.</p><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M15 14 L20 25 L25 14 M14 20 H26"/></svg></a>
-      </div>
-      <div class="facts-wrap">
-        <table>
-          <caption>책 정보 한눈에 보기</caption>
-          <thead><tr><th scope="col">시리즈</th><th scope="col">전자책</th><th scope="col">원전</th><th scope="col">파일 형식</th><th scope="col">종이책</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">세네카에게 쓰는 답장</th><td class="n">9종</td><td>세네카, 『루킬리우스에게 보내는 도덕 서한』</td><td>쓰는 책 입력형 · 필기형, 합본은 읽는 책 포함</td><td>B6 준비 중</td></tr>
-            <tr><th scope="row">플리니우스 기록</th><td class="n">5종</td><td>소 플리니우스의 편지</td><td>쓰는 책 입력형 · 필기형, 단행본은 읽는 책</td><td>B6 준비 중</td></tr>
-            <tr><th scope="row">애덤스 부부</th><td class="n">1종</td><td>존 애덤스와 애비게일 애덤스의 편지</td><td>쓰는 책 입력형 · 필기형 · 읽는 책</td><td>B6 준비 중</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
   <section class="sec" id="how">
     <div class="wrap">
-      <h2 class="sec-title">한 통은 두 쪽입니다<small>왼쪽에서 편지를 읽고, 오른쪽에서 내 답장을 씁니다.</small></h2>
+      <h2 class="sec-title">쓰는 법: 한 통은 두 쪽입니다<small>읽기만 하면 금방 잊힙니다. 왼쪽에서 편지를 읽고 오른쪽에 내 말로 답장을 쓰면, 생각이 내 것으로 남습니다.</small></h2>
       <div class="how">
         <figure class="spread">
           <svg viewBox="0 0 520 300" role="img" aria-label="워크북 한 통의 펼침면. 왼쪽 쪽에는 원전 번호가 붙은 편지 발췌, 오른쪽 쪽에는 오늘의 말로 쓴 풀이, 핵심 한 줄, 시작 질문, 나의 답장 칸이 위에서 아래로 놓여 있습니다.">
@@ -739,44 +637,7 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec guide" id="money">
-    <div class="wrap">
-      <h2 class="sec-title">돈의 편지<small>새 시리즈를 준비하고 있습니다. 돈에 관한 고전 편지를 읽고 내 살림을 적어 봅니다.</small></h2>
-      <div class="money-intro">
-        <div><q>가진 것이 적은 사람이 아니라 더 갖고 싶어 하는 사람이 가난하다.</q><cite>세네카, 루킬리우스에게 보내는 편지 2번</cite></div>
-        <div><ul><li>읽을 편지 후보: 세네카가 부와 가난에 관해 쓴 편지들, 벤저민 프랭클린 『부에 이르는 길』(1758)</li><li>나의 한 달 돈 점검 칸: 매달 자동으로 나가는 돈 적기, 비상금이 생활비 몇 달 치인지 보기, 이번 달 덜어 낼 것 하나 정하기</li></ul></div>
-      </div>
-      <p class="disclaimer">돈의 편지는 스스로 살림을 돌아보는 글쓰기 책입니다. 투자 권유나 금융상품 안내가 아니며, 이 사이트에서는 개인 상담을 하지 않습니다.</p>
-</div>
-    </div>
-  </section>
-
-  <section class="sec" id="letters">
-    <div class="wrap">
-      <h2 class="sec-title">이번 주 편지방<small>출판사가 한 통의 편지를 함께 읽자고 올립니다. 읽고 나서 그 사람에게 내 답장을 써 보세요.</small></h2>
-      <div class="lroom">
-        <article class="letter" aria-label="이번 주 편지">
-          <p class="meta">애덤스 부부 · 애비게일이 존에게 · 1775년 9월, 브레인트리</p>
-          <h3>집이 온통 병원입니다</h3>
-          <p>당신이 떠난 뒤로 나는 몸과 마음의 큰 괴로움을 지나왔습니다. 더 큰 괴로움이 내 몫으로 남아 있는지는 하늘만이 압니다.</p>
-          <p>이토록 병이 돌고 사람이 많이 죽는 때는 가장 나이 든 어른도 기억하지 못합니다. 나는 당신이 걱정입니다. 부디 곧 소식을 주세요.</p>
-          <p>몸이 몹시 약해서 쓸 수 있는 만큼만 썼습니다. 편지를 닫기 전에 더 반가운 소식을 보탤 수 있기를 바랍니다.</p>
-          <p class="sig">더없는 애정으로, 당신의 포샤</p>
-          <p class="src">원문은 1876년 판 『존 애덤스와 애비게일 애덤스의 편지』에서 가려 옮겼습니다. 전문은 「나의 가장 사랑스러운 벗에게」에 실려 있습니다.</p>
-        </article>
-        <div class="lform">
-          <h3>애비게일에게 답장을 써 보세요</h3>
-          <p class="hint">답장은 이 사이트로 보내지 않습니다. 종이 한 장이나 워크북의 답장 칸에 나만을 위해 씁니다.</p>
-          <p class="q"><b>생각해 볼 것</b>당신이 존이라면, 이 편지를 받고 무엇부터 쓰겠습니까?</p>
-          <p class="q"><b>그때는</b>편지가 브레인트리에서 필라델피아까지 가는 데 두 주에서 세 주가 걸렸습니다. 이 편지는 10월 1일에 닿았습니다.</p>
-          <p class="key">걱정시키기 싫은 마음과 알리고 싶은 마음은 한 편지에 함께 있습니다.</p>
-          <a class="btn" href="#books" data-cat="애덤스">애덤스 부부 워크북 보기</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="free">
+  <section class="sec guide" id="free">
     <div class="wrap">
       <div class="freebox">
         <div><span class="mtag">무료</span><h2>삶은 짧은 것이 아니라 우리가 짧게 만든다</h2>
@@ -786,7 +647,7 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec guide" id="preview">
+  <section class="sec" id="preview">
     <div class="wrap">
       <h2 class="sec-title">미리 읽기<small>블루 세네카 &lsquo;나의 시간&rsquo;의 첫 편지와 풀이 일부를 옮겼습니다.</small></h2>
       <div class="lroom">
@@ -812,37 +673,36 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec" id="people">
+  <section class="sec guide" id="letters">
     <div class="wrap">
-      <h2 class="sec-title">편지를 쓴 사람들<small>우리 책에 실린 편지는 모두 실제로 오간 편지입니다.</small></h2>
-      <div class="people">
-        <article><span class="yr">기원전 4년경 ~ 기원후 65년</span><h3>세네카</h3><p>스페인 코르도바에서 태어나 로마에서 철학자이자 정치가로 산 스토아 철학자입니다. 코르시카 섬으로 쫓겨났다가 돌아와 어린 네로를 가르쳤습니다. 말년에 벗 루킬리우스에게 보낸 편지 124통이 『도덕 서한』으로 전합니다.</p><a href="#books" data-cat="세네카">세네카에게 쓰는 답장 ›</a></article>
-        <article><span class="yr">서기 23년경 ~ 79년</span><h3>대(大) 플리니우스</h3><p>로마의 군인이자 관리이며 서른일곱 권의 『박물지』를 쓴 사람입니다. 79년 베수비오 화산이 터진 날, 나폴리만의 함대 사령관으로 배를 띄워 건너갔다가 돌아오지 못했습니다.</p><a href="#books" data-cat="플리니우스">플리니우스 기록 ›</a></article>
-        <article><span class="yr">61년경 ~ 113년경</span><h3>소(小) 플리니우스</h3><p>외삼촌의 유언으로 양자가 된 조카입니다. 변호사로 이름을 얻고 집정관과 비티니아 총독을 지냈습니다. 벗들에게 쓴 편지 247통과 황제와 주고받은 편지 121통이 전합니다.</p><a href="#books" data-cat="플리니우스">플리니우스 기록 ›</a></article>
-        <article><span class="yr">1735년생 · 1744년생</span><h3>존 애덤스와 애비게일 애덤스</h3><p>매사추세츠의 변호사와 목사의 딸로, 1764년에 혼인했습니다. 존이 나랏일로 집을 떠나 있는 동안 두 사람은 편지로 집안일과 나랏일을 의논했습니다. 주고받은 편지가 천 통 넘게 전합니다.</p><a href="#books" data-cat="애덤스">애덤스 부부 ›</a></article>
+      <h2 class="sec-title">이번 주 편지방<small>출판사가 한 통의 편지를 함께 읽자고 올립니다. 읽고 나서 그 사람에게 내 답장을 써 보세요.</small></h2>
+      <div class="lroom">
+        <article class="letter" aria-label="이번 주 편지">
+          <p class="meta">애덤스 부부 · 애비게일이 존에게 · 1775년 9월, 브레인트리</p>
+          <h3>집이 온통 병원입니다</h3>
+          <p>당신이 떠난 뒤로 나는 몸과 마음의 큰 괴로움을 지나왔습니다. 더 큰 괴로움이 내 몫으로 남아 있는지는 하늘만이 압니다.</p>
+          <p>이토록 병이 돌고 사람이 많이 죽는 때는 가장 나이 든 어른도 기억하지 못합니다. 나는 당신이 걱정입니다. 부디 곧 소식을 주세요.</p>
+          <p>몸이 몹시 약해서 쓸 수 있는 만큼만 썼습니다. 편지를 닫기 전에 더 반가운 소식을 보탤 수 있기를 바랍니다.</p>
+          <p class="sig">더없는 애정으로, 당신의 포샤</p>
+          <p class="src">원문은 1876년 판 『존 애덤스와 애비게일 애덤스의 편지』에서 가려 옮겼습니다. 전문은 「나의 가장 사랑스러운 벗에게」에 실려 있습니다.</p>
+        </article>
+        <div class="lform">
+          <h3>애비게일에게 답장을 써 보세요</h3>
+          <p class="hint">답장은 이 사이트로 보내지 않습니다. 종이 한 장이나 워크북의 답장 칸에 나만을 위해 씁니다.</p>
+          <p class="q"><b>생각해 볼 것</b>당신이 존이라면, 이 편지를 받고 무엇부터 쓰겠습니까?</p>
+          <p class="q"><b>그때는</b>편지가 브레인트리에서 필라델피아까지 가는 데 두 주에서 세 주가 걸렸습니다. 이 편지는 10월 1일에 닿았습니다.</p>
+          <p class="key">걱정시키기 싫은 마음과 알리고 싶은 마음은 한 편지에 함께 있습니다.</p>
+          <a class="btn" href="#books" data-cat="애덤스">애덤스 부부 워크북 보기</a>
+        </div>
       </div>
-      <h3 class="tl-h">편지로 보는 연표</h3>
-      <ol class="tline">
-        <li><b>41년</b>세네카, 황제 클라우디우스에게 쫓겨나 코르시카 섬으로</li>
-        <li><b>65년</b>세네카, 네로의 명으로 생을 마침. 루킬리우스에게 보낸 편지 124통이 전함</li>
-        <li><b>77년</b>대 플리니우스, 『박물지』를 황제의 아들 티투스에게 바침</li>
-        <li><b>79년</b>베수비오 화산 폭발. 폼페이가 묻히고 외삼촌은 돌아오지 못함</li>
-        <li><b>100년</b>소 플리니우스, 집정관이 됨</li>
-        <li><b>1348년</b>시인 페트라르카, 1,300년 가까이 지난 세네카에게 편지를 씀</li>
-        <li><b>1764년</b>존과 애비게일 혼인</li>
-        <li><b>1775년</b>전쟁이 시작되고 두 사람의 편지가 이어짐</li>
-        <li><b>1776년</b>애비게일, &ldquo;여성들을 기억해 달라&rdquo;고 씀. 7월에 독립 선언</li>
-        <li><b>1876년</b>손자가 두 사람의 편지를 엮어 펴냄</li>
-        <li><b>2026년</b>victorview 출판사 신고(제582-2026-000025호)</li>
-      </ol>
     </div>
   </section>
 
-  <section class="sec guide" id="lines">
+  <section class="sec" id="lines">
     <div class="wrap">
       <h2 class="sec-title">오늘의 한 줄<small>워크북의 &lsquo;핵심 한 줄&rsquo;에서 날마다 한 줄씩 골라 보여 드립니다.</small></h2>
       <figure class="today"><blockquote id="today-line">시간을 아끼려면 먼저 시간이 어디로 새는지 알아야 합니다.</blockquote><figcaption id="today-src">블루 세네카 &lsquo;나의 시간&rsquo; · 편지 1</figcaption></figure>
-      <ul class="linelist" id="line-list">
+      <ul class="linelist" id="line-list" hidden>
         <li data-n="1">시간을 아끼려면 먼저 시간이 어디로 새는지 알아야 합니다.</li>
         <li data-n="2">돌아보면 한순간이니, 꼭 필요한 일부터 합니다.</li>
         <li data-n="3">삶은 길이가 아니라 채운 것으로 잽니다.</li>
@@ -859,17 +719,27 @@ footer .sitemap a:hover { color: #fff; }
     </div>
   </section>
 
-  <section class="sec" id="magazine">
+  <section class="sec guide" id="people">
     <div class="wrap">
-      <h2 class="sec-title">편지 매거진<small>고전 편지를 더 가깝게 읽는 이야기</small></h2>
-      <div class="mag">
-        <article><span class="mtag">편지 이야기</span><h3>답장이 남지 않은 124통</h3><p>세네카의 편지는 124통이 전하지만 루킬리우스의 답장은 한 통도 남아 있지 않습니다. 그래서 이 책은 그 자리를 비워 두었습니다.</p></article>
-        <article><span class="mtag">쓰는 법 팁</span><h3>시작 질문부터 적어 보세요</h3><p>무엇을 써야 할지 막막하면 오른쪽 쪽의 시작 질문에 한 문장으로 답하는 것부터 시작합니다.</p></article>
-        <article><span class="mtag">역사 한 장면</span><h3>화산이 터진 날의 편지</h3><p>소 플리니우스는 베수비오 화산이 터진 날 삼촌이 배를 띄운 일을 편지로 남겼습니다. 플리니우스 기록 첫째 권의 이야기입니다.</p></article>
-        <article><span class="mtag">편지 이야기</span><h3>1,300년 뒤에 온 답장</h3><p>1348년 이탈리아의 시인 페트라르카는 세상을 떠난 지 1,300년 가까이 된 세네카에게 편지를 썼습니다. 이제 당신 차례입니다.</p></article>
-        <article><span class="mtag">역사 한 장면</span><h3>편지 한 통에 세 주</h3><p>애비게일의 편지가 브레인트리에서 필라델피아까지 가는 데 두 주에서 세 주가 걸렸습니다. 이 편지는 10월 1일에 닿았습니다.</p></article>
-        <article><span class="mtag">편지 이야기</span><h3>&lsquo;포샤&rsquo;라는 서명</h3><p>애비게일은 편지 끝에 &lsquo;포샤&rsquo;라고 서명하곤 했습니다. 로마 사람 브루투스의 아내 이름입니다. 두 사람은 서로를 &lsquo;가장 사랑스러운 벗&rsquo;이라 불렀습니다.</p></article>
+      <h2 class="sec-title">편지를 쓴 사람들<small>우리 책에 실린 편지는 모두 실제로 오간 편지입니다.</small></h2>
+      <div class="people">
+        <article><span class="yr">기원전 4년경 ~ 기원후 65년</span><h3>세네카</h3><p>스페인 코르도바에서 태어나 로마에서 철학자이자 정치가로 산 스토아 철학자입니다. 코르시카 섬으로 쫓겨났다가 돌아와 어린 네로를 가르쳤습니다. 말년에 벗 루킬리우스에게 보낸 편지 124통이 『도덕 서한』으로 전합니다.</p><a href="#books" data-cat="세네카">세네카에게 쓰는 답장 ›</a></article>
+        <article><span class="yr">서기 23년경 ~ 79년</span><h3>대(大) 플리니우스</h3><p>로마의 군인이자 관리이며 서른일곱 권의 『박물지』를 쓴 사람입니다. 79년 베수비오 화산이 터진 날, 나폴리만의 함대 사령관으로 배를 띄워 건너갔다가 돌아오지 못했습니다.</p><a href="#books" data-cat="플리니우스">플리니우스 기록 ›</a></article>
+        <article><span class="yr">61년경 ~ 113년경</span><h3>소(小) 플리니우스</h3><p>외삼촌의 유언으로 양자가 된 조카입니다. 변호사로 이름을 얻고 집정관과 비티니아 총독을 지냈습니다. 벗들에게 쓴 편지 247통과 황제와 주고받은 편지 121통이 전합니다.</p><a href="#books" data-cat="플리니우스">플리니우스 기록 ›</a></article>
+        <article><span class="yr">1735년생 · 1744년생</span><h3>존 애덤스와 애비게일 애덤스</h3><p>매사추세츠의 변호사와 목사의 딸로, 1764년에 혼인했습니다. 존이 나랏일로 집을 떠나 있는 동안 두 사람은 편지로 집안일과 나랏일을 의논했습니다. 주고받은 편지가 천 통 넘게 전합니다.</p><a href="#books" data-cat="애덤스">애덤스 부부 ›</a></article>
       </div>
+    </div>
+  </section>
+
+  <section class="sec" id="money">
+    <div class="wrap">
+      <h2 class="sec-title">돈의 편지<small>새 시리즈를 준비하고 있습니다. 돈에 관한 고전 편지를 읽고 내 살림을 적어 봅니다.</small></h2>
+      <div class="money-intro">
+        <div><q>가진 것이 적은 사람이 아니라 더 갖고 싶어 하는 사람이 가난하다.</q><cite>세네카, 루킬리우스에게 보내는 편지 2번</cite></div>
+        <div><ul><li>읽을 편지 후보: 세네카가 부와 가난에 관해 쓴 편지들, 벤저민 프랭클린 『부에 이르는 길』(1758)</li><li>나의 한 달 돈 점검 칸: 매달 자동으로 나가는 돈 적기, 비상금이 생활비 몇 달 치인지 보기, 이번 달 덜어 낼 것 하나 정하기</li></ul></div>
+      </div>
+      <p class="disclaimer">돈의 편지는 스스로 살림을 돌아보는 글쓰기 책입니다. 투자 권유나 금융상품 안내가 아니며, 이 사이트에서는 개인 상담을 하지 않습니다.</p>
+</div>
     </div>
   </section>
 
@@ -885,7 +755,6 @@ footer .sitemap a:hover { color: #fff; }
           <div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
             <ul>
               <li>판매처가 열리면 책마다 사는 곳을 안내하겠습니다<span>준비 중</span></li>
-              <li>새 시리즈 &lsquo;돈의 편지&rsquo;를 준비하고 있습니다<span>준비 중</span></li>
               <li>종이책 B6 판형을 준비하고 있습니다<span>준비 중</span></li>
               <li>출판사 신고를 마쳤습니다 (제582-2026-000025호)<span>2026.10.07</span></li>
             </ul>
@@ -894,7 +763,6 @@ footer .sitemap a:hover { color: #fff; }
             <details><summary>입력형과 필기형은 무엇이 다른가요?</summary><p>입력형은 답장 칸을 눌러 자판으로 씁니다. 필기형은 줄이 그어진 판이라 필기 앱에서 펜으로 쓰거나 A5로 인쇄해서 씁니다.</p></details>
             <details><summary>선물할 수 있나요?</summary><p>책 맨 앞 &lsquo;이 책을 선물합니다&rsquo; 쪽에 받는 분 이름과 전하는 말을 적어 저장한 뒤 파일을 전하면 됩니다. 구매 한 번으로 한 분께 선물할 수 있습니다.</p></details>
             <details><summary>기존 번역서와 무엇이 다른가요?</summary><p>공공 영역 판본을 바탕으로 새로 옮기고 줄인 발췌입니다. 전체를 읽는 번역서가 아니라 편지를 골라 답장을 쓰는 워크북입니다.</p></details>
-            <details><summary>돈의 편지에서 재무 상담도 받을 수 있나요?</summary><p>아닙니다. 돈의 편지는 스스로 살림을 돌아보는 글쓰기 책이며, 이 사이트에서는 개인 상담이나 금융상품 안내를 하지 않습니다.</p></details>
           </div>
         </div>
         <div style="display:grid;gap:14px;align-content:start" id="notice">
@@ -913,26 +781,18 @@ footer .sitemap a:hover { color: #fff; }
   </section>
 </main>
 
-<div class="trust">
-  <div class="wrap">
-    <span><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg>출판사 신고 제582-2026-000025호</span>
-    <span><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg>원문은 공공 영역 판본에서 새로 옮기고 줄임</span>
-    <span><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg>표지와 그림은 직접 그림</span>
-  </div>
-</div>
-
 <footer>
   <div class="wrap">
     <div class="sitemap">
-      <div><b>책</b><a href="#books" data-cat="세네카">세네카에게 쓰는 답장</a><a href="#books" data-cat="플리니우스">플리니우스 기록</a><a href="#books" data-cat="애덤스">애덤스 부부</a></div>
-      <div><b>쓰는 법</b><a href="#how">한 통 구성</a><a href="#guide">입력형 · 필기형</a><a href="#guide">선물하기</a></div>
-      <div><b>돈의 편지</b><a href="#money">시리즈 소개</a><a href="#money">점검 칸 예시</a></div>
-      <div><b>출판사</b><a href="#letters">이번 주 편지방</a><a href="#preview">미리 읽기</a><a href="#people">편지를 쓴 사람들</a><a href="#lines">오늘의 한 줄</a><a href="#magazine">편지 매거진</a><a href="#contact">출판사 소개</a><a href="#board">공지사항</a><a href="#board">자주 묻는 질문</a></div>
+      <div><b>책</b><a href="#books" data-cat="세네카 4색">세네카 4색</a><a href="#books" data-cat="세네카 골드">세네카 골드</a><a href="#books" data-cat="플리니우스">플리니우스 기록</a><a href="#books" data-cat="애덤스">애덤스 부부</a><a href="#money">돈의 편지</a></div>
+      <div><b>읽어 보기</b><a href="free-seven-days.html">무료 워크북</a><a href="#preview">미리 읽기</a><a href="#letters">이번 주 편지방</a><a href="#lines">오늘의 한 줄</a><a href="#people">편지를 쓴 사람들</a></div>
+      <div><b>출판사</b><a href="#how">쓰는 법</a><a href="#board" data-faq>자주 묻는 질문</a><a href="#notice">공지사항</a><a href="#contact">출판사 소개 · 문의</a></div>
     </div>
     <div class="policy"><button type="button" class="linkbtn" data-pol="pol-privacy">개인정보처리방침</button><button type="button" class="linkbtn" data-pol="pol-terms">이용약관</button><button type="button" class="linkbtn" data-pol="pol-copy">저작권 안내</button></div>
     <p class="flogo">victorview</p>
     <div class="info">
       <p>발행처 victorview · 엮고 옮김 X-man 편집부 · 출판사 신고 제582-2026-000025호</p>
+      <p>원문은 공공 영역 판본에서 새로 옮기고 줄였습니다. 표지와 그림은 직접 그렸습니다.</p>
       <p>이 사이트의 글은 일반 교육 정보이며 투자 권유가 아닙니다. 이 자료는 AI 도구의 도움을 받아 만들었고 발행인이 검토했습니다.</p>
     </div>
     <p class="copy">© victorview. All rights reserved.</p>
@@ -1000,7 +860,7 @@ footer .sitemap a:hover { color: #fff; }
     t.addEventListener('click', function () { selectTab(t); });
     t.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; selectTab(n); n.focus(); } });
   });
-  document.querySelectorAll('a[href="#board"]').forEach(function (a) { if (/질문/.test(a.textContent)) a.addEventListener('click', function () { selectTab(tabs[1]); }); });
+  document.querySelectorAll('a[data-faq]').forEach(function (a) { a.addEventListener('click', function () { selectTab(tabs[1]); }); });
 
   // 최근 찾은 말
   var recentBox = document.getElementById('recent');
@@ -1043,7 +903,12 @@ footer .sitemap a:hover { color: #fff; }
   var Q = '<svg class="sym"><use href="#quill"/></svg>', C = '<svg class="sym"><use href="#cloud"/></svg>', E = '<svg class="sym"><use href="#env"/></svg>';
   var W2 = ['쓰는 책 입력형', '쓰는 책 필기형'], W3 = W2.concat(['읽는 책']);
   // 시리즈 순서: 세네카 4색(블루·레드·퍼플·그린 4) → 세네카 골드(5) → 플리니우스(5) → 애덤스(1)
-  var SERIES = [{ key: '세네카 4색', title: '세네카 블루 · 레드 · 퍼플 · 그린' }, { key: '세네카 골드', title: '세네카 골드 · 124통 전편' }, { key: '플리니우스', title: '플리니우스 기록' }, { key: '애덤스', title: '애덤스 부부' }];
+  var SERIES = [
+    { key: '세네카 4색', title: '세네카 블루 · 레드 · 퍼플 · 그린', desc: '세네카가 벗 루킬리우스에게 보낸 『도덕 서한』에서 주제별로 골라, 한 권마다 답장을 씁니다.' },
+    { key: '세네카 골드', title: '세네카 골드 · 124통 전편', desc: '『도덕 서한』 124통 전부를 네 권에 나눠 담았고, 합본에는 읽는 책도 들어 있습니다.' },
+    { key: '플리니우스', title: '플리니우스 기록', desc: '화산이 터진 날, 황제에게 묻는 총독, 벗에게 보낸 안부. 소 플리니우스의 편지를 네 권과 읽는 단행본으로 엮었습니다.' },
+    { key: '애덤스', title: '애덤스 부부', desc: '떨어져 지낸 존과 애비게일이 주고받은 편지를 읽고 답장을 씁니다. 쓰는 판과 읽는 판을 함께 담았습니다.' }
+  ];
   var books = [
     { img: '01', series: '세네카 4색', cat: '세네카 블루', name: '세네카 블루 · 나의 시간', cls: 'sen sen-blue', t: '나의<br>시간', sym: Q, band: ['세네카', '답장 · 블루'], fmt: W2, kw: '시간 루킬리우스 30통' },
     { img: '02', series: '세네카 4색', cat: '세네카 레드', name: '세네카 레드 · 잠시 멈춤', cls: 'sen sen-red', t: '잠시<br>멈춤', sym: Q, band: ['세네카', '답장 · 레드'], fmt: W2, kw: '멈춤 쉼' },
@@ -1074,7 +939,7 @@ footer .sitemap a:hover { color: #fff; }
     SERIES.forEach(function (sr) {
       var group = shown.filter(function (b) { return b.series === sr.key; });
       if (!group.length) return;
-      html += '<div class="series-head"><b>' + sr.title + '</b><span>' + group.length + '종</span></div>' + group.map(card).join('');
+      html += '<div class="series-head"><b>' + sr.title + '</b><span>' + group.length + '종</span><p>' + sr.desc + '</p></div>' + group.map(card).join('');
     });
     list.innerHTML = html;
     function card(b) {
