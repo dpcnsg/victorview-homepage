@@ -4,4 +4,4 @@ victorview 출판사(X-man 워크북) 공개 홈페이지입니다. Netlify(vict
 
 - `index.html`: 홈페이지 한 장
 - `covers/`: 판매용 전자책 실제 표지 15종
-- 편지방 답장은 Netlify Forms(`letter-reply`)로 모입니다.
+- 이 사이트에는 이름·연락처·글을 보내는 기능이 없습니다(답장 양식 없앰, 2026-10-19). 검색어는 서버로 보내지 않습니다.
