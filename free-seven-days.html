@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무료 워크북 · 일곱 날의 시간 | victorview</title>
+<meta name="description" content="삶은 짧은 것이 아니라 우리가 짧게 만든다. 세네카가 벗 파울리누스에게 보낸 글 일곱 대목을 하루 한 대목씩 읽고 답장을 써서 나만의 책으로 엮는 무료 워크북. 쓴 글은 이 기기에만 저장됩니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
+<style>
+:root {
+  --bg: #ffffff; --soft: #f4f6f9; --ink: #1b2a41; --sub: #5b6577; --line: #e2e6ec;
+  --primary: #1b2a41; --accent: #d7263d; --ivory: #faf6ee; --gold: #b8955a; --sky: #e9f1f8;
+  --font: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --font-book: "Nanum Myeongjo", "Batang", serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--soft); color: var(--ink); font-family: var(--font); line-height: 1.7; }
+a { color: inherit; }
+.top { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--line); }
+.top .in { max-width: 1100px; margin: auto; padding: 10px 16px; display: flex; align-items: center; gap: 14px; }
+.logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+.logo small { font-weight: 500; color: var(--sub); font-size: .75rem; margin-left: 4px; }
+.prog { flex: 1; display: flex; align-items: center; gap: 10px; font-size: .82rem; color: var(--sub); min-width: 0; }
+.prog[hidden], [hidden] { display: none !important; }
+.bar { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; max-width: 320px; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--primary); background: var(--primary); color: #fff; font: inherit; font-size: .9rem; font-weight: 700; padding: 10px 18px; border-radius: 10px; cursor: pointer; text-decoration: none; }
+.btn.ghost { background: #fff; color: var(--primary); }
+.btn.sm { padding: 6px 12px; font-size: .82rem; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid #e0a100; outline-offset: 2px; }
+main { max-width: 1100px; margin: auto; padding: 24px 16px 80px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.hello { max-width: 720px; margin: 24px auto; text-align: center; }
+.hello h1 { font-family: var(--font-book); font-size: 2rem; margin: 0 0 6px; }
+.hello .lead { color: var(--sub); margin: 0 0 22px; }
+.hello ol { text-align: left; max-width: 520px; margin: 0 auto 22px; padding-left: 1.2em; color: var(--ink); }
+.hello label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
+.hello input { width: 100%; max-width: 360px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font: inherit; text-align: center; }
+.safe { margin: 18px auto 0; max-width: 560px; font-size: .82rem; color: var(--sub); background: var(--soft); border-radius: 10px; padding: 10px 14px; }
+.grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 22px; align-items: start; }
+nav.toc { position: sticky; top: 70px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px; max-height: calc(100vh - 90px); overflow: auto; }
+nav.toc h2 { font-size: .85rem; margin: 10px 4px 4px; color: var(--sub); }
+nav.toc h2:first-child { margin-top: 0; }
+nav.toc button { display: flex; width: 100%; gap: 8px; align-items: baseline; text-align: left; background: none; border: 0; padding: 6px 8px; border-radius: 8px; font: inherit; font-size: .85rem; color: var(--ink); cursor: pointer; }
+nav.toc button:hover { background: var(--soft); }
+nav.toc button[aria-current="true"] { background: var(--sky); font-weight: 700; }
+nav.toc button:disabled { color: #a3abb8; cursor: not-allowed; }
+nav.toc .n { min-width: 22px; color: var(--sub); font-size: .78rem; }
+nav.toc .ok { margin-left: auto; color: var(--accent); font-size: .8rem; }
+.spread { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.letter { background: var(--ivory); border: 1px solid var(--line); border-radius: 14px; padding: 26px 24px; font-family: var(--font-book); line-height: 1.95; }
+.letter .meta { font-family: var(--font); font-size: .78rem; color: var(--gold); margin: 0 0 8px; }
+.letter h2 { font-size: 1.3rem; margin: 0 0 12px; outline: none; }
+.gwarn { background: #fdecee; color: var(--accent); font-weight: 700; font-size: .85rem; text-align: center; padding: 8px 16px; }
+.gwarn .btn { margin-left: 8px; }
+.saved.warn { color: var(--accent); font-weight: 700; }
+.letter p { margin: 0 0 12px; }
+.letter .to { color: var(--sub); }
+.letter .cite { font-family: var(--font); font-size: .76rem; color: #6b7482; border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 16px; }
+.right { display: grid; gap: 14px; align-content: start; }
+.expl { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; font-size: .92rem; }
+.expl h3 { font-size: .8rem; color: var(--primary); margin: 10px 0 2px; }
+.expl h3:first-child { margin-top: 0; }
+.expl p { margin: 0 0 8px; }
+.key { margin: 10px 0 0; padding: 10px 14px; border-left: 3px solid var(--accent); background: var(--ivory); font-family: var(--font-book); font-weight: 700; }
+.reply { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+.reply .q { font-size: .9rem; margin: 0 0 10px; }
+.reply .q b { color: var(--accent); }
+.reply textarea { width: 100%; min-height: 260px; border: 1px solid var(--line); border-radius: 10px; padding: 14px; font-family: var(--font-book); font-size: 1rem; line-height: 2; resize: vertical; background: repeating-linear-gradient(#fff 0 31px, #eef1f5 31px 32px); background-attachment: local; }
+.reply .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; font-size: .8rem; color: var(--sub); }
+.reply .row .saved { margin-right: auto; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.tools .btn { font-size: .8rem; }
+.done { text-align: center; }
+.nextbox { text-align: left; margin-top: 22px; border-top: 1px solid var(--line); padding-top: 14px; font-size: .92rem; }
+.nextbox h3 { font-size: .95rem; margin: 12px 0 4px; color: var(--primary); }
+.nextbox p { margin: 0 0 8px; }
+.done h2 { font-family: var(--font-book); font-size: 1.6rem; margin: 0 0 6px; }
+.hide { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+/* 책 */
+#book { display: none; }
+.bk-page { background: #fff; max-width: 148mm; min-height: 200mm; margin: 0 auto 18px; padding: 18mm 15mm; font-family: var(--font-book); line-height: 1.95; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.bk-cover { display: flex; flex-direction: column; justify-content: center; text-align: center; background: var(--primary); color: #fff; }
+.bk-cover .s { font-family: var(--font); font-size: 10pt; letter-spacing: .1em; opacity: .8; }
+.bk-cover h1 { font-size: 24pt; margin: 14mm 0 6mm; line-height: 1.4; }
+.bk-cover .by { font-size: 13pt; }
+.bk-cover .pub { margin-top: 30mm; font-family: var(--font); font-size: 9pt; opacity: .75; }
+.bk-page h2 { font-size: 14pt; margin: 0 0 4mm; }
+.bk-page .meta { font-family: var(--font); font-size: 8pt; color: var(--gold); margin: 0 0 2mm; }
+.bk-page p { font-size: 10.5pt; margin: 0 0 3mm; }
+.bk-page .cite { font-family: var(--font); font-size: 7.5pt; color: #6b7482; }
+.bk-page .key { font-size: 10pt; }
+.bk-page .mine { white-space: pre-wrap; overflow-wrap: anywhere; }
+.bk-page .sign { text-align: right; margin-top: 6mm; }
+.bk-toolbar { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 12px; background: var(--soft); }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } nav.toc { position: static; max-height: 260px; } .spread { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .prog .txt { display: none; } .card { padding: 20px; } .hello h1 { font-size: 1.6rem; } .bk-page { padding: 12mm 9mm; } }
+@media print {
+  @page { size: 148mm 210mm; margin: 0; }
+  html, body { background: #fff; }
+  .top, #app, .bk-toolbar { display: none !important; }
+  #book { display: block !important; }
+  .bk-page { box-shadow: none; margin: 0; min-height: 210mm; max-width: none; width: 148mm; page-break-after: always; break-after: page; }
+  .bk-cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="logo" href="./">victorview<small>내 워크북</small></a>
+  <div class="prog" id="prog" hidden><span class="txt" id="progtxt"></span><div class="bar" aria-hidden="true"><i id="progbar"></i></div><span id="progn"></span></div>
+</div>
+  <div class="gwarn" id="gwarn" role="alert" hidden>저장되지 않았습니다. 이 브라우저가 저장을 막고 있습니다. 창을 닫기 전에 <button class="btn sm" id="gw-save">백업 파일 내려받기</button></div>
+</header>
+
+<div id="app">
+<main>
+  <!-- 시작 -->
+  <section class="card hello" id="v-hello" hidden>
+    <p class="meta" style="color:var(--gold);font-size:.85rem;margin:0 0 6px">세네카 · 무료 워크북</p>
+    <h1>일곱 날의 시간</h1>
+    <p class="lead">"삶은 짧은 것이 아니라 우리가 짧게 만든다." 세네카가 바쁜 벗 파울리누스에게 보낸 글 일곱 대목을 하루 한 대목씩 읽고, 답장을 써서 나만의 책으로 엮습니다. 무료입니다.</p>
+    <ol>
+      <li>첫째 날부터 차례로 열립니다. 답장을 쓰면 다음 날이 열립니다.</li>
+      <li>쓴 답장은 자동으로 저장됩니다. 언제든 이어 쓸 수 있습니다.</li>
+      <li>일곱 날을 마치면 내 이름이 들어간 책을 PDF로 저장하거나 인쇄합니다.</li>
+    </ol>
+    <label for="nm">책에 적을 이름 (별명도 좋습니다)</label>
+    <input id="nm" maxlength="20" autocomplete="off" placeholder="예: 봄날">
+    <p style="margin:16px 0 0"><button class="btn" id="go">첫 편지 열기</button></p>
+    <p class="safe">쓴 글은 <b>이 기기의 브라우저에만</b> 저장되며 출판사를 포함해 어디로도 보내지 않습니다. 다른 기기로 옮기거나 잃지 않으려면 &lsquo;백업 파일 내려받기&rsquo;를 써 주세요.</p>
+  </section>
+
+  <!-- 쓰기 -->
+  <section id="v-write" hidden>
+    <div class="grid">
+      <nav class="toc" id="toc" aria-label="편지 차례"></nav>
+      <div>
+        <div class="spread">
+          <article class="letter" id="letter" aria-live="polite"></article>
+          <div class="right">
+            <div class="expl" id="expl"></div>
+            <div class="reply">
+              <p class="q" id="q"></p>
+              <label class="sr" for="ta">나의 답장</label>
+              <textarea id="ta" placeholder="세네카에게," maxlength="20000"></textarea>
+              <div class="row"><span class="saved" id="saved" role="status"></span>
+                <button class="btn ghost sm" id="prev">이전 편지</button>
+                <button class="btn sm" id="next">다음 편지</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="tools">
+          <button class="btn ghost" id="mkbook">내 책 미리 보기</button>
+          <button class="btn ghost" id="bk-save">백업 파일 내려받기</button>
+          <button class="btn ghost" id="bk-load">백업 파일 불러오기</button>
+          <input type="file" id="bk-file" accept=".json,application/json" hidden>
+          <button class="btn ghost" id="rename">이름 바꾸기</button>
+          <button class="btn ghost" id="wipe">이 기기에서 모두 지우기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 완료 -->
+  <section class="card done" id="v-done" hidden>
+    <h2>일곱 날을 모두 썼습니다</h2>
+    <p id="donemsg"></p>
+    <p><button class="btn" id="mkbook2">내 책 만들기</button> <button class="btn ghost" id="back">답장 다시 보기</button></p>
+    <div class="nextbox">
+      <h3>다음 편지</h3>
+      <p>세네카는 같은 이야기를 벗 루킬리우스에게 편지로 이어 썼습니다. 하루 한 통 서른 날 동안 쓰는 <b>블루 세네카 『나의 시간』</b>(전자책 10,000원)이 그 편지들입니다. 다른 책은 홈페이지 책 목록에서 고를 수 있습니다.</p>
+      <p><a class="btn ghost" href="./#books">다음 책 고르기</a></p>
+      <h3>내 책을 종이책으로</h3>
+      <p>&lsquo;내 책 만들기&rsquo;에서 PDF로 저장한 책은 A5(148×210mm) 크기입니다. 한 권부터 만들어 주는 제본·포토북 업체가 있습니다. 업체마다 PDF를 그대로 받는지, 최소 쪽수, 표지 규격이 다르니 확인한 뒤 직접 주문하세요. 출판사는 고객님의 글과 주소를 받지 않습니다.</p>
+    </div>
+  </section>
+</main>
+</div>
+
+<div id="book" aria-label="내 책"></div>
+
+<script>
+var DATA = {"id": "brev-7", "book": "세네카 · 일곱 날의 시간", "src": "『인생의 짧음에 대하여』 ", "letters": [{"n": 1, "part": "첫째 날", "partTitle": "", "ep": "1장", "title": "삶은 짧지 않다", "to": "세네카가 파울리누스에게.", "paras": ["사람들 대부분은, 파울리누스여, 자연이 인색하다고 불평하네. 우리가 아주 짧은 세월을 받고 태어나고, 주어진 시간이 너무도 빠르게 흘러가 버려서, 몇 사람을 빼면 삶을 막 준비하는 사이에 삶이 끝나 버린다고 말일세. (…)", "우리가 가진 시간이 적은 것이 아니라, 많이 잃어버린 것일세. 삶은 충분히 길고, 모두 잘 쓰기만 하면 가장 큰 일을 이루기에도 넉넉하게 주어졌네. 그러나 사치와 부주의로 흘러 나가고 어떤 좋은 일에도 쓰이지 않으면, 마지막에 가서야 우리는 그것이 가는 줄도 모르는 사이에 지나가 버렸음을 느끼네.", "그렇다네. 우리는 짧은 삶을 받은 것이 아니라 짧게 만든 것이고, 삶이 모자란 것이 아니라 헤프게 쓰는 것일세. 왕의 것처럼 큰 재산도 나쁜 주인의 손에 들어가면 순식간에 흩어지지만, 적은 재산이라도 좋은 관리인에게 맡겨지면 잘 활용되어 불어나네. 우리 세월도 그와 같아서, 잘 다스리는 사람에게는 넓게 펼쳐지네."], "cite": "세네카 『인생의 짧음에 대하여』 1장 발췌(1, 3~4절). 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 \"인생은 짧다\"는 불평을 뒤집습니다. 받은 시간이 적은 것이 아니라 우리가 헤프게 써서 짧아진다고 말합니다. 같은 재산도 누가 다루느냐에 따라 흩어지기도 불어나기도 하듯, 시간도 그렇다고 합니다.", "p2": ["\"시간이 없다\"는 말을 하루에도 몇 번씩 합니다. 그런데 하루를 돌아보면, 시간이 없었다기보다 어디론가 새어 나간 날이 많습니다.", "오늘 하루의 시간을 돈처럼 적어 보세요. 어디에 \"썼고\", 어디로 \"새어 나갔는지\". 잘 쓴 한 시간과 새어 나간 한 시간이 따로 보이기 시작합니다."], "key": "삶은 짧은 것이 아니라, 우리가 짧게 만듭니다.", "q": "오늘 새어 나간 시간은 어디에 있었나요? 그 시간을 되찾는다면 무엇을 하겠습니까?"}, {"n": 2, "part": "둘째 날", "partTitle": "", "ep": "2장", "title": "누구도 자기 것이 아니다", "to": "세네카가 파울리누스에게.", "paras": ["어찌하여 우리는 자연을 탓하는가? 자연은 너그럽게 대해 주었네. 삶은 쓸 줄만 알면 기네. 어떤 사람은 채워지지 않는 탐욕에 붙들려 있고, 어떤 사람은 아무 쓸모 없는 일에 애써 매달리네. 어떤 사람은 술에 젖어 있고, 어떤 사람은 게으름에 굳어 있네. 어떤 사람은 남의 호의를 얻으려는 야심에 지치고, 어떤 사람은 이익을 바라는 장사 욕심에 온 땅과 바다를 떠도네. (…)", "많은 사람이 정한 뜻 없이, 떠돌고 변덕스럽고 늘 불만인 마음에 이끌려 이 계획에서 저 계획으로 떠밀려 다니네. (…) 그래서 나는 가장 위대한 시인이 신탁처럼 읊은 이 말이 참되다는 것을 의심하지 않네. \"우리가 사는 것은 삶의 작은 부분뿐이다.\" 나머지는 모두 삶이 아니라 그저 시간일세. (…)", "모두가 남을 위해 제 시간을 쓰네. 이 사람은 저 사람에게, 저 사람은 또 다른 사람에게 매여 있고, 누구도 자기 자신의 것이 아니네."], "cite": "세네카 『인생의 짧음에 대하여』 2장 발췌. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 우리 시간을 앗아 가는 것들을 하나씩 짚습니다. 끝없는 욕심, 쓸모없는 바쁨, 남의 눈치, 이 계획 저 계획으로 옮겨 다니는 마음. 그렇게 보낸 시간은 \"삶\"이 아니라 그저 흘러간 \"시간\"이라고 말합니다.", "p2": ["일정표는 빈틈없이 찼는데, 그 가운데 내가 고른 일은 몇 개나 될까요? 회의, 연락, 부탁, 남의 일 사이에서 \"내 일\"은 늘 맨 뒤로 밀립니다.", "이번 주 일정을 보며 내가 고른 일에 동그라미를 쳐 보세요. 동그라미가 하나도 없는 날이 있다면, 그날은 세네카의 말대로 \"살았다\"기보다 \"지나갔다\"에 가까웠을지 모릅니다."], "key": "남에게 매인 시간 말고, 나에게 돌아오는 시간이 있어야 삶입니다.", "q": "이번 주 나는 누구에게, 무엇에 가장 많이 매여 있었나요? 그 가운데 내가 고른 것은 무엇인가요?"}, {"n": 3, "part": "셋째 날", "partTitle": "", "ep": "3장", "title": "돈은 지키면서 시간은 내준다", "to": "세네카가 파울리누스에게.", "paras": ["(…) 사람들은 누구도 제 땅에 남이 들어와 살게 두지 않고, 경계를 두고 아주 사소한 다툼만 생겨도 돌과 몽둥이를 드네. 그러면서 제 삶에는 남이 들어오도록 내버려 두고, 아니 스스로 그들을 끌어들여 차지하게 하네. 제 돈을 나누어 주려는 사람은 찾을 수 없네. 그런데 저마다 제 삶은 얼마나 많은 사람에게 나누어 주는가! 재산은 새지 않게 인색하게 지키면서, 아껴야 마땅할 오직 하나인 시간에 이르러서는 가장 헤프네.", "노인 한 사람을 붙들고 이렇게 말해 보세. \"백 살이 되셨군요. 자, 당신 삶을 셈해 보십시오. 당신 시간 가운데 얼마를 빚쟁이가, 얼마를 애인이, 얼마를 후원자가, 얼마를 찾아오는 사람들이 가져갔는지, 얼마를 아내와 다투느라, 얼마를 노예들을 단속하느라, 얼마를 일로 도시를 오르내리느라 썼는지. 거기에 우리 손으로 불러들인 병과, 아무 쓸모 없이 놀고 지나간 시간을 더해 보십시오. 그러면 당신이 센 햇수만큼 살지 않았다는 것을 알게 될 것입니다.\" (…)", "사람들은 마치 영원히 살 것처럼 사네. 자기가 덧없다는 것을 떠올리지 않고, 이미 얼마나 많은 시간이 지나갔는지 보지 않네. 넘치도록 넉넉한 것처럼 시간을 쓰지만, 누군가에게 또는 무엇에 내준 그날이 어쩌면 마지막 날일지도 모르네."], "cite": "세네카 『인생의 짧음에 대하여』 3장 발췌. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 이상하다고 말합니다. 사람들은 땅 한 뼘, 돈 한 푼은 남에게 내주지 않으면서, 정작 하나뿐인 시간은 아무에게나 나누어 준다는 것입니다. 그리고 백 살 노인에게 그 시간을 누가 가져갔는지 셈해 보라고 합니다.", "p2": ["우리는 돈을 빌려 달라는 부탁에는 망설이면서, 시간을 내 달라는 부탁에는 쉽게 \"네\"라고 합니다. 돈은 통장에 남지만, 내준 시간은 어디에도 기록되지 않기 때문입니다.", "세네카의 노인처럼, 지난 한 달 내 시간을 가져간 사람과 일을 적어 보세요. 그 목록이 돈의 지출 내역이었다면, 그대로 두었을지 생각해 보세요."], "key": "돈은 지키면서 시간은 아무에게나 내주지 않습니다.", "q": "지난 한 달 내 시간을 가장 많이 가져간 사람과 일은 무엇이었나요? 돈이었다면 그렇게 내주었을까요?"}, {"n": 4, "part": "넷째 날", "partTitle": "", "ep": "8장", "title": "보이지 않아서 공짜처럼", "to": "세네카가 파울리누스에게.", "paras": ["나는 어떤 사람들이 남에게 시간을 달라고 하고, 부탁받은 사람들이 아주 선뜻 내주는 것을 보면 놀랍네. 두 사람 모두 그 시간으로 무엇을 할지만 보고, 시간 자체는 아무도 생각하지 않네. 마치 아무것도 달라고 하지 않고 아무것도 주지 않는 것처럼 말일세. 우리는 가장 값진 것을 가지고 장난을 치네. 그런데 그것은 몸이 없고 눈앞에 보이지 않기 때문에 사람들 눈에 띄지 않네. 그래서 아주 싸게 여겨지고, 아니 거의 아무 값도 매겨지지 않네.", "사람들은 선물이나 연금을 무엇보다 귀히 여기고, 그것을 얻으려고 제 일과 수고와 정성을 빌려주네. 그런데 시간은 아무도 귀히 여기지 않네. 공짜인 것처럼 훨씬 헤프게 내주네. (…)", "아무도 자네에게 세월을 돌려주지 않을 것이고, 아무도 자네를 다시 자네에게 돌려주지 않을 것이네. 삶은 한번 시작한 길을 갈 뿐, 되돌아가지도 멈추지도 않네. 소란도 피우지 않고, 얼마나 빨리 달아나는지 알려 주지도 않네. 소리 없이 흘러갈 것이네. 왕의 명령으로도, 백성의 바람으로도 더 늘어나지 않네. (…) 그러니 어떻게 되겠는가? 자네는 바쁘고, 삶은 서두르네."], "cite": "세네카 『인생의 짧음에 대하여』 8장 발췌. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 시간이 가장 값진 것인데도 가장 싸게 다뤄지는 까닭을 말합니다. 눈에 보이지 않기 때문입니다. 사람들은 선물과 연금은 귀히 여기면서 시간은 공짜처럼 내주고, 한번 내준 세월은 아무도 돌려주지 않는다고 합니다.", "p2": ["\"잠깐이면 돼요\"라는 부탁을 하루에 몇 번 받습니까? 잠깐들이 모여 오후가 사라집니다. 보이지 않으니 잃어도 모르고 지나갑니다.", "시간을 보이게 해 보세요. 오늘 하루를 30분 단위로 적어, 내가 고른 칸과 남이 가져간 칸에 서로 다른 색을 칠해 보세요. 보이는 순간, 값이 생깁니다."], "key": "시간은 보이지 않아서 공짜처럼 쓰지만, 가장 값진 것입니다.", "q": "이번 주 \"별것 아니라며\" 내준 시간은 무엇이었나요? 그 시간을 돌려받는다면 어디에 쓰겠습니까?"}, {"n": 5, "part": "다섯째 날", "partTitle": "", "ep": "9장", "title": "내일을 기다리다 오늘을 잃는다", "to": "세네카가 파울리누스에게.", "paras": ["(…) 미루는 것이 삶을 가장 크게 낭비하는 일일세. 그것은 날마다 하루씩을 빼앗고, 뒤에 무언가를 약속하면서 지금을 앗아 가네. 사는 것을 가장 크게 가로막는 것은 기다림일세. 기다림은 내일에 매달려 오늘을 잃네. 자네는 운명의 손에 있는 것을 정해 두려 하면서, 자네 손에 있는 것은 놓아 버리네. 어디를 보고 있는가? 어디로 손을 뻗는가? 앞으로 올 것은 모두 불확실하네. 지금 바로 살게.", "가장 위대한 시인이 신의 불길을 받은 듯 건강한 노래로 외치는 것을 들어 보게. \"가엾은 사람들에게 가장 좋은 날은 가장 먼저 달아난다.\" (…) 붙잡지 않으면 달아날 것이고, 붙잡아도 달아날 것이네. 그러니 시간을 쓰는 우리의 빠르기가 시간 자체의 빠르기와 겨루어야 하네. 늘 흐르지는 않을 급류에서 물을 마시듯, 서둘러 마셔야 하네."], "cite": "세네카 『인생의 짧음에 대하여』 9장 발췌. 시는 베르길리우스 『농경시』 3권의 한 구절. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 미루기를 삶의 가장 큰 낭비라고 부릅니다. 내일을 약속하며 오늘을 빼앗고, 확실하지 않은 앞날을 붙들며 지금 손에 있는 날을 놓친다는 것입니다. 그래서 \"지금 바로 살라\"고 말합니다.", "p2": ["\"좀 더 여유가 생기면\", \"애들이 크면\", \"은퇴하면\". 하고 싶은 일은 늘 그다음 칸에 들어가 있습니다. 그 칸은 생각보다 늦게 오거나, 오지 않기도 합니다.", "\"나중에\" 목록에서 하나를 골라, 오늘 10분만 해 보세요. 다 하지 않아도 됩니다. 기다림을 깨는 것은 큰 결심이 아니라 오늘의 작은 시작입니다."], "key": "내일을 기다리다 오늘을 잃지 않습니다. 지금 바로 삽니다.", "q": "\"나중에\"로 미뤄 둔 삶은 무엇인가요? 오늘 10분으로 시작할 수 있는 첫걸음은요?"}, {"n": 6, "part": "여섯째 날", "partTitle": "", "ep": "10장", "title": "지난날은 아무도 빼앗지 못한다", "to": "세네카가 파울리누스에게.", "paras": ["(…) 삶은 세 때로 나뉘네. 지나간 때, 지금, 앞으로 올 때. 그 가운데 지금 지나는 때는 짧고, 앞으로 지날 때는 불확실하고, 지나간 때는 확실하네. 지나간 때에 대해서는 운명도 권리를 잃었고, 그것은 누구의 손에도 넘어가지 않네. 그런데 바쁜 사람들은 바로 이것을 잃네. 지난날을 돌아볼 겨를이 없고, 겨를이 있어도 후회스러운 일을 떠올리기가 즐겁지 않기 때문일세. (…)", "지난날은 우리 시간 가운데 거룩하게 떼어 둔 부분일세. 사람의 어떤 우연도 닿지 않고, 운명의 지배에서 벗어나 있으며, 가난도 두려움도 병의 습격도 흔들지 못하네. 그것은 어지럽혀지지도 빼앗기지도 않네. 우리는 그것을 영원히 평온하게 가지네. (…)", "평온하고 고요한 마음만이 자기 삶의 모든 부분을 돌아볼 수 있네. 바쁜 사람들의 마음은 멍에를 멘 짐승처럼 옆으로 돌아서지도 뒤를 돌아보지도 못하네. 그래서 그들의 삶은 깊은 구렁으로 흘러 사라지네. 아무리 부어도 담아 두지 못하는 그릇에는 쓸모가 없듯, 머물 곳을 찾지 못하고 마음의 틈과 구멍으로 새어 나가는 시간은 아무리 많이 주어도 소용이 없네."], "cite": "세네카 『인생의 짧음에 대하여』 10장 발췌. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "세네카는 삶을 지난날, 지금, 앞날로 나눕니다. 지금은 짧고 앞날은 불확실하지만, 지난날만은 확실해서 운명도 빼앗지 못합니다. 그런데 바쁜 사람은 돌아볼 겨를이 없어 그 지난날마저 잃는다고 합니다.", "p2": ["일기를 쓰거나 하루를 돌아보는 사람은 같은 하루를 두 번 삽니다. 돌아보지 않은 하루는 기억에서 빠르게 지워지고, 한 해가 \"어느새\" 지나갑니다.", "잠들기 전 오늘 있었던 일 가운데 다시 떠올려도 좋은 장면 하나를 한 줄로 적어 보세요. 그 한 줄이 쌓이면 아무도 빼앗지 못하는 내 것이 됩니다."], "key": "지난날은 아무도 빼앗지 못합니다. 돌아볼 때 비로소 내 것이 됩니다.", "q": "지난 한 해에서 돌아보아도 부끄럽지 않은 하루는 언제였나요? 그날 무엇을 했나요?"}, {"n": 7, "part": "일곱째 날", "partTitle": "", "ep": "18~19장", "title": "이제 당신에게 돌아오라", "to": "세네카가 파울리누스에게.", "paras": ["그러니 가장 사랑하는 파울리누스여, 무리에서 벗어나게. 나이에 비해 너무 많은 풍파를 겪었으니, 이제는 더 고요한 항구로 물러나게. 얼마나 많은 파도를 지나왔는지, 얼마나 많은 폭풍을 사생활에서 견디고 또 나랏일에서 스스로 떠안았는지 생각해 보게. 자네의 덕은 고되고 어지러운 일로 이미 충분히 드러났네. 이제는 한가로움 속에서 그것이 무엇을 하는지 시험해 보게. 삶의 더 큰 부분, 분명 더 좋은 부분을 나라에 바쳤으니, 자네 시간의 얼마쯤은 자네 자신에게도 가져가게.", "나는 자네를 게으르고 무기력한 쉼으로 부르는 것이 아닐세. (…) 자네는 온 세상의 살림을 다스리네. 남의 것처럼 깨끗하게, 자기 것처럼 부지런하게, 나라의 것처럼 정성스럽게. 미움을 피하기 어려운 자리에서 사랑을 얻고 있네. 그러나 내 말을 믿게. 나라의 곡식 셈보다 자기 삶의 셈을 아는 편이 낫네. (…)", "이 더 고요하고, 더 안전하고, 더 큰 일로 돌아오게. (…) 피가 아직 뜨겁게 돌 때, 무릎이 약해지기 전에, 더 나은 길로 나서야 하네."], "cite": "세네카 『인생의 짧음에 대하여』 18장 1~3절과 19장 발췌. 라틴어 원문(공공 영역)을 바탕으로 새로 옮기고 1889년 스튜어트 영어판과 대조함. 지면 관계로 일부를 줄였고, 줄인 곳은 (…)로 표시함.", "p1": "글 끝에서 세네카는 로마의 곡물 공급을 맡은 장관인 벗 파울리누스에게 말합니다. 나라를 위해 충분히 일했으니 이제 시간의 얼마쯤은 자신에게 가져오라고. 게으르게 쉬라는 것이 아니라, 나라의 곡식 셈보다 자기 삶의 셈을 먼저 알라는 것입니다.", "p2": ["일을 잘하는 사람일수록 일이 삶의 전부가 되기 쉽습니다. 회사의 숫자, 가게의 매출, 집안의 일정은 꼼꼼히 셈하면서, 내 삶이 어디로 가는지는 셈하지 않습니다.", "오늘은 내 삶을 셈하는 날입니다. 이번 주 내 시간의 몇 시간을 나에게 돌려줄지 정하고, 그 시간에 할 일을 적어 보세요. 일곱 날의 마지막 답장으로, 세네카에게 그 약속을 써 보내세요."], "key": "남의 곡식 창고를 셈하기 전에, 내 삶을 셈합니다.", "q": "내 시간의 얼마쯤을 나 자신에게 돌려준다면, 그 시간에 무엇을 하겠습니까?"}], "about": "세네카(기원전 4년경~기원후 65년)가 로마의 곡물 공급을 맡은 벗 파울리누스에게 보낸 글 『인생의 짧음에 대하여』에서 일곱 대목을 골라, 하루 한 대목씩 읽고 쓴 답장을 엮은 책입니다. \"삶은 짧은 것이 아니라 우리가 짧게 만든다\"는 이 글은 서기 49년에서 55년 사이에 쓴 것으로 봅니다.", "citeall": "편지글: 세네카 『인생의 짧음에 대하여』 발췌. 라틴어 원문(공공 영역)을 바탕으로 victorview가 새로 옮기고 줄였음."};
+(function () {
+  'use strict';
+  var KEY = 'vv-wb-brev-7', L = DATA.letters, N = L.length;
+  var MAX = 20000;
+  var BOOK = DATA.id || 'book';
+  function fresh() { return { v: 1, book: BOOK, name: '', cur: 0, ans: {}, dates: {} }; }
+  // 저장본·백업 파일 검사: 형식이 맞지 않거나 한도를 넘으면 null (기존 글은 건드리지 않음)
+  function clean(s) {
+    if (!s || typeof s !== 'object' || s.v !== 1 || s.book !== BOOK) return null;   // 다른 책의 백업은 받지 않는다
+    if (!s.ans || typeof s.ans !== 'object' || Array.isArray(s.ans)) return null;
+    if (s.dates != null && (typeof s.dates !== 'object' || Array.isArray(s.dates))) return null;
+    if (s.name != null && typeof s.name !== 'string') return null;
+    var o = fresh(); o.name = String(s.name || '').slice(0, 20);
+    for (var k in s.ans) {
+      if (!Object.prototype.hasOwnProperty.call(s.ans, k)) continue;
+      var i = Number(k); if (!(i >= 0 && i < N && i % 1 === 0)) continue;
+      var a = s.ans[k]; if (typeof a !== 'string' || a.length > MAX) return null;
+      o.ans[i] = a; var d = s.dates && s.dates[k]; if (typeof d === 'string') o.dates[i] = d.slice(0, 20);
+    }
+    o.cur = typeof s.cur === 'number' && s.cur >= 0 && s.cur < N ? Math.floor(s.cur) : 0;
+    return o;
+  }
+  var bad = false, raw = null;
+  try { raw = localStorage.getItem(KEY); } catch (e) {}
+  var st = fresh();
+  if (raw) { try { var c0 = clean(JSON.parse(raw)); if (c0) st = c0; else bad = true; } catch (e) { bad = true; } }
+  var saveOk = true, dirty = false;
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); saveOk = true; dirty = false; } catch (e) { saveOk = false; } showSaved(); return saveOk; }
+  function showSaved() {
+    var gw = document.getElementById('gwarn'); if (gw) gw.hidden = saveOk;
+    var el = document.getElementById('saved'); if (!el) return;
+    if (!saveOk) { el.textContent = '저장되지 않았습니다. 이 브라우저가 저장을 막고 있으니 백업 파일로 보관하세요.'; el.className = 'saved warn'; return; }
+    el.className = 'saved'; el.textContent = dirty ? '저장하는 중…' : (st.dates[st.cur] && st.ans[st.cur] ? '저장됨 · ' + st.dates[st.cur] : '');
+  }
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function written(i) { return !!(st.ans[i] && st.ans[i].replace(/세네카에게,?/, '').trim().length >= 1); }
+  function doneCount() { var c = 0; for (var i = 0; i < N; i++) if (written(i)) c++; return c; }
+  function openUpTo() { var i = 0; while (i < N && written(i)) i++; return Math.min(i, N - 1); } // 쓴 편지 다음 한 통까지 열림
+  function show(v) { ['v-hello', 'v-write', 'v-done'].forEach(function (x) { $(x).hidden = x !== v; }); $('prog').hidden = v === 'v-hello'; }
+  function prog() { var d = doneCount(); $('progbar').style.width = (d / N * 100) + '%'; $('progn').textContent = d + ' / ' + N; $('progtxt').textContent = (st.name ? st.name + ' 님의 답장' : '나의 답장'); }
+  function today() { var d = new Date(); return d.getFullYear() + '. ' + (d.getMonth() + 1) + '. ' + d.getDate() + '.'; }
+
+  function toc() {
+    var up = openUpTo(), h = '', lastPart = '';
+    L.forEach(function (x, i) {
+      if (x.partTitle && x.part !== lastPart) { h += '<h2>' + esc(x.part + ' · ' + x.partTitle) + '</h2>'; lastPart = x.part; }
+      h += '<button data-i="' + i + '"' + (i === st.cur ? ' aria-current="true"' : '') + (i > up ? ' disabled title="앞 편지에 답장을 쓰면 열립니다"' : '') + '><span class="n">' + (i + 1) + '</span><span>' + esc(x.title) + '</span>' + (written(i) ? '<span class="ok" aria-label="씀">✓</span>' : '') + '</button>';
+    });
+    $('toc').innerHTML = h;
+  }
+  function render() {
+    var i = st.cur, x = L[i];
+    $('letter').innerHTML = '<p class="meta">' + esc(x.part + ' · ' + (DATA.src || '『도덕 서한』 ') + x.ep) + '</p><h2 tabindex="-1">' + esc(x.title) + '</h2><p class="to">' + esc(x.to) + '</p>' + x.paras.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '<p class="cite">' + esc(x.cite) + '</p>';
+    $('expl').innerHTML = '<h3>이 편지가 말하는 것</h3><p>' + esc(x.p1) + '</p><h3>지금 우리의 하루에 놓아 보면</h3>' + x.p2.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '<p class="key">' + esc(x.key) + '</p>';
+    $('q').innerHTML = '<b>시작 질문</b> ' + esc(x.q);
+    $('ta').value = st.ans[i] || '';
+    showSaved();
+    $('prev').disabled = i === 0;
+    $('next').textContent = i === N - 1 ? '마치기' : '다음 편지';
+    $('next').disabled = !written(i);
+    toc(); prog();
+  }
+  function go(i, focus) { st.cur = Math.max(0, Math.min(i, openUpTo())); save(); render(); window.scrollTo(0, 0); if (focus) { var h = document.querySelector('#letter h2'); if (h) h.focus(); } }
+
+  var tmr = null;
+  $('ta').addEventListener('input', function () {
+    st.ans[st.cur] = $('ta').value; st.dates[st.cur] = today();
+    dirty = true; showSaved(); clearTimeout(tmr); tmr = setTimeout(save, 400);
+    $('next').disabled = !written(st.cur); toc(); prog();
+  });
+  function flush() { if (dirty) { clearTimeout(tmr); save(); } }
+  window.addEventListener('pagehide', flush); window.addEventListener('beforeunload', flush);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flush(); });
+  $('ta').addEventListener('blur', flush);
+  $('toc').addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (b && !b.disabled) { flush(); go(+b.dataset.i, true); } });
+  $('prev').addEventListener('click', function () { flush(); go(st.cur - 1, true); });
+  $('next').addEventListener('click', function () { if (!written(st.cur)) return; save(); flush(); if (st.cur === N - 1 || doneCount() === N) { finish(); } else go(st.cur + 1, true); });
+
+  $('go').addEventListener('click', function () { st.name = $('nm').value.trim().slice(0, 20); save(); show('v-write'); go(openUpTo(), true); });
+  $('nm').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('go').click(); });
+  $('rename').addEventListener('click', function () { var n = prompt('책에 적을 이름 (별명도 좋습니다)', st.name || ''); if (n !== null) { st.name = n.trim().slice(0, 20); if (!save()) alert('이름을 저장하지 못했습니다. 이 브라우저가 저장을 막고 있습니다.'); prog(); } });
+  $('wipe').addEventListener('click', function () { if (!confirm('이 기기에 저장된 이름과 답장을 모두 지웁니다. 백업 파일이 없으면 되살릴 수 없습니다. 지울까요?')) return; try { localStorage.removeItem(KEY); } catch (e) {} st = fresh(); bad = false; dirty = false; $('nm').value = ''; show('v-hello'); $('nm').focus(); });
+
+  // 백업: 파일로 내려받기 / 불러오기 (서버로 보내지 않음)
+  $('gw-save').addEventListener('click', function () { $('bk-save').click(); });
+  $('bk-save').addEventListener('click', function () { flush();
+    var blob = new Blob([JSON.stringify(st, null, 1)], { type: 'application/json' }), a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = '내워크북-일곱날의시간-' + new Date().toISOString().slice(0, 10) + '.json'; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  });
+  $('bk-load').addEventListener('click', function () { $('bk-file').click(); });
+  $('bk-file').addEventListener('change', function () {
+    var f = this.files[0]; if (!f) return; if (f.size > 5e6) { alert('파일이 너무 큽니다. 내 워크북 백업 파일을 골라 주세요.'); this.value = ''; return; } var r = new FileReader();
+    r.onload = function () {
+      var o = null; try { o = clean(JSON.parse(r.result)); } catch (e) {}
+      if (!o) { alert('이 책의 백업 파일이 아니거나(다른 책의 백업은 불러올 수 없습니다) 한도(답장 한 통 2만 자)를 넘습니다. 지금 답장은 그대로 둡니다.'); return; }
+      if (!confirm('백업 파일의 답장으로 바꿉니다. 지금 이 기기의 답장은 덮어씁니다. 계속할까요?')) return;
+      st = o; bad = false; dirty = false; st.cur = Math.min(st.cur, openUpTo()); show('v-write'); render();
+      if (!save()) alert('불러온 답장을 이 브라우저에 저장하지 못했습니다. 화면을 닫기 전에 백업 파일을 다시 내려받아 두세요.');
+      $('ta').focus();
+    };
+    r.readAsText(f); this.value = '';
+  });
+
+  function finish() { show('v-done'); $('donemsg').textContent = (st.name ? st.name + ' 님, ' : '') + '세네카에게 일곱 날의 답장을 모두 보냈습니다. 이제 한 권의 책으로 엮어 보세요.'; prog(); window.scrollTo(0, 0); }
+  $('back').addEventListener('click', function () { show('v-write'); go(0, true); });
+
+  // 책 만들기: 표지 + 편지마다 (편지 발췌 한 쪽, 내 답장 한 쪽). 인쇄 → PDF로 저장
+  function book() {
+    var nm = st.name || '나', h = '<div class="bk-toolbar"><button class="btn" id="bk-print">PDF로 저장 · 인쇄</button><button class="btn ghost" id="bk-close">돌아가기</button></div>';
+    h += '<section class="bk-page bk-cover"><p class="s">세네카에게 쓰는 답장</p><h1>일곱 날의 시간</h1><p class="by">' + esc(nm) + ' 지음</p><p class="pub">세네카의 편지 · victorview 옮김</p></section>';
+    if (DATA.about) h += '<section class="bk-page"><h2>이 책은</h2><p>' + esc(DATA.about) + '</p><p>' + esc(nm) + ' 님이 쓴 답장을 함께 엮었습니다.</p><p class="cite">' + esc(DATA.citeall) + ' 답장: ' + esc(nm) + '.</p></section>';
+    else h += '<section class="bk-page"><h2>이 책은</h2><p>' + esc(nm) + ' 님이 세네카의 편지 서른 통을 하루 한 통씩 읽고 쓴 답장을 엮은 책입니다.</p><p>세네카(기원전 4년경~기원후 65년)가 벗 루킬리우스에게 보낸 편지는 124통이 전하지만, 루킬리우스의 답장은 한 통도 전하지 않습니다. 이 책은 그 빈자리를 채운 기록입니다.</p><p class="cite">편지글: 세네카 『도덕 서한』 발췌. 공공 영역 판본을 바탕으로 victorview가 새로 옮기고 줄였음. 답장: ' + esc(nm) + '.</p></section>';
+    L.forEach(function (x, i) {
+      if (!written(i)) return;
+      h += '<section class="bk-page"><p class="meta">' + esc(x.part) + ' · ' + esc(DATA.src || '『도덕 서한』 ') + esc(x.ep) + '</p><h2>' + esc(x.title) + '</h2>' + x.paras.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '<p class="key">' + esc(x.key) + '</p></section>';
+      h += '<section class="bk-page"><p class="meta">' + esc(nm) + '의 답장' + (st.dates[i] ? ' · ' + esc(st.dates[i]) : '') + '</p><p class="mine">' + esc(st.ans[i]) + '</p><p class="sign">' + esc(nm) + ' 드림</p></section>';
+    });
+    $('book').innerHTML = h; $('app').style.display = 'none'; $('book').style.display = 'block'; window.scrollTo(0, 0);
+    $('bk-print').addEventListener('click', function () { window.print(); }); $('bk-print').focus();
+    $('bk-close').addEventListener('click', function () { $('book').style.display = 'none'; $('book').innerHTML = ''; $('app').style.display = ''; if (bookFrom) bookFrom.focus(); });
+  }
+  var bookFrom = null;
+  $('mkbook').addEventListener('click', function () { flush(); bookFrom = $('mkbook'); book(); });
+  $('mkbook2').addEventListener('click', function () { bookFrom = $('mkbook2'); book(); });
+
+  // 시작
+  if (bad) setTimeout(function () { alert('이 기기에 저장된 답장을 읽지 못했습니다. 백업 파일이 있으면 \u2018백업 파일 불러오기\u2019로 되살려 주세요.'); }, 0);
+  if (st.name || doneCount()) { show(doneCount() === N ? 'v-done' : 'v-write'); if (doneCount() === N) finish(); else go(st.cur); }
+  else { show('v-hello'); }
+})();
+</script>
+</body>
+</html>
