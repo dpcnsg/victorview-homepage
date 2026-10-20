@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>무료 워크북 · 일곱 날의 시간 | victorview</title>
-<meta name="description" content="삶은 짧은 것이 아니라 우리가 짧게 만든다. 세네카가 벗 파울리누스에게 보낸 글 일곱 대목을 하루 한 대목씩 읽고 답장을 써서 나만의 책으로 엮는 무료 워크북. 쓴 글은 이 기기에만 저장됩니다.">
+<meta name="description" content="시간이 없다는 말, 오늘 몇 번 하셨나요? 세네카가 쉴 틈 없던 벗에게 쓴 글에서 고른 일곱 대목에 하루 한 통 답장을 쓰면, 일곱째 날 내 이름이 적힌 책 한 권이 남습니다. 가입도 결제도 없는 무료 워크북.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Nanum+Myeongjo:wght@400;700;800&display=swap">
@@ -76,6 +76,7 @@ nav.toc .ok { margin-left: auto; color: var(--accent); font-size: .8rem; }
 .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .tools .btn { font-size: .8rem; }
 .done { text-align: center; }
+.days { font-size: .9rem; color: var(--sub); margin: 10px 0 4px; line-height: 1.7; }
 .nextbox { text-align: left; margin-top: 22px; border-top: 1px solid var(--line); padding-top: 14px; font-size: .92rem; }
 .nextbox h3 { font-size: .95rem; margin: 12px 0 4px; color: var(--primary); }
 .nextbox p { margin: 0 0 8px; }
@@ -122,17 +123,18 @@ nav.toc .ok { margin-left: auto; color: var(--accent); font-size: .8rem; }
 <main>
   <!-- 시작 -->
   <section class="card hello" id="v-hello" hidden>
-    <p class="meta" style="color:var(--gold);font-size:.85rem;margin:0 0 6px">세네카 · 무료 워크북</p>
+    <p class="meta" style="color:var(--gold);font-size:.85rem;margin:0 0 6px">세네카 · 무료 워크북 · 7일</p>
     <h1>일곱 날의 시간</h1>
-    <p class="lead">"삶은 짧은 것이 아니라 우리가 짧게 만든다." 세네카가 바쁜 벗 파울리누스에게 보낸 글 일곱 대목을 하루 한 대목씩 읽고, 답장을 써서 나만의 책으로 엮습니다. 무료입니다.</p>
+    <p class="lead">&lsquo;시간이 없다&rsquo;는 말, 오늘 몇 번 하셨나요? 약 2천 년 전, 세네카는 로마의 곡물을 책임지느라 쉴 틈 없던 벗 파울리누스에게 이렇게 썼습니다. <b>"삶은 짧은 것이 아니라, 우리가 짧게 만든다."</b> 그 글에서 고른 일곱 대목에 하루 한 통씩 답장을 쓰면, 일곱째 날 내 이름이 적힌 책 한 권이 남습니다.</p>
+    <p class="days">일곱 날의 이야기: 삶은 짧지 않다 · 누구도 자기 것이 아니다 · 돈은 지키면서 시간은 내준다 · 보이지 않아서 공짜처럼 · 내일을 기다리다 오늘을 잃는다 · 지난날은 아무도 빼앗지 못한다 · 이제 당신에게 돌아오라</p>
     <ol>
-      <li>첫째 날부터 차례로 열립니다. 답장을 쓰면 다음 날이 열립니다.</li>
-      <li>쓴 답장은 자동으로 저장됩니다. 언제든 이어 쓸 수 있습니다.</li>
-      <li>일곱 날을 마치면 내 이름이 들어간 책을 PDF로 저장하거나 인쇄합니다.</li>
+      <li>하루 한 대목, 질문 하나. 답장을 쓰면 다음 날이 열립니다.</li>
+      <li>가입도 결제도 없습니다. 답장은 이 기기의 브라우저에 자동 저장됩니다. 잃지 않으려면 백업 파일을 내려받아 두세요.</li>
+      <li>일곱째 날, 내 이름이 적힌 책을 브라우저 인쇄 기능으로 PDF로 저장하거나 종이에 인쇄합니다.</li>
     </ol>
     <label for="nm">책에 적을 이름 (별명도 좋습니다)</label>
     <input id="nm" maxlength="20" autocomplete="off" placeholder="예: 봄날">
-    <p style="margin:16px 0 0"><button class="btn" id="go">첫 편지 열기</button></p>
+    <p style="margin:16px 0 0"><button class="btn" id="go">첫째 날 편지 받기</button></p>
     <p class="safe">쓴 글은 <b>이 기기의 브라우저에만</b> 저장되며 출판사를 포함해 어디로도 보내지 않습니다. 다른 기기로 옮기거나 잃지 않으려면 &lsquo;백업 파일 내려받기&rsquo;를 써 주세요.</p>
   </section>
 
