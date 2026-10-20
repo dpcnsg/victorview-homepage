@@ -517,6 +517,117 @@ footer .sitemap a { color: #e3e7ee; }
 footer .copy { color: #b9c1cd; }
 .quickbar a { color: var(--ink); font-weight: 700; }
 .lform .key, .money-intro q { font-family: var(--font); font-weight: 800; }
+/* 깔끔한 카드형 (2026-10-20): 연한 회색 바탕 위 둥근 흰 카드, 카드마다 한 가지 정보, 숯색 포인트 영역, 초록 포인트. 글씨는 크고 진하게 그대로. */
+:root {
+  --bg: #f3f4f6; --soft: #f3f4f6; --card: #ffffff; --ink: #1d1f22; --sub: #3a3e45; --line: #e3e5e9;
+  --primary: #2b2d31; --charcoal: #2b2d31; --green: #008a4d; --green-ink: #00733f; --green-soft: #e5f5ec;
+  --accent: #00733f; --gold: #00733f; --ivory: #ffffff;
+  --r-lg: 20px; --r-md: 14px; --r-sm: 8px;
+}
+html { background: var(--bg); }
+body { background: var(--bg); margin: 0; }
+body::before { background: #fff; }
+:focus-visible { outline-color: var(--green); }
+
+/* 머리: 흰 띠 */
+header.site { background: #fff; border-bottom: 1px solid var(--line); }
+.util { color: var(--sub); border-bottom-color: var(--line); }
+.logo b { color: var(--ink); }
+.logo span { border: 0; background: var(--green-soft); color: var(--green-ink); padding: 1px 8px; border-radius: 6px; font-weight: 800; }
+.gnb nav a { color: var(--ink); border-radius: var(--r-sm); }
+.gnb nav a:hover { background: var(--bg); color: var(--ink); }
+
+/* 단추: 숯색 바탕, 덜 둥근 네모 */
+.btn, .s2 .btn { background: var(--charcoal); border-color: var(--charcoal); color: #fff; border-radius: var(--r-sm); padding: 13px 22px; }
+.btn:hover { background: #000; border-color: #000; }
+.btn.ghost { background: #fff; color: var(--ink); border-color: #c9ccd2; }
+
+/* 첫 화면: 둥근 흰 카드 한 장 */
+.hero { max-width: calc(var(--wide) - 40px); margin: 28px auto 0; border-radius: var(--r-lg); background: #fff; }
+.s1, .s2, .s3 { background: #fff; }
+.slide .kicker, .s2 .kicker { display: inline-block; background: var(--green-soft); color: var(--green-ink); font-size: .85rem; padding: 3px 10px; border-radius: 6px; letter-spacing: 0; }
+.slide h2 { color: var(--ink); }
+.hero-ctrl button { background: #fff; border-color: #c9ccd2; color: var(--ink); }
+.bar i { background: var(--green); }
+@media (max-width: 1200px) { .hero { margin: 20px 16px 0; } }
+
+/* 구역 제목: 왼쪽 정렬, 굵은 고딕 */
+.sec { padding-block: 64px; }
+@media (max-width: 700px) { .sec { padding-block: 44px; } }
+.sec-title { text-align: left; font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 24px; }
+.sec-title::before { display: none; }
+.sec-title small { margin-top: 8px; }
+.guide, .finder, #needs { background: transparent !important; }
+
+/* 나만의 책 찾기: 흰 카드 네 장 */
+.need { background: #fff; border: 2px solid transparent; border-radius: var(--r-lg); padding: 24px; }
+.need small { color: var(--green-ink); font-weight: 800; }
+.need:hover { border-color: #c9ccd2; box-shadow: none; }
+.need[aria-pressed="true"] { border-color: var(--ink); box-shadow: none; }
+.need-out { background: #fff; border-radius: var(--r-lg); }
+
+/* 책 찾기 */
+.searchbox { border: 2px solid var(--ink); border-radius: var(--r-md); margin: 0; }
+.tags { justify-content: flex-start; }
+.recent { justify-content: flex-start; }
+.searchbox button { background: var(--charcoal); }
+.tags button { background: #fff; border: 1px solid var(--line); color: var(--ink); }
+.tags button:hover { border-color: var(--ink); }
+section:has(#cats) { padding-top: 0 !important; }
+section:has(#cats) > .wrap { background: #fff; border-radius: var(--r-lg); padding-block: 32px; max-width: calc(var(--wide) - 40px); }
+@media (max-width: 1200px) { section:has(#cats) > .wrap { margin-inline: 16px; } }
+.cat { border-radius: var(--r-md); }
+.cat:hover, .cat[aria-pressed="true"] { background: var(--bg); border-color: transparent; }
+.cat[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--ink); }
+.cat .chip { background: var(--bg); }
+.list-head { border-top-color: var(--line); }
+.series-head b { background: var(--charcoal); border-radius: 6px; }
+.book::before { border-bottom-color: #dcdfe4; box-shadow: none; }
+.book .cv { box-shadow: 0 14px 18px -14px rgba(20, 22, 26, .55); }
+.book .fmt em { border-color: #c9ccd2; color: var(--ink); border-radius: 6px; }
+
+/* 쓰는 법 */
+.spread { background: #fff; border: 0; border-radius: var(--r-lg); padding: 22px; }
+.steps { background: #fff; border-radius: var(--r-lg); padding: 28px; }
+.steps li::before { background: var(--charcoal); }
+
+/* 읽어 보기: 무료 상자는 숯색 카드 */
+.freebox { background: var(--charcoal); color: #fff; border: 0; border-radius: var(--r-lg); padding: 34px 36px; }
+.freebox h2 { color: #fff; }
+.freebox p { color: #dfe2e6; }
+.mtag { background: var(--green); color: #fff; border-radius: 6px; }
+.freebox .btn { background: var(--green); border-color: var(--green); color: #fff; }
+.freebox .btn:hover { background: var(--green-ink); border-color: var(--green-ink); }
+.sub-h { margin-top: 40px; }
+.lroom .letter { background: #fff; border: 0; border-radius: var(--r-lg); font-family: var(--font); font-weight: 500; line-height: 1.85; }
+.lroom .letter h3 { font-weight: 800; }
+.lform { background: #fff; border: 0; border-radius: var(--r-lg); }
+.lform .q b { color: var(--green-ink); }
+.lform .key { border-left-color: var(--green); background: var(--green-soft); }
+
+/* 편지를 쓴 사람들 */
+.people article { background: #fff; border: 0; border-radius: var(--r-lg); box-shadow: none; }
+.people .yr { color: var(--green-ink); }
+
+/* 돈의 편지 */
+.money-intro { background: #fff; border-radius: var(--r-lg); padding: 28px; margin-bottom: 0; }
+.money-intro q { border-left-color: var(--green); }
+.disclaimer { border-top: 0; padding-top: 0; }
+
+/* 출판사 소개 */
+.board > div:first-child { background: #fff; border-radius: var(--r-lg); padding: 24px; }
+.tabs { border-bottom: 2px solid var(--ink); }
+.tabs button { border-radius: var(--r-sm) var(--r-sm) 0 0; }
+.tabs button[aria-selected="true"] { background: var(--charcoal); color: #fff; }
+.consumer, .notice-box { background: #fff; border: 0; border-radius: var(--r-lg); }
+.consumer h3 svg { stroke: var(--green-ink); }
+
+/* 바닥글·바로가기 */
+footer { background: var(--charcoal); }
+footer .policy, footer .sitemap { border-bottom-color: #44474d; }
+.quickbar { border: 0; border-radius: var(--r-md); box-shadow: 0 8px 24px -12px rgba(20, 22, 26, .3); }
+.quickbar a:hover { background: var(--bg); }
+.drawer .quick a { background: var(--bg); }
 </style>
 </head>
 <body>
@@ -672,20 +783,20 @@ footer .copy { color: #b9c1cd; }
       <div class="how">
         <figure class="spread">
           <svg viewBox="0 0 520 300" role="img" aria-label="워크북 한 통의 펼침면. 왼쪽 쪽에는 원전 번호가 붙은 편지 발췌, 오른쪽 쪽에는 오늘의 말로 쓴 풀이, 핵심 한 줄, 시작 질문, 나의 답장 칸이 위에서 아래로 놓여 있습니다.">
-            <rect x="10" y="10" width="245" height="280" fill="#fffdf8" stroke="currentColor" stroke-width="1.2"/>
-            <rect x="265" y="10" width="245" height="280" fill="#fffdf8" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="10" y="10" width="245" height="280" fill="#ffffff" stroke="currentColor" stroke-width="1.2"/>
+            <rect x="265" y="10" width="245" height="280" fill="#ffffff" stroke="currentColor" stroke-width="1.2"/>
             <g font-family="Noto Sans KR, sans-serif" fill="currentColor">
-              <text x="30" y="40" font-size="11" fill="#b8955a">편지 1 · 1절</text>
-              <line x1="30" y1="54" x2="30" y2="196" stroke="#d7263d" stroke-width="2"/>
+              <text x="30" y="40" font-size="11" fill="#00733f">편지 1 · 1절</text>
+              <line x1="30" y1="54" x2="30" y2="196" stroke="#008a4d" stroke-width="2"/>
               <g stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".2">
                 <line x1="44" y1="62" x2="232" y2="62"/><line x1="44" y1="80" x2="224" y2="80"/><line x1="44" y1="98" x2="232" y2="98"/><line x1="44" y1="116" x2="210" y2="116"/><line x1="44" y1="134" x2="228" y2="134"/><line x1="44" y1="152" x2="190" y2="152"/><line x1="44" y1="170" x2="226" y2="170"/><line x1="44" y1="188" x2="160" y2="188"/>
               </g>
               <text x="30" y="232" font-size="12" font-weight="700">세네카의 편지 발췌</text>
               <text x="30" y="250" font-size="11" opacity=".75">원전 번호와 절 표기</text>
-              <rect x="282" y="28" width="211" height="62" rx="4" fill="#faf6ee" stroke="#e6dcc8"/>
+              <rect x="282" y="28" width="211" height="62" rx="4" fill="#f3f4f6" stroke="#e3e5e9"/>
               <text x="294" y="50" font-size="12" font-weight="700">오늘의 말로 쓴 풀이</text>
               <g stroke="currentColor" stroke-width="4" stroke-linecap="round" opacity=".2"><line x1="294" y1="66" x2="478" y2="66"/><line x1="294" y1="78" x2="440" y2="78"/></g>
-              <text x="282" y="114" font-size="12" font-weight="700" fill="#d7263d">핵심 한 줄</text>
+              <text x="282" y="114" font-size="12" font-weight="700" fill="#00733f">핵심 한 줄</text>
               <text x="282" y="140" font-size="12" font-weight="700">시작 질문</text>
               <text x="282" y="166" font-size="12" font-weight="700">나의 답장</text>
               <g stroke="currentColor" stroke-width="1" opacity=".35"><line x1="282" y1="186" x2="493" y2="186"/><line x1="282" y1="208" x2="493" y2="208"/><line x1="282" y1="230" x2="493" y2="230"/><line x1="282" y1="252" x2="493" y2="252"/><line x1="282" y1="274" x2="493" y2="274"/></g>
