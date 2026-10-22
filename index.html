@@ -630,6 +630,26 @@ footer .policy, footer .sitemap { border-bottom-color: #44474d; }
 .drawer .quick a { background: var(--bg); }
 a.book { color: inherit; text-decoration: none; }
 .book.book-free .fmt em { border-color: #A92D1B; color: #A92D1B; font-weight: 700; }
+/* 가로바 (2026-10-22 시장 "홈페이지 가로바도 하나"): 머리 아래 고정, 휴대폰에서는 옆으로 밀어 보기 */
+.hbar { border-top: 1px solid var(--line); }
+.hbar .wrap { display: flex; justify-content: center; gap: 6px; padding-block: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.hbar .wrap::-webkit-scrollbar { display: none; }
+.hbar a { flex: none; white-space: nowrap; text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--ink); padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+.hbar a:hover, .hbar a:focus-visible { border-color: var(--ink); }
+.hbar a.free { background: var(--accent, #b4231f); border-color: var(--accent, #b4231f); color: #fff; }
+.hbar .sep { flex: none; width: 1px; margin: 4px 4px; background: var(--line); }
+html { scroll-padding-top: 184px; }
+@media (max-width: 900px) {
+  .hbar .wrap { justify-content: flex-start; padding-block: 7px; }
+  .hbar { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  html { scroll-padding-top: 142px; }
+}
+/* 휴대폰 순서 (2026-10-22): 책 목록을 두 줄로 놓아 아래 쓰는 법·읽어 보기·문의까지 빨리 닿게 */
+@media (max-width: 560px) {
+  .books { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; }
+  .book .name { font-size: .92rem; }
+  .book .fmt em { font-size: .7rem; }
+}
 </style>
 </head>
 <body>
@@ -663,12 +683,13 @@ a.book { color: inherit; text-decoration: none; }
       </div>
     </div>
   </div>
+  <nav class="hbar" aria-label="책 바로가기"><div class="wrap"><a class="free" href="free-seven-days.html">무료 워크북</a><a href="#cats" data-cat="세네카 4색">세네카 4색</a><a href="#cats" data-cat="세네카 골드">세네카 골드</a><a href="#cats" data-cat="플리니우스">플리니우스</a><a href="#cats" data-cat="애덤스">애덤스 부부</a><a href="#cats" data-cat="링컨">링컨</a><span class="sep" aria-hidden="true"></span><a href="#how">쓰는 법</a><a href="#free">읽어 보기</a><a href="#contact">문의</a></div></nav>
 </header>
 
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
     <div class="drawer-head"><b>전체 메뉴</b><button class="icon-btn" id="drawer-x" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24"><path d="M6 6 L18 18 M18 6 L6 18"/></svg></button></div>
-    <div><h3>책</h3><ul><li><a href="#books" data-cat="세네카 4색">세네카 4색</a></li><li><a href="#books" data-cat="세네카 골드">세네카 골드</a></li><li><a href="#books" data-cat="플리니우스">플리니우스 기록</a></li><li><a href="#books" data-cat="애덤스">애덤스 부부</a></li><li><a href="#money">돈의 편지 (준비 중)</a></li></ul></div>
+    <div><h3>책</h3><ul><li><a href="#books" data-cat="세네카 4색">세네카 4색</a></li><li><a href="#books" data-cat="세네카 골드">세네카 골드</a></li><li><a href="#books" data-cat="플리니우스">플리니우스 기록</a></li><li><a href="#books" data-cat="애덤스">애덤스 부부</a></li><li><a href="#books" data-cat="링컨">링컨</a></li><li><a href="#money">돈의 편지 (준비 중)</a></li></ul></div>
     <div><h3>읽어 보기</h3><ul><li><a href="free-seven-days.html">무료 워크북</a></li><li><a href="#preview">미리 읽기</a></li><li><a href="#people">편지를 쓴 사람들</a></li></ul></div>
     <div><h3>출판사</h3><ul><li><a href="#how">쓰는 법</a></li><li><a href="#board" data-faq>자주 묻는 질문</a></li><li><a href="#notice">공지사항</a></li><li><a href="#contact">출판사 소개 · 문의</a></li></ul></div>
   </div>
@@ -913,7 +934,7 @@ a.book { color: inherit; text-decoration: none; }
 <footer>
   <div class="wrap">
     <div class="sitemap">
-      <div><b>책</b><a href="#books" data-cat="세네카 4색">세네카 4색</a><a href="#books" data-cat="세네카 골드">세네카 골드</a><a href="#books" data-cat="플리니우스">플리니우스 기록</a><a href="#books" data-cat="애덤스">애덤스 부부</a><a href="#money">돈의 편지</a></div>
+      <div><b>책</b><a href="#books" data-cat="세네카 4색">세네카 4색</a><a href="#books" data-cat="세네카 골드">세네카 골드</a><a href="#books" data-cat="플리니우스">플리니우스 기록</a><a href="#books" data-cat="애덤스">애덤스 부부</a><a href="#books" data-cat="링컨">링컨</a><a href="#money">돈의 편지</a></div>
       <div><b>읽어 보기</b><a href="free-seven-days.html">무료 워크북</a><a href="#preview">미리 읽기</a><a href="#people">편지를 쓴 사람들</a></div>
       <div><b>출판사</b><a href="#how">쓰는 법</a><a href="#board" data-faq>자주 묻는 질문</a><a href="#notice">공지사항</a><a href="#contact">출판사 소개 · 문의</a></div>
     </div>
