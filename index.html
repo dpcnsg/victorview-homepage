@@ -636,6 +636,7 @@ a.book { color: inherit; text-decoration: none; }
 .hbar .wrap::-webkit-scrollbar { display: none; }
 .hbar a { flex: none; white-space: nowrap; text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--ink); padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
 .hbar a:hover, .hbar a:focus-visible { border-color: var(--ink); }
+.book .fmt em.buy { background: var(--accent, #b4231f); border-color: var(--accent, #b4231f); color: #fff; }
 .hbar a.free { background: var(--accent, #b4231f); border-color: var(--accent, #b4231f); color: #fff; }
 .hbar .sep { flex: none; width: 1px; margin: 4px 4px; background: var(--line); }
 html { scroll-padding-top: 184px; }
@@ -904,7 +905,8 @@ html { scroll-padding-top: 184px; }
           </div>
           <div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
             <ul>
-              <li>판매처가 열리면 책마다 사는 곳을 안내하겠습니다<span>준비 중</span></li>
+              <li>세네카에게 쓰는 답장 4종을 크몽에서 판매합니다. 책을 누르면 사는 곳으로 갑니다<span>2026.10.26</span></li>
+              <li>다른 책도 크몽 심사가 끝나는 대로 사는 곳을 안내하겠습니다<span>준비 중</span></li>
               <li>종이책 B6 판형을 준비하고 있습니다<span>준비 중</span></li>
               <li>출판사 신고를 마쳤습니다 (제582-2026-000025호)<span>2026.10.07</span></li>
             </ul>
@@ -1054,10 +1056,10 @@ html { scroll-padding-top: 184px; }
     { key: '링컨', title: '링컨의 돈과 일의 편지', desc: '“가난하다는 것은 나쁜 일이네.” “일하고, 일하고, 또 일하는 것, 그것이 핵심일세.” 링컨이 1837~1860년 가족·벗·젊은이와 주고받은 돈과 일의 편지 22통을 읽고 답장을 씁니다.' }
   ];
   var books = [
-    { img: '01', series: '세네카 4색', cat: '세네카 블루', name: '세네카 블루 · 나의 시간', cls: 'sen sen-blue', t: '나의<br>시간', sym: Q, band: ['세네카', '답장 · 블루'], fmt: W2, kw: '시간 루킬리우스 30통' },
-    { img: '02', series: '세네카 4색', cat: '세네카 레드', name: '세네카 레드 · 잠시 멈춤', cls: 'sen sen-red', t: '잠시<br>멈춤', sym: Q, band: ['세네카', '답장 · 레드'], fmt: W2, kw: '멈춤 쉼' },
-    { img: '03', series: '세네카 4색', cat: '세네카 퍼플', name: '세네카 퍼플 · 일곱 밤의 편지', cls: 'sen sen-purple', t: '일곱<br>밤의<br>편지', sym: Q, band: ['세네카', '답장 · 퍼플'], fmt: W2, kw: '밤 일곱' },
-    { img: '04', series: '세네카 4색', cat: '세네카 그린', name: '세네카 그린 · 어머니, 저는 괜찮습니다', cls: 'sen sen-green', t: '어머니,<br>저는<br>괜찮<br>습니다', sym: Q, band: ['세네카', '답장 · 그린'], fmt: W2, kw: '어머니 가족' },
+    { img: '01', buy: 'https://kmong.com/gig/835328', series: '세네카 4색', cat: '세네카 블루', name: '세네카 블루 · 나의 시간', cls: 'sen sen-blue', t: '나의<br>시간', sym: Q, band: ['세네카', '답장 · 블루'], fmt: W2, kw: '시간 루킬리우스 30통' },
+    { img: '02', buy: 'https://kmong.com/gig/836390', series: '세네카 4색', cat: '세네카 레드', name: '세네카 레드 · 잠시 멈춤', cls: 'sen sen-red', t: '잠시<br>멈춤', sym: Q, band: ['세네카', '답장 · 레드'], fmt: W2, kw: '멈춤 쉼' },
+    { img: '03', buy: 'https://kmong.com/gig/836394', series: '세네카 4색', cat: '세네카 퍼플', name: '세네카 퍼플 · 일곱 밤의 편지', cls: 'sen sen-purple', t: '일곱<br>밤의<br>편지', sym: Q, band: ['세네카', '답장 · 퍼플'], fmt: W2, kw: '밤 일곱' },
+    { img: '04', buy: 'https://kmong.com/gig/836396', series: '세네카 4색', cat: '세네카 그린', name: '세네카 그린 · 어머니, 저는 괜찮습니다', cls: 'sen sen-green', t: '어머니,<br>저는<br>괜찮<br>습니다', sym: Q, band: ['세네카', '답장 · 그린'], fmt: W2, kw: '어머니 가족' },
     { img: '16', series: '세네카 4색', cat: '무료 워크북', name: '세네카 · 일곱 날의 시간', cls: 'sen', t: '일곱<br>날의<br>시간', sym: Q, band: ['세네카', '무료'], fmt: ['무료로 시작하기'], kw: '무료 일곱 날 시간 파울리누스 체험', href: 'free-seven-days.html', free: true },
     { img: '05', series: '세네카 골드', cat: '세네카 골드', name: '세네카 골드 · 1권', cls: 'sen sen-gold', t: '골드<br>1권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
     { img: '06', series: '세네카 골드', cat: '세네카 골드', name: '세네카 골드 · 2권', cls: 'sen sen-gold', t: '골드<br>2권', sym: Q, band: ['세네카', '답장 · 골드'], fmt: W2, kw: '124통' },
@@ -1091,9 +1093,9 @@ html { scroll-padding-top: 184px; }
     });
     list.innerHTML = html;
     function card(b) {
-      var tag = b.href ? 'a' : 'div', open = b.href ? '<a class="book book-free" href="' + b.href + '">' : '<div class="book">';
+      var tag = (b.href || b.buy) ? 'a' : 'div', open = b.href ? '<a class="book book-free" href="' + b.href + '">' : b.buy ? '<a class="book" href="' + b.buy + '" target="_blank" rel="noopener">' : '<div class="book">';
       return open + '<img class="cv" src="covers/' + b.img + '.png" alt="' + b.name + ' 표지" loading="lazy">' +
-        '<div><div class="meta">' + b.cat + '</div><div class="name">' + b.name + '</div></div><div class="fmt">' + b.fmt.map(function (f) { return '<em>' + f + '</em>'; }).join('') + '</div></' + tag + '>';
+        '<div><div class="meta">' + b.cat + '</div><div class="name">' + b.name + '</div></div><div class="fmt">' + b.fmt.map(function (f) { return '<em>' + f + '</em>'; }).join('') + (b.buy ? '<em class="buy">크몽에서 구매 ›</em>' : '') + '</div></' + tag + '>';
     }
     empty.hidden = shown.length > 0;
     document.getElementById('list-title').textContent = term ? '‘' + term + '’ 찾은 결과' : (activeCat === '전체' ? '전체 책' : activeCat === '세네카' ? '세네카에게 쓰는 답장' : (SERIES.filter(function (sr) { return sr.key === activeCat; })[0] || { title: activeCat }).title);
