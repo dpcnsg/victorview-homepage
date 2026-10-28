@@ -137,6 +137,27 @@ header nav a.en { border: 1px solid var(--line); }
 .steps span { display: block; color: var(--ink-2); margin-top: var(--s-1); }
 .steps { padding: 0; margin: 0; }
 
+
+/* 쓰는 법 그림 */
+.steps svg { width: 44px; height: 44px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; margin-top: var(--s-2); }
+/* 책 속 미리보기 */
+.peek { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s-4); }
+@media (max-width: 860px) { .peek { grid-template-columns: repeat(5, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-3); } .peek figure { scroll-snap-align: start; } }
+.peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-3); }
+.peek img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.peek figcaption { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-2); }
+/* 편지 한 줄 */
+.lines { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+@media (max-width: 760px) { .lines { grid-template-columns: 1fr; } }
+.lines blockquote { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-5); }
+.lines q { font-family: var(--font-serif); font-size: 19px; line-height: 1.6; display: block; }
+.lines cite { display: block; font-style: normal; font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-3); }
+.lines cite::before { content: "— "; color: var(--dahong); }
+/* 자주 묻는 질문 */
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 0 var(--s-5); margin-top: var(--s-3); }
+.faq summary { cursor: pointer; font-weight: 700; min-height: 52px; display: flex; align-items: center; }
+.faq details p { color: var(--ink-2); padding-bottom: var(--s-4); }
+
 /* 출판사 소개(원래 문구 그대로) */
 .sec-title { font-size: var(--fs-h2); }
 .sec-title small { display: block; font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-body); color: var(--ink-2); margin-top: var(--s-3); line-height: var(--lh-body); }
@@ -190,6 +211,7 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
       <a href="#books" class="hide-sm">한글판</a>
       <a href="#english" class="hide-sm">English</a>
       <a href="#free">무료</a>
+      <a href="#faq" class="hide-sm">질문</a>
       <a href="#contact" class="hide-sm">출판사</a>
       <a href="english.html" class="en" lang="en">English page</a>
     </nav>
@@ -225,33 +247,62 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
     </div>
   </section>
 
+  <section class="sec alt" id="peek">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="kicker">책 속 미리보기</span><h2>펼치면 이렇게 생겼습니다</h2><p>시리즈마다 한 쪽씩 골랐습니다. 편지, 오늘의 말로 쓴 풀이, 답장 칸이 이어집니다.</p></div>
+      <div class="peek">
+        <figure class="reveal"><img src="covers/preview/ko-seneca.jpg" alt="세네카 블루 『나의 시간』 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>세네카 블루 · 편지 1</figcaption></figure>
+        <figure class="reveal"><img src="covers/preview/ko-gold.jpg" alt="세네카 골드 1일째 풀이와 답장 칸 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>세네카 골드 · 풀이와 답장 칸</figcaption></figure>
+        <figure class="reveal"><img src="covers/preview/ko-pliny.jpg" alt="플리니우스 첫째 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>플리니우스 첫째 · 편지 1</figcaption></figure>
+        <figure class="reveal"><img src="covers/preview/ko-adams.jpg" alt="애덤스 부부 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>애덤스 부부 · 편지 1</figcaption></figure>
+        <figure class="reveal"><img src="covers/preview/ko-lincoln.jpg" alt="링컨 한 줄 필사와 나의 답장 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>링컨 · 한 줄 필사와 나의 답장</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="lines">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="kicker">편지 한 줄</span><h2>책 속에서 고른 문장들</h2><p>우리 책에 실린 실제 문장입니다.</p></div>
+      <div class="lines">
+        <blockquote class="reveal"><q>오늘을 단단히 쥔다면 내일에 덜 기대게 될 걸세.</q><cite>세네카, 『도덕 서한』 1번 · 「나의 시간」</cite></blockquote>
+        <blockquote class="reveal"><q>우리는 실제보다 상상 속에서 더 자주 괴로워하지.</q><cite>세네카, 『도덕 서한』 13번 · 「일곱 밤의 편지」</cite></blockquote>
+        <blockquote class="reveal"><q>다시 말하지만, 낙심이 자네를 갉아먹도록 두지 말게.</q><cite>링컨, 조지 래섬에게 1860년 7월 22일 · 「일하는 것만이 치료다」</cite></blockquote>
+        <blockquote class="reveal"><q>참는 것은 내가 새로 배울 것도 없는 공부이니 당신의 때를 기다릴 수 있습니다.</q><cite>애비게일 애덤스, 존에게 1775년 9월 16일 · 「나의 가장 사랑스러운 벗에게」</cite></blockquote>
+        <blockquote class="reveal"><q>과일은 철이 끝나 갈 무렵이 가장 달지.</q><cite>세네카, 『도덕 서한』 12번 · 「일곱 밤의 편지」</cite></blockquote>
+        <blockquote class="reveal"><q>밤에는 무섭던 형체가 날이 밝으면 사라지네.</q><cite>세네카, 『도덕 서한』 104번 · 「나의 시간」</cite></blockquote>
+        <blockquote class="reveal"><q>두려움은 대개 분장일세.</q><cite>세네카, 『도덕 서한』 24번 · 「124일의 답장」</cite></blockquote>
+        <blockquote class="reveal"><q>그대가 잘 지내면 됐네. 나는 잘 지내네.</q><cite>로마 편지의 옛 첫머리 인사 · 「잘 지내나, 소식 좀 주게」</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="books">
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">한글판 서가</span><h2>편지마다 한 권, <span class="nw">시리즈마다 한 색</span></h2><p>휴대폰·PC로 쓰는 판과 펜·종이로 쓰는 판을 함께 드립니다. 크몽에서 판매 중인 책은 단추를 누르면 사는 곳으로 갑니다. 다른 책은 판매처 심사가 끝나는 대로 안내합니다.</p></div>
-<div class="series" style="--band:#2E4A72"><div class="series-head reveal"><h3>세네카 4색</h3><p>세네카가 벗과 어머니에게 보낸 글을 읽고 답장을 씁니다.</p></div>
+<div class="series" style="--band:#2E4A72"><div class="series-head reveal"><h3>세네카 4색</h3><p>세네카가 벗과 어머니에게 보낸 글. 바쁜 하루에서 내 시간을 다시 붙잡고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/01.jpg" alt="『나의 시간』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>나의 시간</h4><p class="sub">세네카 블루 · 『도덕 서한』 30통, 시간을 되찾는 편지</p><p class="price">10,000원</p><a class="btn sm" href="https://kmong.com/gig/835328" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/02.jpg" alt="『잠시 멈춤』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>잠시 멈춤</h4><p class="sub">세네카 레드 · 『분노에 대하여』 21장, 화가 날 때 멈추는 글</p><p class="price">10,000원</p><a class="btn sm" href="https://kmong.com/gig/836390" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/03.jpg" alt="『일곱 밤의 편지』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>일곱 밤의 편지</h4><p class="sub">세네카 퍼플 · 잠들기 전에 읽는 편지 7통</p><p class="price">5,000원</p><a class="btn sm" href="https://kmong.com/gig/836394" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/04.jpg" alt="『어머니, 저는 괜찮습니다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>어머니, 저는 괜찮습니다</h4><p class="sub">세네카 그린 · 유배지에서 어머니께 보낸 위로의 글 7대목</p><p class="price">5,000원</p><a class="btn sm" href="https://kmong.com/gig/836396" target="_blank" rel="noopener">크몽에서 보기</a></article></div></div>
-<div class="series" style="--band:#B8955A"><div class="series-head reveal"><h3>세네카 골드</h3><p>현존 『도덕 서한』 124통을 발췌·요약해 하루 한 통씩 넉 달.</p></div>
+<div class="series" style="--band:#B8955A"><div class="series-head reveal"><h3>세네카 골드</h3><p>현존 『도덕 서한』 124통을 발췌·요약해 하루 한 통씩 넉 달. 긴 호흡으로 꾸준히 쓰고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/05.jpg" alt="『124일의 답장 1권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>124일의 답장 1권</h4><p class="sub">1~31번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/06.jpg" alt="『124일의 답장 2권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>124일의 답장 2권</h4><p class="sub">32~62번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/07.jpg" alt="『124일의 답장 3권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>124일의 답장 3권</h4><p class="sub">63~93번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/08.jpg" alt="『124일의 답장 4권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>124일의 답장 4권</h4><p class="sub">94~124번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/09.jpg" alt="『124일의 답장 합본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>124일의 답장 합본</h4><p class="sub">124통 전체 구성, 쓰는 책과 읽는 책</p><p class="price">17,000원</p></article></div></div>
-<div class="series" style="--band:#E8743B"><div class="series-head reveal"><h3>플리니우스 기록</h3><p>조카가 남긴 베수비오 화산의 기록과 삼촌의 『박물지』.</p></div>
+<div class="series" style="--band:#E8743B"><div class="series-head reveal"><h3>플리니우스 기록</h3><p>조카가 남긴 베수비오 화산의 기록과 삼촌의 『박물지』. 역사와 기록을 좋아하는 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/10.jpg" alt="『그날, 삼촌은 배를 띄웠다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>그날, 삼촌은 배를 띄웠다</h4><p class="sub">첫째 · 화산의 날과 삼촌</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/11.jpg" alt="『폐하, 어떻게 할까요』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>폐하, 어떻게 할까요</h4><p class="sub">둘째 · 황제 트라야누스와의 문답</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/12.jpg" alt="『잘 지내나, 소식 좀 주게』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>잘 지내나, 소식 좀 주게</h4><p class="sub">셋째 · 벗과 가족에게 보낸 짧은 편지</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/13.jpg" alt="『삼촌의 밤, 세상을 적다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>삼촌의 밤, 세상을 적다</h4><p class="sub">넷째 · 삼촌의 『박물지』에서 고른 대목</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/14.jpg" alt="『플리니우스 단행본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>플리니우스 단행본</h4><p class="sub">네 권을 한 권으로 읽는 책</p><p class="price">15,000원</p></article></div></div>
-<div class="series" style="--band:#A8475A"><div class="series-head reveal"><h3>애덤스 부부</h3><p>미국 독립 혁명기에 부부가 주고받은 편지 21통.</p></div>
+<div class="series" style="--band:#A8475A"><div class="series-head reveal"><h3>애덤스 부부</h3><p>미국 독립 혁명기에 부부가 주고받은 편지 21통. 떨어져 지내는 가족에게 마음을 전하고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/15.jpg" alt="『나의 가장 사랑스러운 벗에게』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>나의 가장 사랑스러운 벗에게</h4><p class="sub">쓰는 책 · 읽는 책 · 둘을 묶은 합본</p><p class="price">10,000원부터</p></article></div></div>
-<div class="series" style="--band:#A92D1B"><div class="series-head reveal"><h3>링컨</h3><p>돈과 일에 관한 편지 22통, 1달러마다 1달러.</p></div>
+<div class="series" style="--band:#A92D1B"><div class="series-head reveal"><h3>링컨</h3><p>돈과 일에 관한 편지 22통, 1달러마다 1달러. 돈과 일을 대하는 태도를 돌아보고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/17.jpg" alt="『일하는 것만이 치료다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
 <h4>일하는 것만이 치료다</h4><p class="sub">쓰는 책 · 읽는 책 · 둘을 묶은 정본</p><p class="price">10,000원부터</p></article></div></div>
     </div>
@@ -291,10 +342,21 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">쓰는 법</span><h2>세 걸음이면 됩니다</h2></div>
       <ol class="steps">
-        <li class="reveal"><b>편지 한 통 읽기</b><span>옛 편지를 오늘의 말로 풀어 읽습니다.</span></li>
-        <li class="reveal"><b>한 줄 옮겨 적기</b><span>마음에 남는 문장 하나를 손으로 적습니다.</span></li>
-        <li class="reveal"><b>나의 답장 쓰기</b><span>편지를 받은 사람이 되어 답장을 씁니다.</span></li>
+        <li class="reveal"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10 H22 C24 10 24 12 24 12 V40 C24 38 22 37 20 37 H8 Z"/><path d="M40 10 H26 C24 10 24 12 24 12 V40 C24 38 26 37 28 37 H40 Z"/><path d="M12 17 H19 M12 22 H19 M29 17 H36 M29 22 H36"/></svg><b>편지 한 통 읽기</b><span>옛 편지를 읽고, 오늘의 말로 풀어 쓴 글로 뜻을 짚습니다.</span></li>
+        <li class="reveal"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M36 6 C28 10 20 20 16 32 L14 38 L19 33 C27 29 33 21 36 6 Z"/><path d="M8 42 H40"/></svg><b>한 줄 옮겨 적기</b><span>마음에 남는 문장 하나를 손으로 옮겨 적습니다.</span></li>
+        <li class="reveal"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="13" width="36" height="24" rx="2"/><path d="M6 15 L24 28 L42 15"/></svg><b>나의 답장 쓰기</b><span>쓰는 책에서는 편지를 받은 사람이 되어 답장을 씁니다.</span></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="sec alt faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="kicker">자주 묻는 질문</span><h2>사기 전에 궁금한 것</h2></div>
+      <details><summary>휴대폰·PC로 쓰는 판과 펜·종이로 쓰는 판은 무엇이 다른가요?</summary><p>글은 같고 쓰는 방법만 다릅니다. 휴대폰·PC로 쓰는 판은 답장 칸을 눌러 자판으로 쓰고, 펜·종이로 쓰는 판은 인쇄해서 손으로 씁니다.</p></details>
+      <details><summary>인쇄해서 써도 되나요?</summary><p>네. 펜·종이로 쓰는 판은 집에서 인쇄해 쓰도록 만들었습니다. 산 분이 개인적으로 쓰는 범위에서 인쇄할 수 있습니다.</p></details>
+      <details><summary>읽는 책은 무엇인가요?</summary><p>답장 칸 없이 편지와 풀이를 이어 읽는 판입니다. 단행본과 합본에 들어 있습니다.</p></details>
+      <details><summary>환불은 어떻게 하나요?</summary><p>책은 판매처에서 사며, 환불은 그 판매처의 규정을 따릅니다.</p></details>
+      <details><summary>해외에서도 살 수 있나요?</summary><p>영어판(English editions)은 Payhip에서 해외 카드와 PayPal로 살 수 있습니다. 아래 English Editions 서가와 <a href="english.html" lang="en">English page</a>를 보세요.</p></details>
     </div>
   </section>
 
@@ -407,6 +469,8 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
   document.querySelectorAll('dialog.pol').forEach(function (d) { d.addEventListener('close', function () { if (opener) { opener.focus(); opener = null; } }); });
 })();
 </script>
+
+
 
 
 

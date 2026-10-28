@@ -38,7 +38,7 @@ a { color: var(--green); }
 
 header { border-bottom: 1px solid var(--line); background: var(--paper); }
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); min-height: 56px; }
-.logo { text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; }
+.logo { display: inline-flex; align-items: baseline; padding: 10px 0; min-height: 44px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; }
 .logo span { font-weight: 500; color: var(--ink-2); font-size: var(--fs-small); margin-left: var(--s-2); }
 header nav a { font-size: var(--fs-small); text-decoration: none; padding: var(--s-3) var(--s-2); display: inline-block; min-height: 44px; line-height: 20px; }
 
@@ -51,7 +51,7 @@ header nav a { font-size: var(--fs-small); text-decoration: none; padding: var(-
 .tag { display: inline-block; background: transparent; color: var(--dahong); border: 1.5px solid var(--dahong); font-size: var(--fs-small); font-weight: 700; border-radius: var(--r-pill); padding: 2px var(--s-3); }
 .free h2 { font-size: var(--fs-h2); margin-top: var(--s-2); }
 .free p { margin-top: var(--s-2); color: var(--ink-2); }
-@media (max-width: 600px) { .free { grid-template-columns: 1fr; } .free img { width: 120px; } }
+@media (max-width: 600px) { .free { grid-template-columns: 80px 1fr; gap: var(--s-4); padding: var(--s-4); } .free img { width: 80px; } .free h2 { font-size: 22px; } }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--s-5); border-radius: var(--r); background: var(--dahong); color: var(--on-dahong); font-weight: 700; text-decoration: none; margin-top: var(--s-4); }
 .btn:hover { background: var(--dahong-press); }
@@ -75,6 +75,22 @@ section.series > p { margin-top: var(--s-2); color: var(--ink-2); max-width: 46e
 .how { margin-top: var(--s-7); border-top: 1px solid var(--line); padding-top: var(--s-6); }
 .how h2 { font-size: var(--fs-h2); }
 .how ul { margin: var(--s-3) 0 0; padding-left: 1.2em; color: var(--ink-2); }
+
+.steps { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.steps li { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-5); }
+.steps svg { width: 40px; height: 40px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.steps b { display: block; margin-top: var(--s-2); font-size: 17px; }
+.steps span { display: block; color: var(--ink-2); margin-top: var(--s-1); }
+.peek { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-4); margin-top: var(--s-4); }
+@media (max-width: 860px) { .peek { grid-template-columns: repeat(4, 80%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-3); } .peek figure { scroll-snap-align: start; } }
+.peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-3); }
+.peek img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.peek figcaption { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-2); }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 0 var(--s-5); margin-top: var(--s-3); }
+.faq summary { cursor: pointer; font-weight: 700; min-height: 52px; display: flex; align-items: center; }
+.faq details p { color: var(--ink-2); padding-bottom: var(--s-4); }
+@media (max-width: 600px) { header nav a[href="#how"] { display: none; } }
 footer { margin-top: var(--s-7); padding: var(--s-6) 0 var(--s-7); border-top: 1px solid var(--line); font-size: var(--fs-small); color: var(--ink-2); }
 footer a { color: var(--green); }
 </style>
@@ -84,7 +100,7 @@ footer a { color: var(--green); }
 <header>
   <div class="wrap">
     <a class="logo" href="english.html">victorview<span>Publisher</span></a>
-    <nav aria-label="Language"><a href="index.html" lang="ko">한국어</a></nav>
+    <nav aria-label="Menu"><a href="#how">How it works</a><a href="#faq">Questions</a><a href="index.html" lang="ko">한국어</a></nav>
   </div>
 </header>
 
@@ -250,13 +266,32 @@ footer a { color: var(--green); }
     </div>
   </section>
 
-  <section class="how">
-    <h2>How the PDFs work</h2>
-    <ul>
-      <li>You get two files after purchase: US Letter and A4. Print at home, or write in them on a tablet.</li>
-      <li>Payment and download are handled by Payhip.</li>
-      <li>The English translations from Latin are new and were made from public-domain Latin texts; no earlier English translation was used.</li>
-    </ul>
+  <section class="how" id="how">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10 H22 C24 10 24 12 24 12 V40 C24 38 22 37 20 37 H8 Z"/><path d="M40 10 H26 C24 10 24 12 24 12 V40 C24 38 26 37 28 37 H40 Z"/></svg><b>Read</b><span>Read the letter or passage, then a short guide in today's words.</span></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M36 6 C28 10 20 20 16 32 L14 38 L19 33 C27 29 33 21 36 6 Z"/><path d="M8 42 H40"/></svg><b>Copy</b><span>Copy one sentence by hand.</span></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="13" width="36" height="24" rx="2"/><path d="M6 15 L24 28 L42 15"/></svg><b>Reply</b><span>In the workbooks, write back as the person who received it.</span></li>
+    </ol>
+  </section>
+
+  <section class="how" id="samples">
+    <h2>Sample pages</h2>
+    <div class="peek">
+      <figure><img src="covers/preview/en-lincoln.jpg" alt="Sample spread from Work Is the Only Cure: a letter and its guide" width="640" height="480" loading="lazy" decoding="async"><figcaption>Work Is the Only Cure · letter and guide</figcaption></figure>
+      <figure><img src="covers/preview/en-adams.jpg" alt="Sample spread from My Dearest Friend: a letter and its guide" width="640" height="480" loading="lazy" decoding="async"><figcaption>My Dearest Friend · letter and guide</figcaption></figure>
+      <figure><img src="covers/preview/en-blue.jpg" alt="Sample spread from Time of My Own: a letter and its guide" width="640" height="480" loading="lazy" decoding="async"><figcaption>Time of My Own · letter and guide</figcaption></figure>
+      <figure><img src="covers/preview/en-pliny.jpg" alt="Sample spread from That Day, My Uncle Set Sail" width="640" height="480" loading="lazy" decoding="async"><figcaption>That Day, My Uncle Set Sail · inside pages</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="how faq" id="faq">
+    <h2>Questions</h2>
+    <details><summary>What do I get?</summary><p>Two printable PDF files after purchase: US Letter and A4. Print at home, or write in them on a tablet.</p></details>
+    <details><summary>How do I pay?</summary><p>Payment and download are handled by Payhip. You can pay by card or PayPal.</p></details>
+    <details><summary>Are the translations new?</summary><p>Yes. The English translations of Seneca and Pliny are new, made directly from public-domain Latin texts. Lincoln and the Adamses are in their own words.</p></details>
+    <details><summary>Refunds?</summary><p>For refund requests, contact <a href="mailto:victorview.books@gmail.com">victorview.books@gmail.com</a>. Please check the refund policy on the product page before purchasing.</p></details>
+    <details><summary>Is there a Korean edition?</summary><p>Yes. The same books are published in Korean. See the <a href="index.html" lang="ko">Korean homepage</a>.</p></details>
   </section>
 </main>
 
