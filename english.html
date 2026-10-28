@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>victorview · Classic Letters in English</title>
+<meta name="description" content="victorview publishes classic letters you read and answer: Seneca, Pliny, Abraham Lincoln, and John and Abigail Adams. Printable PDF workbooks in US Letter and A4.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="victorview · Classic Letters in English">
+<meta property="og:description" content="Read a classic letter or passage each day. Our workbooks include space for your reply.">
+<meta property="og:image" content="https://victorview.netlify.app/covers/en/free.jpg">
+<meta property="og:url" content="https://victorview.netlify.app/english.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+:root {
+  --paper: #FBF7EE; --paper-2: #F3ECDD; --ink: #171A18; --ink-2: #4A4F4C; --line: #D9CFBC;
+  --dahong: #A92D1B; --dahong-press: #8E2416; --green: #1E3A2F; --on-dahong: #FFFFFF;
+  --font-sans: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --font-serif: "Noto Serif KR", "Batang", serif;
+  --fs-small: 14px; --fs-body: 16px; --fs-lead: 18px; --fs-h3: 20px; --fs-h2: 24px; --fs-h1: 32px;
+  --lh-body: 1.7; --lh-head: 1.25;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px;
+  --r: 12px; --r-lg: 16px; --r-pill: 999px; --r-book: 2px;
+  --shadow-book: 0 6px 12px -6px rgba(23, 26, 24, .35);
+  color-scheme: light;
+}
+@media (min-width: 900px) { :root { --fs-h1: 40px; --fs-h2: 28px; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); }
+h1, h2, h3 { margin: 0; line-height: var(--lh-head); font-family: var(--font-serif); }
+p { margin: 0; }
+a { color: var(--green); }
+:focus-visible { outline: 2px solid var(--dahong); outline-offset: 2px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-left, 0px)); }
+
+header { border-bottom: 1px solid var(--line); background: var(--paper); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); min-height: 56px; }
+.logo { text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; }
+.logo span { font-weight: 500; color: var(--ink-2); font-size: var(--fs-small); margin-left: var(--s-2); }
+header nav a { font-size: var(--fs-small); text-decoration: none; padding: var(--s-3) var(--s-2); display: inline-block; min-height: 44px; line-height: 20px; }
+
+.hero { padding: var(--s-7) 0 var(--s-6); }
+.hero h1 { font-size: var(--fs-h1); }
+.hero p { margin-top: var(--s-3); font-size: var(--fs-lead); color: var(--ink-2); max-width: 40em; }
+
+.free { background: var(--paper-2); border-radius: var(--r-lg); padding: var(--s-5); display: grid; grid-template-columns: 140px 1fr; gap: var(--s-5); align-items: center; }
+.free img { width: 140px; height: auto; border-radius: var(--r-book); box-shadow: var(--shadow-book); display: block; }
+.tag { display: inline-block; background: transparent; color: var(--dahong); border: 1.5px solid var(--dahong); font-size: var(--fs-small); font-weight: 700; border-radius: var(--r-pill); padding: 2px var(--s-3); }
+.free h2 { font-size: var(--fs-h2); margin-top: var(--s-2); }
+.free p { margin-top: var(--s-2); color: var(--ink-2); }
+@media (max-width: 600px) { .free { grid-template-columns: 1fr; } .free img { width: 120px; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--s-5); border-radius: var(--r); background: var(--dahong); color: var(--on-dahong); font-weight: 700; text-decoration: none; margin-top: var(--s-4); }
+.btn:hover { background: var(--dahong-press); }
+.btn.line { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+.btn.line:hover { background: var(--green); color: #fff; }
+
+section.series { padding-top: var(--s-7); }
+section.series > h2 { font-size: var(--fs-h2); }
+section.series > p { margin-top: var(--s-2); color: var(--ink-2); max-width: 46em; }
+.grid { display: grid; gap: var(--s-5); margin-top: var(--s-5); grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.book { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-4); display: flex; flex-direction: column; }
+.book img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: var(--r-book); box-shadow: var(--shadow-book); }
+.book h3 { font-size: var(--fs-h3); margin-top: var(--s-4); }
+.book .sub { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-1); }
+.book .blurb { margin-top: var(--s-3); }
+.book .price { margin-top: auto; padding-top: var(--s-4); font-weight: 700; }
+.book .price small { font-weight: 400; color: var(--ink-2); font-size: var(--fs-small); display: block; }
+.book .btn { margin-top: var(--s-3); width: 100%; background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+.book .btn:hover { background: var(--green); color: #fff; }
+
+.how { margin-top: var(--s-7); border-top: 1px solid var(--line); padding-top: var(--s-6); }
+.how h2 { font-size: var(--fs-h2); }
+.how ul { margin: var(--s-3) 0 0; padding-left: 1.2em; color: var(--ink-2); }
+footer { margin-top: var(--s-7); padding: var(--s-6) 0 var(--s-7); border-top: 1px solid var(--line); font-size: var(--fs-small); color: var(--ink-2); }
+footer a { color: var(--green); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="english.html">victorview<span>Publisher</span></a>
+    <nav aria-label="Language"><a href="index.html" lang="ko">한국어</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Classic letters you read, copy, and answer</h1>
+    <p>Read a classic letter or passage each day and copy one line by hand. Our workbooks include space for your reply. Every book is a printable PDF in two sizes, US Letter and A4.</p>
+  </div>
+
+  <div class="free" id="free">
+    <img src="covers/en/free.jpg" alt="Cover of 7 Days of Letters" width="140" height="198">
+    <div>
+      <span class="tag">Free</span>
+      <h2>7 Days of Letters</h2>
+      <p>Seven passages from Seneca's <i>On the Shortness of Life</i>, newly translated from the Latin. One a day, with lined pages for your reply. After seven days you have a small book with your name on the title page.</p>
+      <a class="btn" href="https://payhip.com/b/7rwTV">Get it free</a>
+    </div>
+  </div>
+
+  <section class="series" id="lincoln-adams">
+    <h2>American letters</h2>
+    <p>Letters in their original English words, with a short guide to each letter, a sentence to copy, and a page for your reply.</p>
+    <div class="grid">
+      <article class="book">
+        <img src="covers/en/lincoln.jpg" alt="Cover of Work Is the Only Cure" width="400" height="600" loading="lazy">
+        <h3>Work Is the Only Cure</h3>
+        <p class="sub">A Dollar for Every Dollar — Abraham Lincoln's Letters on Money and Work</p>
+        <p class="blurb">Twenty-two letters about money and work: twenty-one by Lincoln between 1837 and 1860, and one written to him.</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/9GCBL">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/adams.jpg" alt="Cover of My Dearest Friend" width="400" height="600" loading="lazy">
+        <h3>My Dearest Friend</h3>
+        <p class="sub">Letters of John and Abigail Adams, 1775–1777</p>
+        <p class="blurb">Twenty-one letters between a husband and wife during the American Revolution. What would you have written back?</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/6DAXI">Buy printable PDF</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="series" id="seneca">
+    <h2>Letters back to Seneca</h2>
+    <p>New English translations made directly from the Latin. Each reading comes with a note in today's words and pages to write your reply.</p>
+    <div class="grid">
+      <article class="book">
+        <img src="covers/en/blue.jpg" alt="Cover of Time of My Own" width="400" height="600" loading="lazy">
+        <h3>Time of My Own</h3>
+        <p class="sub">Seneca Blue · Thirty letters</p>
+        <p class="blurb">Thirty of Seneca's Moral Letters to his friend Lucilius, from taking back your time to age and learning.</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/yNVut">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/red.jpg" alt="Cover of Pause" width="400" height="600" loading="lazy">
+        <h3>Pause</h3>
+        <p class="sub">Seneca Red · Twenty-one readings on anger</p>
+        <p class="blurb">Twenty-one readings from Seneca's <i>On Anger</i>, one a day for three weeks.</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/KZx7P">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/purple.jpg" alt="Cover of Seven Nights of Letters" width="400" height="600" loading="lazy">
+        <h3>Seven Nights of Letters</h3>
+        <p class="sub">Seneca Purple · Seven letters</p>
+        <p class="blurb">Seven letters from Seneca to read before sleep, one for each night of a week.</p>
+        <p class="price">US$4.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/TcFsJ">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/green.jpg" alt="Cover of Mother, I Am All Right" width="400" height="600" loading="lazy">
+        <h3>Mother, I Am All Right</h3>
+        <p class="sub">Seneca Green · Seven passages</p>
+        <p class="blurb">Seven passages from the letter Seneca wrote to his mother from exile, and seven days of writing to your own.</p>
+        <p class="price">US$4.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/eJT2Y">Buy printable PDF</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="series" id="gold">
+    <h2>124 Days of Replies</h2>
+    <p>Seneca Gold: selections and summaries covering all 124 surviving Moral Letters to Lucilius, one a day, in four monthly volumes or one complete set. Not one of Lucilius's replies survives. Here you write them.</p>
+    <div class="grid">
+      <article class="book">
+        <img src="covers/en/gold1.jpg" alt="Cover of 124 Days of Replies, Volume 1" width="400" height="600" loading="lazy">
+        <h3>124 Days of Replies, Vol. 1</h3>
+        <p class="sub">Letters 1–31</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/A980Q">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/gold2.jpg" alt="Cover of 124 Days of Replies, Volume 2" width="400" height="600" loading="lazy">
+        <h3>124 Days of Replies, Vol. 2</h3>
+        <p class="sub">Letters 32–62</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/fvcdr">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/gold3.jpg" alt="Cover of 124 Days of Replies, Volume 3" width="400" height="600" loading="lazy">
+        <h3>124 Days of Replies, Vol. 3</h3>
+        <p class="sub">Letters 63–93</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/a5Wvq">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/gold4.jpg" alt="Cover of 124 Days of Replies, Volume 4" width="400" height="600" loading="lazy">
+        <h3>124 Days of Replies, Vol. 4</h3>
+        <p class="sub">Letters 94–124</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/z0y7b">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/gold-all.jpg" alt="Cover of 124 Days of Replies, complete set" width="400" height="600" loading="lazy">
+        <h3>124 Days of Replies, Complete</h3>
+        <p class="sub">Covers all 124 letters, four volumes in one</p>
+        <p class="price">US$14.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/5ilqH">Buy printable PDF</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="series" id="pliny">
+    <h2>The Pliny Records</h2>
+    <p>Pliny the Younger's account of the day Vesuvius erupted in AD 79, alongside passages from his uncle's Natural History. New English translations made directly from the Latin.</p>
+    <div class="grid">
+      <article class="book">
+        <img src="covers/en/pliny1.jpg" alt="Cover of That Day, My Uncle Set Sail" width="400" height="600" loading="lazy">
+        <h3>That Day, My Uncle Set Sail</h3>
+        <p class="sub">Book 1 · Pliny the Younger’s letters on Vesuvius and his uncle</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/D0geV">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/pliny2.jpg" alt="Cover of Sir, What Shall I Do?" width="400" height="600" loading="lazy">
+        <h3>Sir, What Shall I Do?</h3>
+        <p class="sub">Book 2 · Exchanges with the Emperor Trajan</p>
+        <p class="price">US$4.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/Nj4wJ">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/pliny3.jpg" alt="Cover of Are You Well? Send Me News" width="400" height="600" loading="lazy">
+        <h3>Are You Well? Send Me News</h3>
+        <p class="sub">Book 3 · Twenty short letters to friends and family</p>
+        <p class="price">US$4.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/YxBl7">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/pliny4.jpg" alt="Cover of Writing Down the World at Night" width="400" height="600" loading="lazy">
+        <h3>Writing Down the World at Night</h3>
+        <p class="sub">Book 4 · Twenty passages from the Natural History</p>
+        <p class="price">US$4.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/Q2zua">Buy printable PDF</a>
+      </article>
+      <article class="book">
+        <img src="covers/en/pliny-all.jpg" alt="Cover of Pliny: The Complete Edition" width="400" height="600" loading="lazy">
+        <h3>Pliny: The Complete Edition</h3>
+        <p class="sub">The letters, the exchanges with Trajan, and the Natural History passages in one reading edition</p>
+        <p class="price">US$6.99<small>Printable PDF · US Letter & A4</small></p>
+        <a class="btn" href="https://payhip.com/b/vUYkm">Buy printable PDF</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How the PDFs work</h2>
+    <ul>
+      <li>You get two files after purchase: US Letter and A4. Print at home, or write in them on a tablet.</li>
+      <li>Payment and download are handled by Payhip.</li>
+      <li>The English translations from Latin are new and were made from public-domain Latin texts; no earlier English translation was used.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>victorview · Publisher, Republic of Korea</p>
+    <p>Questions: <a href="mailto:victorview.books@gmail.com">victorview.books@gmail.com</a> · <a href="index.html" lang="ko">한국어 홈페이지</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
