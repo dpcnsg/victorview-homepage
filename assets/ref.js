@@ -17,7 +17,7 @@
     try { var s = localStorage.getItem(K); if (s && OK.test(s)) { code = s; saved = true; } } catch (e) {}
   }
   if (!code) return;
-  var msg = '입력된 추천 코드 ' + code + ' — Payhip에서 한글판을 살 때 결제 화면의 쿠폰 칸에 넣어 주세요. 이벤트 기간(2026년 11월 15일~2027년 1월 14일)에 10% 할인되며, 적용 여부는 결제 화면에서 확인할 수 있습니다.' +
+  var msg = '입력된 추천 코드 ' + code + ' — Payhip에서 한글판을 살 때 결제 화면의 쿠폰 칸에 넣어 주세요. 이벤트 기간(2026년 11월 2일~2027년 1월 31일)에 10% 할인되며, 적용 여부는 결제 화면에서 확인할 수 있습니다.' +
     (saved ? '' : ' (이 브라우저에 저장되지 않아 지금 화면에서만 보입니다)');
   function show() {
     [].forEach.call(document.querySelectorAll('.refnote'), function (el) { el.textContent = msg; el.hidden = false; });
