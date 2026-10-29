@@ -173,17 +173,20 @@ header nav a.en { border: 1px solid var(--line); }
 /* 쓰는 법 그림 */
 .steps svg { width: 44px; height: 44px; stroke: var(--green); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; margin-top: var(--s-2); }
 /* 책 속 미리보기 */
-.peek { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s-4); }
-@media (max-width: 860px) { .peek { grid-template-columns: repeat(5, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-3); } .peek figure { scroll-snap-align: start; } }
-.peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-3); }
+/* 2026-10-29 시장: 미리보기·편지 한 줄을 작게 줄여 책 목록이 빨리 보이게 */
+#peek, #lines { padding: var(--s-6) 0; }
+#peek .sec-head, #lines .sec-head { margin-bottom: var(--s-4); }
+#peek .sec-head h2, #lines .sec-head h2 { font-size: 24px; }
+.peek { display: grid; grid-template-columns: repeat(5, minmax(0, 150px)); gap: var(--s-3); }
+@media (max-width: 860px) { .peek { grid-template-columns: repeat(5, 38%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-2); } .peek figure { scroll-snap-align: start; } }
+.peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-2); }
 .peek img { width: 100%; height: auto; display: block; border-radius: 4px; }
-.peek figcaption { font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-2); }
-/* 편지 한 줄 */
-.lines { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
-@media (max-width: 760px) { .lines { grid-template-columns: 1fr; } }
-.lines blockquote { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-5); }
-.lines q { font-family: var(--font-serif); font-size: 19px; line-height: 1.6; display: block; }
-.lines cite { display: block; font-style: normal; font-size: var(--fs-small); color: var(--ink-2); margin-top: var(--s-3); }
+.peek figcaption { font-size: 13px; color: var(--ink-2); margin-top: var(--s-1); line-height: 1.35; }
+/* 편지 한 줄: 한 줄로 옆으로 넘겨 보기 */
+.lines { display: flex; gap: var(--s-3); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-2); }
+.lines blockquote { flex: 0 0 280px; scroll-snap-align: start; margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-4); }
+.lines q { font-family: var(--font-serif); font-size: 16px; line-height: 1.55; display: block; }
+.lines cite { display: block; font-style: normal; font-size: 12px; color: var(--ink-2); margin-top: var(--s-2); }
 .lines cite::before { content: "— "; color: var(--dahong); }
 /* 자주 묻는 질문 */
 .faq details { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 0 var(--s-5); margin-top: var(--s-3); }
@@ -522,5 +525,6 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
 
 
 <script src="assets/share.js" defer></script>
+<script src="assets/jump.js" defer></script>
 </body>
 </html>
