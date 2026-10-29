@@ -1,0 +1,13 @@
+/* 언어 고르기(모든 쪽 머리) — 자동 넘김 없음, 누르면 그 언어 쪽으로 감 */
+.lang-pick { position: relative; }
+.lang-pick > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 1px solid #D9CFBC; border-radius: 12px; font-size: 14px; color: #171A18; background: #fff; white-space: nowrap; }
+.lang-pick > summary::-webkit-details-marker { display: none; }
+.lang-pick > summary svg { width: 18px; height: 18px; fill: none; stroke: #1E3A2F; stroke-width: 1.6; flex: none; }
+.lang-pick > summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid #4A4F4C; border-bottom: 1.5px solid #4A4F4C; transform: rotate(45deg) translateY(-2px); margin-left: 2px; }
+.lang-pick[open] > summary { border-color: #1E3A2F; }
+.lang-pick ul { position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; list-style: none; margin: 0; padding: 6px; min-width: 210px; background: #FBF7EE; border: 1px solid #D9CFBC; border-radius: 12px; box-shadow: 0 8px 24px -8px rgba(23, 26, 24, .25); }
+.lang-pick li a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #171A18; text-decoration: none; font-size: 15px; }
+.lang-pick li a:hover { background: #F3ECDD; }
+.lang-pick li a[aria-current="true"] { font-weight: 700; }
+.lang-pick li a[aria-current="true"]::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #A92D1B; order: 2; }
+.lang-pick li a small { color: #4A4F4C; font-size: 14px; }
