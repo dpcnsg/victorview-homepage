@@ -4,13 +4,45 @@
 <meta charset="utf-8">
 <link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="victorview 출판사. 고전 편지를 읽고 직접 답장을 쓰는 워크북. 세네카, 플리니우스, 애덤스 부부, 링컨의 편지. 한글판과 English editions.">
+<meta name="description" content="victorview 출판사. 고전 편지를 읽고 직접 답장을 쓰는 워크북. 세네카, 플리니우스, 애덤스 부부, 링컨의 편지를 한국어·영어·일본어·중국어(번체)·독일어·프랑스어·이탈리아어·스페인어·포르투갈어로 펴냅니다.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="victorview 출판사">
-<meta property="og:description" content="고전 편지를 읽고 직접 답장을 쓰는 워크북. 한글판과 English editions.">
-<meta property="og:image" content="https://victorview.netlify.app/covers/15.png">
+<meta property="og:description" content="고전 편지를 읽고 직접 답장을 쓰는 워크북. 아홉 언어로 펴냅니다.">
+<meta property="og:image" content="https://victorview.netlify.app/covers/ko/15.jpg">
 <meta property="og:url" content="https://victorview.netlify.app/">
-<title>victorview 출판사</title>
+<title>victorview 출판사 · 고전 편지를 읽고 답장을 쓰는 워크북</title>
+<!-- GEN:head -->
+<link rel="canonical" href="https://victorview.netlify.app/">
+<link rel="alternate" hreflang="ko" href="https://victorview.netlify.app/">
+<link rel="alternate" hreflang="en" href="https://victorview.netlify.app/english.html">
+<link rel="alternate" hreflang="ja" href="https://victorview.netlify.app/ja/">
+<link rel="alternate" hreflang="zh-TW" href="https://victorview.netlify.app/zh-tw/">
+<link rel="alternate" hreflang="de" href="https://victorview.netlify.app/de/">
+<link rel="alternate" hreflang="fr" href="https://victorview.netlify.app/fr/">
+<link rel="alternate" hreflang="it" href="https://victorview.netlify.app/it/">
+<link rel="alternate" hreflang="es" href="https://victorview.netlify.app/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://victorview.netlify.app/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://victorview.netlify.app/english.html">
+<link rel="stylesheet" href="assets/lang.css">
+<style>
+.world { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; }
+@media (max-width: 480px) { .world { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+.world a { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); text-decoration: none; color: var(--ink); transition: border-color .2s, transform .2s; }
+.world a:hover { border-color: var(--green); transform: translateY(-2px); }
+.world a[aria-current="page"] { border-color: var(--dahong); }
+.world .thumbs { display: flex; height: 64px; margin-bottom: 8px; }
+.world .thumbs img { width: 42px; height: 63px; object-fit: cover; border-radius: 2px; box-shadow: 0 6px 12px -6px rgba(23, 26, 24, .35); background: var(--paper-2); }
+.world .thumbs img + img { margin-left: -14px; }
+.world b { font-family: var(--font-serif); font-size: 19px; line-height: 1.3; }
+.world span { font-size: 14px; color: var(--ink-2); }
+.world a.off { color: var(--ink-2); background: transparent; border-style: dashed; }
+.opts { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.opts a { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--green); font-size: 14px; font-weight: 700; }
+.opts a:hover { background: #fff; }
+.opts b { color: var(--ink); }
+.card .price small { font-weight: 400; color: var(--ink-2); font-size: 14px; }
+</style>
+<!-- /GEN:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700;900&display=swap">
@@ -210,10 +242,13 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
     <nav aria-label="주 메뉴">
       <a href="#books" class="hide-sm">한글판</a>
       <a href="#english" class="hide-sm">English</a>
+      <a href="#world" class="hide-sm">세계의 서가</a>
       <a href="#free">무료</a>
       <a href="#faq" class="hide-sm">질문</a>
       <a href="#contact" class="hide-sm">출판사</a>
-      <a href="english.html" class="en" lang="en">English page</a>
+      <!-- GEN:pick -->
+<details class="lang-pick"><summary aria-label="언어: 한국어"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12 H21 M12 3 C9 6 8 9 8 12 C8 15 9 18 12 21 C15 18 16 15 16 12 C16 9 15 6 12 3 Z"/></svg><span>한국어</span></summary><ul><li><a href="./" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="english.html" hreflang="en" lang="en">English</a></li><li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="zh-tw/" hreflang="zh-TW" lang="zh-TW">繁體中文</a></li><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="it/" hreflang="it" lang="it">Italiano</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li></ul></details>
+<!-- /GEN:pick -->
     </nav>
   </div>
 </header>
@@ -224,9 +259,9 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
       <div class="reveal">
         <span class="kicker">VICTORVIEW · 고전 편지 워크북</span>
         <h1>옛 편지를 읽고,<br><em>내 답장</em>을 씁니다</h1>
-        <p class="lead">세네카, 플리니우스, 애덤스 부부, 링컨. 하루 한 편, 고전 편지와 글의 대목을 읽고 한 줄을 옮겨 적습니다. 쓰는 책에는 나의 답장을 적습니다. 한글판과 영어판(English editions)으로 펴냅니다.</p>
-        <div class="acts"><a class="btn" href="#books">책 보기</a><a class="btn ghost" href="free-seven-days.html">무료로 시작하기</a></div>
-        <p class="note">출판사 신고 제582-2026-000025호 · 표지와 그림은 직접 그렸습니다</p>
+        <p class="lead">세네카, 플리니우스, 애덤스 부부, 링컨. 하루 한 편, 고전 편지와 글의 대목을 읽고 한 줄을 옮겨 적고, 나의 답장을 씁니다. PDF로 받아 휴대폰·PC에서 쓰거나 인쇄해서 씁니다. 한국어와 영어를 비롯해 아홉 언어로 펴냅니다.</p>
+        <div class="acts"><a class="btn" href="free-seven-days.html">무료로 시작하기</a><a class="btn ghost" href="#books">책 보기</a></div>
+        <p class="note">출판사 신고 제582-2026-000025호 · 표지와 그림은 직접 그렸습니다 · <a href="#world">다른 언어로 보기</a></p>
       </div>
       <div class="stack" aria-hidden="true">
         <img src="covers/ko/01.jpg" alt="" width="360" height="510" fetchpriority="high">
@@ -278,67 +313,77 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
 
   <section class="sec" id="books">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="kicker">한글판 서가</span><h2>편지마다 한 권, <span class="nw">시리즈마다 한 색</span></h2><p>휴대폰·PC로 쓰는 판과 펜·종이로 쓰는 판을 함께 드립니다. 크몽에서 판매 중인 책은 단추를 누르면 사는 곳으로 갑니다. 다른 책은 판매처 심사가 끝나는 대로 안내합니다.</p></div>
+      <div class="sec-head reveal"><span class="kicker">한글판 서가</span><h2>편지마다 한 권, <span class="nw">시리즈마다 한 색</span></h2><p>휴대폰·PC로 쓰는 판과 펜·종이로 쓰는 판을 함께 드립니다. 모든 책은 Payhip에서 카드·PayPal로 삽니다(값은 미국 달러). 세네카 4색은 크몽에서도 삽니다.</p></div>
+<!-- GEN:ko-shelf -->
 <div class="series" style="--band:#2E4A72"><div class="series-head reveal"><h3>세네카 4색</h3><p>세네카가 벗과 어머니에게 보낸 글. 바쁜 하루에서 내 시간을 다시 붙잡고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/01.jpg" alt="『나의 시간』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>나의 시간</h4><p class="sub">세네카 블루 · 『도덕 서한』 30통, 시간을 되찾는 편지</p><p class="price">10,000원</p><a class="btn sm" href="https://kmong.com/gig/835328" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/02.jpg" alt="『잠시 멈춤』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>잠시 멈춤</h4><p class="sub">세네카 레드 · 『분노에 대하여』 21장, 화가 날 때 멈추는 글</p><p class="price">10,000원</p><a class="btn sm" href="https://kmong.com/gig/836390" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/03.jpg" alt="『일곱 밤의 편지』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>일곱 밤의 편지</h4><p class="sub">세네카 퍼플 · 잠들기 전에 읽는 편지 7통</p><p class="price">5,000원</p><a class="btn sm" href="https://kmong.com/gig/836394" target="_blank" rel="noopener">크몽에서 보기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/04.jpg" alt="『어머니, 저는 괜찮습니다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>어머니, 저는 괜찮습니다</h4><p class="sub">세네카 그린 · 유배지에서 어머니께 보낸 위로의 글 7대목</p><p class="price">5,000원</p><a class="btn sm" href="https://kmong.com/gig/836396" target="_blank" rel="noopener">크몽에서 보기</a></article></div></div>
+<h4>나의 시간</h4><p class="sub">세네카 블루 · 『도덕 서한』 30통, 시간을 되찾는 편지</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/4XR9p" target="_blank" rel="noopener">Payhip에서 사기</a><a class="btn sm" href="https://kmong.com/gig/835328" target="_blank" rel="noopener">크몽에서 보기 · 10,000원</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/02.jpg" alt="『잠시 멈춤』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>잠시 멈춤</h4><p class="sub">세네카 레드 · 『분노에 대하여』 21장, 화가 날 때 멈추는 글</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/HPno2" target="_blank" rel="noopener">Payhip에서 사기</a><a class="btn sm" href="https://kmong.com/gig/836390" target="_blank" rel="noopener">크몽에서 보기 · 10,000원</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/03.jpg" alt="『일곱 밤의 편지』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>일곱 밤의 편지</h4><p class="sub">세네카 퍼플 · 잠들기 전에 읽는 편지 7통</p><p class="price">US$3.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/fWo17" target="_blank" rel="noopener">Payhip에서 사기</a><a class="btn sm" href="https://kmong.com/gig/836394" target="_blank" rel="noopener">크몽에서 보기 · 5,000원</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/04.jpg" alt="『어머니, 저는 괜찮습니다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>어머니, 저는 괜찮습니다</h4><p class="sub">세네카 그린 · 유배지에서 어머니께 보낸 위로의 글 7대목</p><p class="price">US$3.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/tmQrG" target="_blank" rel="noopener">Payhip에서 사기</a><a class="btn sm" href="https://kmong.com/gig/836396" target="_blank" rel="noopener">크몽에서 보기 · 5,000원</a></article></div></div>
 <div class="series" style="--band:#B8955A"><div class="series-head reveal"><h3>세네카 골드</h3><p>현존 『도덕 서한』 124통을 발췌·요약해 하루 한 통씩 넉 달. 긴 호흡으로 꾸준히 쓰고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/05.jpg" alt="『124일의 답장 1권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>124일의 답장 1권</h4><p class="sub">1~31번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/06.jpg" alt="『124일의 답장 2권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>124일의 답장 2권</h4><p class="sub">32~62번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/07.jpg" alt="『124일의 답장 3권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>124일의 답장 3권</h4><p class="sub">63~93번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/08.jpg" alt="『124일의 답장 4권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>124일의 답장 4권</h4><p class="sub">94~124번 편지</p><p class="price">7,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/09.jpg" alt="『124일의 답장 합본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>124일의 답장 합본</h4><p class="sub">124통 전체 구성, 쓰는 책과 읽는 책</p><p class="price">17,000원</p></article></div></div>
+<h4>124일의 답장 1권</h4><p class="sub">1~31번 편지</p><p class="price">US$4.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/buy1t" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/06.jpg" alt="『124일의 답장 2권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>124일의 답장 2권</h4><p class="sub">32~62번 편지</p><p class="price">US$4.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/dMqiA" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/07.jpg" alt="『124일의 답장 3권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>124일의 답장 3권</h4><p class="sub">63~93번 편지</p><p class="price">US$4.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/34oCA" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/08.jpg" alt="『124일의 답장 4권』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>124일의 답장 4권</h4><p class="sub">94~124번 편지</p><p class="price">US$4.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/Yg879" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/09.jpg" alt="『124일의 답장 합본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>124일의 답장 합본</h4><p class="sub">124통 전체 구성, 쓰는 책과 읽는 책</p><p class="price">US$11.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/dYzBr" target="_blank" rel="noopener">Payhip에서 사기</a></article></div></div>
 <div class="series" style="--band:#E8743B"><div class="series-head reveal"><h3>플리니우스 기록</h3><p>조카가 남긴 베수비오 화산의 기록과 삼촌의 『박물지』. 역사와 기록을 좋아하는 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/10.jpg" alt="『그날, 삼촌은 배를 띄웠다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>그날, 삼촌은 배를 띄웠다</h4><p class="sub">첫째 · 화산의 날과 삼촌</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/11.jpg" alt="『폐하, 어떻게 할까요』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>폐하, 어떻게 할까요</h4><p class="sub">둘째 · 황제 트라야누스와의 문답</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/12.jpg" alt="『잘 지내나, 소식 좀 주게』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>잘 지내나, 소식 좀 주게</h4><p class="sub">셋째 · 벗과 가족에게 보낸 짧은 편지</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/13.jpg" alt="『삼촌의 밤, 세상을 적다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>삼촌의 밤, 세상을 적다</h4><p class="sub">넷째 · 삼촌의 『박물지』에서 고른 대목</p><p class="price">10,000원</p></article><article class="card reveal"><div class="cv"><img src="covers/ko/14.jpg" alt="『플리니우스 단행본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>플리니우스 단행본</h4><p class="sub">네 권을 한 권으로 읽는 책</p><p class="price">15,000원</p></article></div></div>
+<h4>그날, 삼촌은 배를 띄웠다</h4><p class="sub">첫째 · 화산의 날과 삼촌</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/wZH15" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/11.jpg" alt="『폐하, 어떻게 할까요』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>폐하, 어떻게 할까요</h4><p class="sub">둘째 · 황제 트라야누스와의 문답</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/Z4FNk" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/12.jpg" alt="『잘 지내나, 소식 좀 주게』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>잘 지내나, 소식 좀 주게</h4><p class="sub">셋째 · 벗과 가족에게 보낸 짧은 편지</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/ST1tw" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/13.jpg" alt="『삼촌의 밤, 세상을 적다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>삼촌의 밤, 세상을 적다</h4><p class="sub">넷째 · 삼촌의 『박물지』에서 고른 대목</p><p class="price">US$6.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/o16ga" target="_blank" rel="noopener">Payhip에서 사기</a></article><article class="card reveal"><div class="cv"><img src="covers/ko/14.jpg" alt="『플리니우스 완결본』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
+<h4>플리니우스 완결본</h4><p class="sub">네 권을 한 권으로 읽는 책</p><p class="price">US$10.99 <small>Payhip</small></p><a class="btn sm" href="https://payhip.com/b/MeR5l" target="_blank" rel="noopener">Payhip에서 사기</a></article></div></div>
 <div class="series" style="--band:#A8475A"><div class="series-head reveal"><h3>애덤스 부부</h3><p>미국 독립 혁명기에 부부가 주고받은 편지 21통. 떨어져 지내는 가족에게 마음을 전하고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/15.jpg" alt="『나의 가장 사랑스러운 벗에게』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>나의 가장 사랑스러운 벗에게</h4><p class="sub">쓰는 책 · 읽는 책 · 둘을 묶은 합본</p><p class="price">10,000원부터</p></article></div></div>
+<h4>나의 가장 사랑스러운 벗에게</h4><p class="sub">미국 독립 혁명기 부부의 편지 21통</p><p class="price">US$6.99부터 <small>Payhip</small></p><ul class="opts" aria-label="『나의 가장 사랑스러운 벗에게』 판 고르기"><li><a href="https://payhip.com/b/SN6yJ" target="_blank" rel="noopener"><span>쓰는 책</span><b>US$6.99</b></a></li><li><a href="https://payhip.com/b/qK5cN" target="_blank" rel="noopener"><span>읽는 책</span><b>US$6.99</b></a></li><li><a href="https://payhip.com/b/7V4tg" target="_blank" rel="noopener"><span>합본</span><b>US$10.99</b></a></li></ul></article></div></div>
 <div class="series" style="--band:#A92D1B"><div class="series-head reveal"><h3>링컨</h3><p>돈과 일에 관한 편지 22통, 1달러마다 1달러. 돈과 일을 대하는 태도를 돌아보고 싶은 분께.</p></div>
 <div class="shelf"><article class="card reveal"><div class="cv"><img src="covers/ko/17.jpg" alt="『일하는 것만이 치료다』 표지" width="360" height="510" loading="lazy" decoding="async"></div>
-<h4>일하는 것만이 치료다</h4><p class="sub">쓰는 책 · 읽는 책 · 둘을 묶은 정본</p><p class="price">10,000원부터</p></article></div></div>
+<h4>일하는 것만이 치료다</h4><p class="sub">돈과 일에 관한 편지 22통</p><p class="price">US$6.99부터 <small>Payhip</small></p><ul class="opts" aria-label="『일하는 것만이 치료다』 판 고르기"><li><a href="https://payhip.com/b/YmdiQ" target="_blank" rel="noopener"><span>쓰는 책</span><b>US$7.99</b></a></li><li><a href="https://payhip.com/b/tET8D" target="_blank" rel="noopener"><span>읽는 책</span><b>US$6.99</b></a></li><li><a href="https://payhip.com/b/Vs3Av" target="_blank" rel="noopener"><span>정본 합본</span><b>US$11.99</b></a></li></ul></article></div></div>
+<!-- /GEN:ko-shelf -->
     </div>
   </section>
 
   <section class="sec alt" id="english" lang="en">
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">ENGLISH EDITIONS</span><h2>Classic letters you read, copy, and answer</h2><p>Printable PDF workbooks in two sizes, US Letter and A4. New translations made directly from the Latin; Lincoln and the Adamses in their own words. <a href="english.html">See the English page</a>.</p></div>
+<!-- GEN:en-shelf -->
 <div class="series" style="--band:#1F4E5A" lang="en"><div class="series-head reveal"><h3>American letters</h3><p>Letters in their original English words, with a short guide and a page for your reply.</p></div>
 <div class="shelf"><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/lincoln.jpg" alt="Cover of Work Is the Only Cure" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Work Is the Only Cure</h4><p class="sub">Abraham Lincoln&#x27;s letters on money and work</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/9GCBL" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/adams.jpg" alt="Cover of My Dearest Friend" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>My Dearest Friend</h4><p class="sub">John and Abigail Adams, 1775–1777</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/6DAXI" target="_blank" rel="noopener">Buy printable PDF</a></article></div></div>
+<h4>Work Is the Only Cure</h4><p class="sub">Abraham Lincoln&#x27;s letters on money and work</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/9GCBL" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/adams.jpg" alt="Cover of My Dearest Friend" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>My Dearest Friend</h4><p class="sub">John and Abigail Adams, 1775–1777</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/6DAXI" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/learn-korean.jpg" alt="Cover of Learn Korean with Lincoln’s Letters" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Learn Korean with Lincoln’s Letters</h4><p class="sub">Korean and English side by side · reading workbook</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/Lox3E" target="_blank" rel="noopener">Buy on Payhip</a></article></div></div>
 <div class="series" style="--band:#2E4A72" lang="en"><div class="series-head reveal"><h3>Letters back to Seneca</h3><p>New translations made directly from the Latin.</p></div>
 <div class="shelf"><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/blue.jpg" alt="Cover of Time of My Own" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Time of My Own</h4><p class="sub">Seneca Blue · thirty letters</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/yNVut" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/red.jpg" alt="Cover of Pause" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Pause</h4><p class="sub">Seneca Red · twenty-one readings on anger</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/KZx7P" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/purple.jpg" alt="Cover of Seven Nights of Letters" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Seven Nights of Letters</h4><p class="sub">Seneca Purple · seven letters</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/TcFsJ" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/green.jpg" alt="Cover of Mother, I Am All Right" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Mother, I Am All Right</h4><p class="sub">Seneca Green · seven passages</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/eJT2Y" target="_blank" rel="noopener">Buy printable PDF</a></article></div></div>
+<h4>Time of My Own</h4><p class="sub">Seneca Blue · thirty letters</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/yNVut" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/red.jpg" alt="Cover of Pause" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Pause</h4><p class="sub">Seneca Red · twenty-one readings on anger</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/KZx7P" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/purple.jpg" alt="Cover of Seven Nights of Letters" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Seven Nights of Letters</h4><p class="sub">Seneca Purple · seven letters</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/TcFsJ" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/green.jpg" alt="Cover of Mother, I Am All Right" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Mother, I Am All Right</h4><p class="sub">Seneca Green · seven passages</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/eJT2Y" target="_blank" rel="noopener">Buy on Payhip</a></article></div></div>
 <div class="series" style="--band:#B8955A" lang="en"><div class="series-head reveal"><h3>124 Days of Replies</h3><p>Selections and summaries covering all 124 surviving Moral Letters, one a day.</p></div>
 <div class="shelf"><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold1.jpg" alt="Cover of Vol. 1" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Vol. 1</h4><p class="sub">Letters 1–31</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/A980Q" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold2.jpg" alt="Cover of Vol. 2" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Vol. 2</h4><p class="sub">Letters 32–62</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/fvcdr" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold3.jpg" alt="Cover of Vol. 3" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Vol. 3</h4><p class="sub">Letters 63–93</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/a5Wvq" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold4.jpg" alt="Cover of Vol. 4" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Vol. 4</h4><p class="sub">Letters 94–124</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/z0y7b" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold-all.jpg" alt="Cover of Complete" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Complete</h4><p class="sub">Covers all 124 letters</p><p class="price">US$14.99</p><a class="btn sm" href="https://payhip.com/b/5ilqH" target="_blank" rel="noopener">Buy printable PDF</a></article></div></div>
+<h4>Vol. 1</h4><p class="sub">Letters 1–31</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/A980Q" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold2.jpg" alt="Cover of Vol. 2" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Vol. 2</h4><p class="sub">Letters 32–62</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/fvcdr" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold3.jpg" alt="Cover of Vol. 3" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Vol. 3</h4><p class="sub">Letters 63–93</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/a5Wvq" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold4.jpg" alt="Cover of Vol. 4" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Vol. 4</h4><p class="sub">Letters 94–124</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/z0y7b" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/gold-all.jpg" alt="Cover of Complete" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Complete</h4><p class="sub">Covers all 124 letters</p><p class="price">US$14.99</p><a class="btn sm" href="https://payhip.com/b/5ilqH" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/seneca-124.jpg" alt="Cover of Seneca: 124 Moral Letters" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Seneca: 124 Moral Letters</h4><p class="sub">Reading edition · PDF + EPUB</p><p class="price">US$14.99</p><a class="btn sm" href="https://payhip.com/b/gZmXh" target="_blank" rel="noopener">Buy on Payhip</a></article></div></div>
 <div class="series" style="--band:#E8743B" lang="en"><div class="series-head reveal"><h3>The Pliny Records</h3><p>The nephew&#x27;s account of the eruption of Vesuvius, alongside passages from his uncle&#x27;s Natural History.</p></div>
 <div class="shelf"><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny1.jpg" alt="Cover of That Day, My Uncle Set Sail" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>That Day, My Uncle Set Sail</h4><p class="sub">Book 1</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/D0geV" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny2.jpg" alt="Cover of Sir, What Shall I Do?" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Sir, What Shall I Do?</h4><p class="sub">Book 2</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/Nj4wJ" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny3.jpg" alt="Cover of Are You Well? Send Me News" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Are You Well? Send Me News</h4><p class="sub">Book 3</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/YxBl7" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny4.jpg" alt="Cover of Writing Down the World at Night" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Writing Down the World at Night</h4><p class="sub">Book 4</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/Q2zua" target="_blank" rel="noopener">Buy printable PDF</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny-all.jpg" alt="Cover of Pliny: The Complete Edition" width="400" height="600" loading="lazy" decoding="async"></div>
-<h4>Pliny: The Complete Edition</h4><p class="sub">All four in one volume</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/vUYkm" target="_blank" rel="noopener">Buy printable PDF</a></article></div></div>
+<h4>That Day, My Uncle Set Sail</h4><p class="sub">Book 1</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/D0geV" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny2.jpg" alt="Cover of Sir, What Shall I Do?" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Sir, What Shall I Do?</h4><p class="sub">Book 2</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/Nj4wJ" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny3.jpg" alt="Cover of Are You Well? Send Me News" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Are You Well? Send Me News</h4><p class="sub">Book 3</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/YxBl7" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny4.jpg" alt="Cover of Writing Down the World at Night" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Writing Down the World at Night</h4><p class="sub">Book 4</p><p class="price">US$4.99</p><a class="btn sm" href="https://payhip.com/b/Q2zua" target="_blank" rel="noopener">Buy on Payhip</a></article><article class="card reveal" lang="en"><div class="cv"><img src="covers/en/pliny-all.jpg" alt="Cover of Pliny: The Complete Edition" width="400" height="600" loading="lazy" decoding="async"></div>
+<h4>Pliny: The Complete Edition</h4><p class="sub">All four in one volume</p><p class="price">US$6.99</p><a class="btn sm" href="https://payhip.com/b/vUYkm" target="_blank" rel="noopener">Buy on Payhip</a></article></div></div>
+<!-- /GEN:en-shelf -->
     </div>
   </section>
 
-  <section class="sec" id="how">
+<!-- GEN:world -->
+<section class="sec" id="world"><div class="wrap"><div class="sec-head reveal"><span class="kicker">세계의 서가</span><h2>같은 책을 여러 나라 말로</h2><p>같은 시리즈를 여러 언어로 펴냅니다. 언어를 누르면 그 언어의 서가로 갑니다.</p></div><ul class="world"><li><a href="./" hreflang="ko" aria-current="page"><span class="thumbs"><img src="covers/ko/01.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/ko/02.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/ko/03.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="ko">한국어</b><span>20권</span></a></li><li><a href="english.html" hreflang="en"><span class="thumbs"><img src="covers/en/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/en/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/en/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="en">English</b><span>19권</span></a></li><li><a href="ja/" hreflang="ja"><span class="thumbs"><img src="covers/ja/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/ja/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/ja/red.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="ja">日本語</b><span>18권</span></a></li><li><a href="zh-tw/" hreflang="zh-TW"><span class="thumbs"><img src="covers/zh/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/zh/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/zh/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="zh-TW">繁體中文</b><span>7권</span></a></li><li><a href="de/" hreflang="de"><span class="thumbs"><img src="covers/de/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/de/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/de/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="de">Deutsch</b><span>18권</span></a></li><li><a href="fr/" hreflang="fr"><span class="thumbs"><img src="covers/fr/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/fr/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/fr/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="fr">Français</b><span>18권</span></a></li><li><a href="it/" hreflang="it"><span class="thumbs"><img src="covers/it/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/it/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/it/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="it">Italiano</b><span>18권</span></a></li><li><a href="es/" hreflang="es"><span class="thumbs"><img src="covers/es/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/es/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/es/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="es">Español</b><span>18권</span></a></li><li><a href="pt-br/" hreflang="pt-BR"><span class="thumbs"><img src="covers/pt/lincoln.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/pt/adams.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"><img src="covers/pt/blue.jpg" alt="" width="42" height="63" loading="lazy" decoding="async"></span><b lang="pt-BR">Português (Brasil)</b><span>12권</span></a></li></ul></div></section>
+<!-- /GEN:world -->
+
+  <section class="sec alt" id="how">
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">쓰는 법</span><h2>세 걸음이면 됩니다</h2></div>
       <ol class="steps">
@@ -349,14 +394,15 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
     </div>
   </section>
 
-  <section class="sec alt faq" id="faq">
+  <section class="sec faq" id="faq">
     <div class="wrap">
       <div class="sec-head reveal"><span class="kicker">자주 묻는 질문</span><h2>사기 전에 궁금한 것</h2></div>
       <details><summary>휴대폰·PC로 쓰는 판과 펜·종이로 쓰는 판은 무엇이 다른가요?</summary><p>글은 같고 쓰는 방법만 다릅니다. 휴대폰·PC로 쓰는 판은 답장 칸을 눌러 자판으로 쓰고, 펜·종이로 쓰는 판은 인쇄해서 손으로 씁니다.</p></details>
       <details><summary>인쇄해서 써도 되나요?</summary><p>네. 펜·종이로 쓰는 판은 집에서 인쇄해 쓰도록 만들었습니다. 산 분이 개인적으로 쓰는 범위에서 인쇄할 수 있습니다.</p></details>
       <details><summary>읽는 책은 무엇인가요?</summary><p>답장 칸 없이 편지와 풀이를 이어 읽는 판입니다. 단행본과 합본에 들어 있습니다.</p></details>
-      <details><summary>환불은 어떻게 하나요?</summary><p>책은 판매처에서 사며, 환불은 그 판매처의 규정을 따릅니다.</p></details>
-      <details><summary>해외에서도 살 수 있나요?</summary><p>영어판(English editions)은 Payhip에서 해외 카드와 PayPal로 살 수 있습니다. 아래 English Editions 서가와 <a href="english.html" lang="en">English page</a>를 보세요.</p></details>
+      <details><summary>어디서 어떻게 사나요?</summary><p>한글판을 비롯한 모든 책은 Payhip에서 카드와 PayPal로 삽니다. 값은 미국 달러이고, 결제하면 PDF 파일을 바로 내려받습니다. 세네카 4색은 크몽에서도 살 수 있습니다.</p></details>
+      <details><summary>환불은 어떻게 하나요?</summary><p>책은 판매처에서 사며, 환불은 그 판매처의 규정을 따릅니다. Payhip에서 산 책은 <a href="mailto:victorview.books@gmail.com">victorview.books@gmail.com</a>으로 문의해 주세요.</p></details>
+      <details><summary>다른 언어로도 있나요?</summary><p>영어, 일본어, 중국어(번체), 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어(브라질)로 펴냅니다. 세네카와 플리니우스는 라틴어에서 새로 옮겼고, 링컨과 애덤스 부부는 영어 원문을 바탕으로 했습니다. <a href="#world">세계의 서가</a>에서 언어를 고르면 그 언어의 서가로 갑니다.</p></details>
     </div>
   </section>
 
@@ -371,8 +417,9 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
           </div>
           <div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
             <ul>
-              <li>세네카에게 쓰는 답장 4종을 크몽에서 판매합니다. 책을 누르면 사는 곳으로 갑니다<span>2026.10.26</span></li>
-              <li>다른 책도 크몽 심사가 끝나는 대로 사는 곳을 안내하겠습니다<span>준비 중</span></li>
+              <li>일본어·중국어(번체)·독일어·프랑스어·이탈리아어·스페인어·포르투갈어판을 펴내고 홈페이지에 언어별 서가를 열었습니다<span>2026.10.29</span></li>
+              <li>한글판 20종과 영어판을 Payhip에서 판매합니다. 책을 누르면 사는 곳으로 갑니다<span>2026.10.28</span></li>
+              <li>세네카에게 쓰는 답장 4종을 크몽에서 판매합니다<span>2026.10.26</span></li>
               <li>종이책 B6 판형을 준비하고 있습니다<span>준비 중</span></li>
               <li>출판사 신고를 마쳤습니다 (제582-2026-000025호)<span>2026.10.07</span></li>
             </ul>
@@ -408,6 +455,7 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
       <p>발행처 victorview · 엮고 옮김 X-man 편집부 · 출판사 신고 제582-2026-000025호</p>
       <p>원문은 공공 영역 판본에서 새로 옮기고 줄였습니다. 표지와 그림은 직접 그렸습니다.</p>
       <p>이 사이트의 글은 일반 교육 정보이며 투자 권유가 아닙니다. 이 자료는 AI 도구의 도움을 받아 만들었고 발행인이 검토했습니다.</p>
+      <p>다른 언어: <a href="english.html" hreflang="en" lang="en">English</a> · <a href="ja/" hreflang="ja" lang="ja">日本語</a> · <a href="zh-tw/" hreflang="zh-TW" lang="zh-TW">繁體中文</a> · <a href="de/" hreflang="de" lang="de">Deutsch</a> · <a href="fr/" hreflang="fr" lang="fr">Français</a> · <a href="it/" hreflang="it" lang="it">Italiano</a> · <a href="es/" hreflang="es" lang="es">Español</a> · <a href="pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></p>
     </div>
     <p class="copy">© victorview. All rights reserved.</p>
   </div>
@@ -429,17 +477,16 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
 
 <dialog class="pol" id="pol-privacy" aria-labelledby="pol-privacy-h"><button type="button" class="x" data-close>닫기</button>
   <h2 id="pol-privacy-h">개인정보처리방침</h2>
-  <p>이 사이트에는 회원 가입, 결제, 이름·연락처·글을 보내는 기능이 없습니다. 책 찾기에 넣은 검색어는 서버로 보내지 않습니다.</p>
+  <p>이 사이트에는 회원 가입, 결제, 이름·연락처·글을 보내는 기능이 없습니다. 책은 판매처(Payhip·크몽)에서 사며, 그곳의 개인정보 처리는 각 판매처의 방침을 따릅니다.</p>
   <h3>이 기기 브라우저에만 남는 것</h3>
-  <ul><li>최근 찾은 말: 책 찾기에서 찾은 말을 최대 5개까지 기억합니다. 검색 칸 아래 &lsquo;지우기&rsquo;를 누르면 지워집니다.</li>
-  <li>무료 워크북: 책에 적을 이름과 쓴 답장, 쓴 날짜를 이어 쓰도록 기억합니다. 워크북 화면의 &lsquo;이 기기에서 모두 지우기&rsquo;로 지울 수 있습니다.</li>
-  <li>두 가지 모두 출판사로 보내지 않고 이 기기의 브라우저에만 남습니다. 브라우저 설정에서 이 사이트의 데이터를 지우면 함께 지워집니다.</li></ul>
+  <ul><li>무료 워크북: 책에 적을 이름과 쓴 답장, 쓴 날짜를 이어 쓰도록 기억합니다. 워크북 화면의 &lsquo;이 기기에서 모두 지우기&rsquo;로 지울 수 있습니다.</li>
+  <li>이 내용은 출판사로 보내지 않고 이 기기의 브라우저에만 남습니다. 브라우저 설정에서 이 사이트의 데이터를 지우면 함께 지워집니다.</li></ul>
   <h3>사이트를 보여 주는 곳</h3>
   <ul><li>사이트는 Netlify(미국)를 통해 전달됩니다. 페이지를 여는 과정에서 접속 기록(IP 주소, 브라우저 종류 등)이 Netlify에 남을 수 있습니다.</li>
-  <li>글꼴은 jsDelivr와 Google Fonts에서 불러옵니다. 이때 브라우저가 두 곳의 서버에 접속합니다.</li>
+  <li>글꼴은 Google Fonts에서 불러옵니다. 이때 브라우저가 Google의 서버에 접속합니다.</li>
   <li>출판사는 방문자를 따로 추적하는 분석 도구나 광고 쿠키를 쓰지 않습니다.</li></ul>
   <p>이 내용이 바뀌면 공지사항에 먼저 알립니다.</p>
-  <p><small>시행일 2026년 10월 19일 · 발행처 victorview · 출판사 신고 제582-2026-000025호</small></p>
+  <p><small>시행일 2026년 10월 19일 · 고침 2026년 10월 29일 · 발행처 victorview · 출판사 신고 제582-2026-000025호</small></p>
 </dialog>
 <dialog class="pol" id="pol-terms" aria-labelledby="pol-terms-h"><button type="button" class="x" data-close>닫기</button>
   <h2 id="pol-terms-h">이용약관</h2>

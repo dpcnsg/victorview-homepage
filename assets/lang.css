@@ -10,4 +10,4 @@
 .lang-pick li a:hover { background: #F3ECDD; }
 .lang-pick li a[aria-current="true"] { font-weight: 700; }
 .lang-pick li a[aria-current="true"]::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #A92D1B; order: 2; }
-.lang-pick li a small { color: #4A4F4C; font-size: 13px; }
+.lang-pick li a small { color: #4A4F4C; font-size: 14px; }
