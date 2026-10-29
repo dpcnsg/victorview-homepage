@@ -146,7 +146,10 @@ header nav > a:hover { background: var(--paper-2); }
 .peek { display: grid; grid-template-columns: repeat(4, minmax(0, 150px)); gap: var(--s-3); }
 .peek.n2 { grid-template-columns: repeat(2, minmax(0, 150px)); }
 .peek.n3 { grid-template-columns: repeat(3, minmax(0, 150px)); }
-@media (max-width: 860px) { .peek, .peek.n2, .peek.n3 { grid-template-columns: repeat(4, 38%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-2); scrollbar-width: thin; } .peek figure { scroll-snap-align: start; } }
+.peek.n5 { grid-template-columns: repeat(5, minmax(0, 150px)); }
+.peek figure { transition: transform .15s, border-color .15s; }
+.peek figure:hover, .peek figure:focus-visible { border-color: var(--dahong); transform: translateY(-2px); outline: none; }
+@media (max-width: 860px) { .peek, .peek.n2, .peek.n3, .peek.n5 { grid-template-columns: repeat(5, 38%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-2); scrollbar-width: thin; } .peek figure { scroll-snap-align: start; } }
 .peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-2); cursor: zoom-in; }
 .peek img { width: 100%; height: auto; display: block; border-radius: 4px; background: var(--paper-2); }
 .peek figcaption { font-size: 13px; color: var(--ink-2); margin-top: var(--s-1); line-height: 1.35; }

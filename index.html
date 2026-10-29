@@ -188,6 +188,9 @@ header nav a.en { border: 1px solid var(--line); }
 .peek figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-1); cursor: zoom-in; }
 .peek img { width: 100%; height: auto; display: block; border-radius: 4px; }
 .peek figcaption { font-size: 12px; color: var(--ink-2); margin-top: var(--s-1); line-height: 1.35; }
+.peek figcaption b { color: var(--ink); font-weight: 700; }
+.peek figure { transition: transform .15s, border-color .15s; }
+.peek figure:hover, .peek figure:focus-visible { border-color: var(--dahong); transform: translateY(-2px); outline: none; }
 /* 편지 한 줄: 목록처럼 한 줄씩 */
 .lines { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-1) var(--s-4); }
 .lines blockquote { margin: 0; padding: var(--s-3) 0; border-bottom: 1px solid var(--line); }
@@ -298,13 +301,13 @@ dialog.pol .x { position: absolute; right: var(--s-3); top: var(--s-3); min-heig
   <section class="sec alt" id="peek">
     <div class="wrap duo">
       <div class="duo-col">
-        <div class="sec-head reveal"><span class="kicker">책 속 미리보기</span><h2>펼치면 이렇게 생겼습니다</h2><p>시리즈마다 한 쪽씩 골랐습니다. 누르면 크게 보입니다.</p></div>
+        <div class="sec-head reveal"><span class="kicker">책 속 미리보기</span><h2>펼치면 이렇게 생겼습니다</h2><p>책을 누르면 속지 샘플 두 쪽을 넘겨 볼 수 있습니다.</p></div>
         <div class="peek">
-        <figure><img src="covers/preview/ko-seneca.jpg" alt="세네카 블루 『나의 시간』 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>세네카 블루 · 편지 1</figcaption></figure>
-        <figure><img src="covers/preview/ko-gold.jpg" alt="세네카 골드 1일째 풀이와 답장 칸 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>세네카 골드 · 풀이와 답장 칸</figcaption></figure>
-        <figure><img src="covers/preview/ko-pliny.jpg" alt="플리니우스 첫째 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>플리니우스 첫째 · 편지 1</figcaption></figure>
-        <figure><img src="covers/preview/ko-adams.jpg" alt="애덤스 부부 편지 1 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>애덤스 부부 · 편지 1</figcaption></figure>
-        <figure><img src="covers/preview/ko-lincoln.jpg" alt="링컨 한 줄 필사와 나의 답장 쪽" width="640" height="907" loading="lazy" decoding="async"><figcaption>링컨 · 한 줄 필사와 나의 답장</figcaption></figure>
+        <figure tabindex="0" role="button" data-pages="covers/preview/ko-blue-1.jpg|covers/preview/ko-blue-2.jpg" aria-label="세네카 블루 『나의 시간』 속지 샘플 보기"><img src="covers/ko/01.jpg" alt="세네카 블루 『나의 시간』 표지" width="360" height="510" loading="lazy" decoding="async"><figcaption>세네카 블루<br><b>나의 시간</b></figcaption></figure>
+        <figure tabindex="0" role="button" data-pages="covers/preview/ko-gold1-1.jpg|covers/preview/ko-gold1-2.jpg" aria-label="세네카 골드 『124일의 답장 1권』 속지 샘플 보기"><img src="covers/ko/05.jpg" alt="세네카 골드 『124일의 답장 1권』 표지" width="360" height="510" loading="lazy" decoding="async"><figcaption>세네카 골드<br><b>124일의 답장 1권</b></figcaption></figure>
+        <figure tabindex="0" role="button" data-pages="covers/preview/ko-pliny1-1.jpg|covers/preview/ko-pliny1-2.jpg" aria-label="플리니우스 첫째 『그날, 삼촌은 배를 띄웠다』 속지 샘플 보기"><img src="covers/ko/10.jpg" alt="플리니우스 첫째 『그날, 삼촌은 배를 띄웠다』 표지" width="360" height="510" loading="lazy" decoding="async"><figcaption>플리니우스 첫째<br><b>그날, 삼촌은 배를 띄웠다</b></figcaption></figure>
+        <figure tabindex="0" role="button" data-pages="covers/preview/ko-adams-1.jpg|covers/preview/ko-adams-2.jpg" aria-label="애덤스 부부 『나의 가장 사랑스러운 벗에게』 속지 샘플 보기"><img src="covers/ko/15.jpg" alt="애덤스 부부 『나의 가장 사랑스러운 벗에게』 표지" width="360" height="510" loading="lazy" decoding="async"><figcaption>애덤스 부부<br><b>나의 가장 사랑스러운 벗에게</b></figcaption></figure>
+        <figure tabindex="0" role="button" data-pages="covers/preview/ko-lincoln-1.jpg|covers/preview/ko-lincoln-2.jpg" aria-label="링컨 『일하는 것만이 치료다』 속지 샘플 보기"><img src="covers/ko/17.jpg" alt="링컨 『일하는 것만이 치료다』 표지" width="360" height="510" loading="lazy" decoding="async"><figcaption>링컨<br><b>일하는 것만이 치료다</b></figcaption></figure>
       </div>
       </div>
       <div class="duo-col" id="lines">
