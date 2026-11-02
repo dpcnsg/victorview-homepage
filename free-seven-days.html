@@ -138,6 +138,7 @@ nav.toc .ok { margin-left: auto; color: var(--accent); font-size: .8rem; }
     <label for="nm">책에 적을 이름 (별명도 좋습니다)</label>
     <input id="nm" maxlength="20" autocomplete="off" placeholder="예: 봄날">
     <p style="margin:16px 0 0"><button class="btn" id="go">첫째 날 편지 받기</button> <button class="btn ghost share-btn" type="button" data-url="https://victorview.netlify.app/free-seven-days.html" data-title="일곱 날의 시간 · 무료 워크북" data-text="세네카의 글 일곱 대목에 하루 한 통 답장을 쓰는 무료 워크북이에요. 가입 없이 바로 시작할 수 있어요." data-done="주소를 복사했어요" data-copy="아래 주소를 복사해 보내세요">친구에게 보내기</button></p>
+    <p class="safe refnote" hidden></p>
     <p class="safe">쓴 글은 <b>이 기기의 브라우저에만</b> 저장되며 출판사를 포함해 어디로도 보내지 않습니다. 다른 기기로 옮기거나 잃지 않으려면 &lsquo;백업 파일 내려받기&rsquo;를 써 주세요.</p>
   </section>
 
@@ -178,6 +179,7 @@ nav.toc .ok { margin-left: auto; color: var(--accent); font-size: .8rem; }
     <p id="donemsg"></p>
     <p><button class="btn" id="mkbook2">내 책 만들기</button> <button class="btn ghost" id="back">답장 다시 보기</button> <button class="btn ghost share-btn" type="button" data-url="https://victorview.netlify.app/free-seven-days.html" data-title="일곱 날의 시간 · 무료 워크북" data-text="일주일 동안 세네카에게 답장을 써 봤어요. 하루 한 통이면 되는 무료 워크북이에요." data-done="주소를 복사했어요" data-copy="아래 주소를 복사해 보내세요">친구에게 권하기</button></p>
     <div class="nextbox">
+      <p class="refnote" hidden></p>
       <h3>다음 편지</h3>
       <p>세네카는 같은 이야기를 벗 루킬리우스에게 편지로 이어 썼습니다. 하루 한 통 서른 날 동안 쓰는 <b>블루 세네카 『나의 시간』</b>(전자책 10,000원)이 그 편지들입니다. 다른 책은 홈페이지 책 목록에서 고를 수 있습니다.</p>
       <p><a class="btn ghost" href="./#books">다음 책 고르기</a></p>
@@ -324,6 +326,7 @@ var DATA = {"id": "brev-7", "book": "세네카 · 일곱 날의 시간", "src": 
   else { show('v-hello'); }
 })();
 </script>
+<script src="assets/ref.js" defer></script>
 <script src="assets/share.js" defer></script>
 <script src="assets/jump.js" defer></script>
 </body>
