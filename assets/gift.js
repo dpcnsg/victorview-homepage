@@ -35,6 +35,7 @@
       '<path d="M100 42C74 8 40 14 52 32c6 9 28 12 48 10ZM100 42c26-34 60-28 48-10-6 9-28 12-48 10Z" fill="' + b.rib + '"/><path d="M100 42C82 22 62 22 66 30c3 6 20 12 34 12ZM100 42c18-20 38-20 34-12-3 6-20 12-34 12Z" fill="#000" opacity=".16"/><rect x="90" y="30" width="20" height="17" rx="5" fill="' + b.rib + '"/></g></svg>';
   }
 
+  var revealDetail = function () {};
   var opened = {};
   var cards = {};
   [].forEach.call(stage.querySelectorAll('.gift-card'), function (c) { cards[c.dataset.box] = c; });
@@ -103,9 +104,9 @@
     var n = Object.keys(opened).length;
     if (count) {
       count.hidden = false;
-      count.textContent = n < BOXES.length ? '다섯 상자 가운데 ' + n + '개를 열었습니다.' : '다섯 상자를 모두 여셨습니다. 이제 추천 코드를 받아 보세요.';
+      count.textContent = n < BOXES.length ? '다섯 상자 가운데 ' + n + '개를 열었습니다.' : '다섯 상자를 모두 여셨습니다. 아래에 세부 내용을 펼쳐 두었습니다.';
     }
-    if (n === BOXES.length) stage.classList.add('gift-all');
+    if (n === BOXES.length) { stage.classList.add('gift-all'); revealDetail(); }
     // 휴대폰에서는 카드가 상자 아래에 있으므로 카드를 화면 안으로 데려온다.
     var panel = stage.querySelector('.gift-panel');
     if (panel && window.innerWidth < 900) {
@@ -132,9 +133,13 @@
     }, 2400);
   }
 
-  // 세부 내용 단추와 #event-detail 주소는 접힌 내용을 펴서 보여 준다.
+  // 세부 내용은 숨겨 두고, 코드 받기를 누르거나 다섯 상자를 다 열었을 때, 세부 내용 단추를 눌렀을 때 연다(2026-11-03 시장 지시).
   var detail = document.getElementById('event-detail');
-  function reveal() { if (detail) detail.open = true; }
-  [].forEach.call(document.querySelectorAll('a[href="#event-detail"]'), function (a) { a.addEventListener('click', reveal); });
+  var more = detail && detail.closest('.gift-more');
+  function reveal() { if (more) more.hidden = false; if (detail) detail.open = true; }
+  if (more) more.hidden = true;
+  revealDetail = reveal;
+  if (stage.classList.contains('gift-all')) reveal();
+  [].forEach.call(document.querySelectorAll('a[href="#event-detail"], .gift-acts a[href*="pf.kakao.com"]'), function (a) { a.addEventListener('click', reveal); });
   if (location.hash === '#event-detail') reveal();
 })();

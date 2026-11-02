@@ -86,6 +86,7 @@
 .gift-all .gift-acts .btn:first-child { box-shadow: 0 0 0 4px rgba(255,226,154,.55); }
 .gift-terms { margin: var(--s-5) 0 0; padding-top: var(--s-3); border-top: 1px solid rgba(232,195,106,.4); font-size: var(--fs-small); line-height: 1.7; color: #EDE5CF; max-width: 62em; }
 .gift-more { padding-top: var(--s-5); padding-bottom: var(--s-6); }
+.gift-more[hidden] { display: none; }
 #event-detail { scroll-margin-top: 72px; border-radius: var(--r-lg); background: #fff; border: 1px solid #E5C98E; box-shadow: 0 16px 34px -22px rgba(23,26,24,.55); overflow: hidden; }
 #event-detail > summary { position: relative; list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--s-3); min-height: 72px; padding: var(--s-3) var(--s-5); text-align: center; font-family: var(--font-serif); font-weight: 700; font-size: clamp(19px, 2.6vw, 24px); color: #fff; background: linear-gradient(90deg, #1C3C85 0 20%, #931B1C 20% 40%, #4A2E85 40% 60%, #1C5D3D 60% 80%, #A86F24 80% 100%); text-shadow: 0 1px 3px rgba(0,0,0,.55); }
 #event-detail > summary::-webkit-details-marker { display: none; }
@@ -107,4 +108,4 @@
   .gift-stage::before, .gift-box.is-nudge { animation: none; }
   .gift-box, .gift-lid, .gift-letter, .gift-glow { transition: none; }
 }
-@media print { .gift-pile, .gift-fx { display: none !important; } .gift-card[hidden] { display: block !important; } }
+@media print { .gift-more[hidden] { display: block !important; } .gift-pile, .gift-fx { display: none !important; } .gift-card[hidden] { display: block !important; } }
