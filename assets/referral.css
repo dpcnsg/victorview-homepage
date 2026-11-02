@@ -1,0 +1,33 @@
+/* 오픈 기념 추천 이벤트 (2026-10-29 시장 승인) — 띠 배너와 이벤트 칸. 검이불루 화이불치: 녹색 띠 한 줄, 다홍은 한 점만 */
+.ref-band { background: var(--green); color: #F3ECDD; font-size: var(--fs-small); line-height: 1.5; }
+.ref-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 var(--s-3); min-height: 44px; padding-top: 2px; padding-bottom: 2px; text-align: center; }
+.ref-band b { color: #fff; font-weight: 700; }
+.ref-band a { color: #fff; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s-2); white-space: nowrap; }
+.ref-band a:hover { text-decoration-thickness: 2px; }
+
+.ref-event { scroll-margin-top: 64px; }
+.ref-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s-5); display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); }
+.ref-card h3 { font-size: var(--fs-h3); }
+.ref-card > div > p { margin-top: var(--s-2); color: var(--ink-2); }
+.ref-steps { list-style: none; margin: var(--s-4) 0 0; padding: 0; counter-reset: rs; }
+.ref-steps li { counter-increment: rs; position: relative; padding: 0 0 var(--s-3) 40px; color: var(--ink-2); }
+.ref-steps li::before { content: counter(rs); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--green); color: var(--green); font-weight: 700; font-size: var(--fs-small); display: flex; align-items: center; justify-content: center; }
+.ref-steps b { color: var(--ink); }
+.ref-table { width: 100%; border-collapse: collapse; margin-top: var(--s-3); font-size: var(--fs-small); }
+.ref-table th, .ref-table td { border-bottom: 1px solid var(--line); padding: var(--s-2) var(--s-2) var(--s-2) 0; text-align: left; vertical-align: top; }
+.ref-table th { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.ref-table td { color: var(--ink-2); }
+.ref-table td:first-child { white-space: nowrap; color: var(--green); font-weight: 700; }
+.ref-note { margin-top: var(--s-2); font-size: var(--fs-small); color: var(--ink-2); }
+.ref-key { margin-top: var(--s-4); padding: var(--s-2) var(--s-3); border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); font-size: var(--fs-small); font-weight: 700; color: var(--ink); }
+.ref-fine b { color: var(--ink); margin-right: 4px; }
+.ref-acts { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-4); }
+.ref-acts .btn { margin: 0; }
+.ref-disclose { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-left: 3px solid var(--green); background: var(--paper); font-size: var(--fs-small); color: var(--ink); }
+.ref-fine { margin: var(--s-4) 0 0; padding-left: 1.2em; font-size: var(--fs-small); line-height: 1.65; color: var(--ink-2); }
+.ref-fine li { margin-top: 2px; }
+@media (max-width: 760px) {
+  .ref-card { grid-template-columns: 1fr; gap: var(--s-4); padding: var(--s-4); }
+  .ref-acts .btn { width: 100%; }
+}
+@media print { .ref-band { display: none; } }
