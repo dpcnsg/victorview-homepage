@@ -42,4 +42,13 @@ body { font-family: var(--font-sans); background: #10281F; color: #F7F0DF; line-
 .fr-ghost:hover { background: #E8C36A; color: #10281F; }
 .fr-msg { min-height: 24px; margin: 10px 0 0; font-weight: 700; color: #FFD98A; }
 .fr-nocode { padding: 12px; border: 1px solid #E8C36A; border-radius: 10px; }
+.fr-why { margin: 18px 0 0; padding: 16px 18px; border-radius: 4px 16px 16px 16px; background: #FBF7EE; color: var(--ink); font-family: var(--font-serif); font-size: 19px; line-height: 1.6; box-shadow: 0 14px 28px -16px rgba(0,0,0,.7); word-break: keep-all; }
+.fr-why p { margin: 0; }
+.fr-why .fr-why-who { margin-bottom: 4px; font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: var(--dahong); }
+.fr-intro { margin: 14px 0 0; font-size: 16px; color: #F3E9CF; word-break: keep-all; }
+.fr-form textarea { width: 100%; padding: 10px 12px; border: 1px solid #E5C98E; border-radius: 10px; background: var(--paper); color: var(--ink); font: 500 16px/1.5 var(--font-sans); resize: vertical; }
+.fr-form textarea:focus-visible, .fr-chip:focus-visible { outline: 3px solid #FFE29A; outline-offset: 2px; }
+.fr-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.fr-chip { min-height: 40px; padding: 6px 12px; border: 1px solid #E8C36A; border-radius: 20px; background: transparent; color: #FFE7B0; font: 500 14px var(--font-sans); text-align: left; cursor: pointer; }
+.fr-chip:hover { background: rgba(232,195,106,.18); }
 [hidden] { display: none !important; }
