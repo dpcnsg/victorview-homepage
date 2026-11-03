@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700&display=swap">
 <link rel="stylesheet" href="assets/referral.css?v=20261103c">
-<link rel="stylesheet" href="assets/friend.css?v=20261103d">
+<link rel="stylesheet" href="assets/friend.css?v=20261103e">
 </head>
 <body>
 <main class="fr" id="fr">
@@ -25,7 +25,7 @@
   <section class="fr-receive" id="fr-receive">
     <p class="fr-ad" id="fr-ad">[광고·추천 보상] 이 코드로 구매하시면 추천한 분께 책 쿠폰으로 바꿀 수 있는 적립액이 생깁니다. 교환 조건과 한도가 있습니다.</p>
     <h1 id="fr-title">친구가 보낸 선물 상자가 도착했습니다</h1>
-    <blockquote class="fr-why" id="fr-why" hidden><p class="fr-why-who" id="fr-why-who"></p><p id="fr-why-text"></p></blockquote>
+    <blockquote class="fr-why" id="fr-why" hidden><p class="fr-why-who" id="fr-why-who"></p><p id="fr-why-text"></p><p class="fr-why-note" id="fr-why-note" hidden>추천한 분이 직접 쓴 글입니다. 출판사의 글이 아닙니다.</p></blockquote>
     <p class="fr-intro" id="fr-intro" hidden></p>
     <p class="fr-lead" id="fr-lead">상자를 열면 무료 책, 추천 책 구매 바로가기, 10% 할인 코드가 들어 있습니다.</p>
     <div class="fr-boxwrap" id="fr-boxwrap"></div>
@@ -45,30 +45,31 @@
         <img src="covers/ko/16.jpg" alt="『일곱 날의 시간』 표지" width="360" height="510">
         <div><p class="fr-tag">무료 책</p><h2>일곱 날의 시간</h2><p class="fr-price">무료, 가입과 결제 없이 시작합니다</p><a class="btn" id="fr-free" href="free-seven-days.html">무료 책 바로가기</a></div>
       </article>
+      <aside class="fr-promo" id="fr-promo"><h2>추천 이벤트에 참여하고 조건을 채우면 책 쿠폰을 받을 수 있습니다</h2><p>오픈 기념 추천 이벤트, 2026년 11월 4일~2027년 1월 31일(시범). 참여 후 받은 추천 코드로 연결된 Payhip 구매만 적립됩니다. 적립액이 고른 책값에 이르면 그 책의 무료 쿠폰을 드립니다. 현금 지급은 없고, 조건과 한도가 있습니다.</p><a class="btn" href="index.html#event">이벤트 보기</a></aside>
       <p class="fr-links"><a href="index.html#books">다른 책 보기</a><a href="index.html#event">이벤트 안내 보기</a></p>
     </div>
   </section>
 
   <section class="fr-send" id="fr-send" hidden>
-    <h1>친구에게 선물 상자 보내기</h1>
-    <p class="fr-lead">누구에게 어떤 책을 추천할지 고르면, 그대로 메시지가 만들어집니다.</p>
+    <h1>이 책을 친구에게 추천하기</h1>
+    <p class="fr-lead">친구 이름과 추천 이유를 적으면 메시지가 만들어집니다. 보내기를 누른 뒤 카카오톡에서 친구를 고르세요.</p>
     <form class="fr-form" id="fr-form" autocomplete="off">
       <label>내 이름 또는 별명<input id="s-from" maxlength="12" placeholder="예: 민수"></label>
       <label>받는 친구 이름<input id="s-to" maxlength="12" placeholder="예: 지은"></label>
       <label>추천할 책<select id="s-book"></select></label>
       <label>추천 이유<textarea id="s-why" maxlength="60" rows="2" placeholder="친구에게 한마디를 적어 주세요"></textarea></label>
-      <div class="fr-chips"><button class="fr-chip" type="button">요즘 많이 힘들지? 이 책 한번 읽어 봐. 힘이 될 거야.</button><button class="fr-chip" type="button">네 생각이 나서 보내. 하루 한 통씩 읽어 봐.</button><button class="fr-chip" type="button">나는 이 책이 좋았어. 너도 읽어 보면 좋겠어.</button></div>
+      <div class="fr-chips"><button class="fr-chip" type="button">요즘 많이 힘들지? 네 생각이 나서 이 책을 보내.</button><button class="fr-chip" type="button">네 생각이 나서 보내. 하루 한 통씩 읽어 봐.</button><button class="fr-chip" type="button">나는 이 책이 좋았어. 너도 읽어 보면 좋겠어.</button></div>
     </form>
-    <p class="fr-small fr-note">이름·별명과 추천 이유는 출판사로 오지 않고, 보내는 링크의 # 뒤에 담겨 받는 분 화면에 표시됩니다. 링크를 전달받은 사람도 볼 수 있으니 실명 대신 별명을 쓰고, 추천 이유에 민감한 정보를 적지 마세요. 추천 이유는 직접 느낀 대로 쓰고, 효과를 장담하는 말은 피해 주세요.</p>
+    <p class="fr-small fr-note">이름·별명과 추천 이유는 출판사로 오지 않고, 보내는 링크의 # 뒤에 담겨 받는 분 화면에 표시됩니다. 링크를 전달받은 사람도 볼 수 있으니 실명 대신 별명을 쓰고, 추천 이유에 민감한 정보를 적지 마세요. 추천 이유는 직접 느낀 의견만 써 주세요. 예시는 본인 생각과 맞을 때만 쓰고, 효과 보장·욕설·비방·개인정보는 넣지 마세요.</p>
     <h2 class="fr-preview-h">친구가 받을 메시지</h2>
     <p class="fr-preview" id="s-preview"></p>
     <div class="fr-acts"><button class="btn" id="s-share" type="button">카카오톡 친구 골라 보내기</button><button class="btn fr-ghost" id="s-copy" type="button">메시지 복사</button></div>
     <p class="fr-msg" id="s-msg" role="status"></p>
     <p class="fr-small">SNS·블로그에 올릴 때는 메시지 맨 앞의 표시를 지우지 말아 주세요. 사진은 사진 안에, 영상은 시작과 끝에 넣어 주세요.</p>
-    <p class="fr-nocode" id="s-nocode" hidden>추천 코드가 있어야 보낼 수 있습니다. <a href="https://pf.kakao.com/_bxhUmX/chat" target="_blank" rel="noopener noreferrer">카카오톡 채널</a>에 &ldquo;추천 참여&rdquo;라고 보내 주세요.</p>
+    <p class="fr-nocode" id="s-nocode" hidden>추천 코드가 없어도 보낼 수 있지만, 코드 없이 보내면 구매가 생겨도 추천 금액이 적립되지 않습니다. 코드를 받으면 친구는 10% 할인되고 나는 추천 금액이 쌓입니다. <a href="https://pf.kakao.com/_bxhUmX/chat" target="_blank" rel="noopener noreferrer">카카오톡 채널</a>에 &ldquo;추천 참여&rdquo;라고 보내 주세요.</p>
   </section>
 </main>
 <script src="assets/ref.js" defer></script>
-<script src="assets/friend.js?v=20261103d" defer></script>
+<script src="assets/friend.js?v=20261103f" defer></script>
 </body>
 </html>

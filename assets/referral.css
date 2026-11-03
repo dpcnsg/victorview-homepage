@@ -109,3 +109,6 @@
   .gift-box, .gift-lid, .gift-letter, .gift-glow { transition: none; }
 }
 @media print { .gift-more[hidden] { display: block !important; } .gift-pile, .gift-fx { display: none !important; } .gift-card[hidden] { display: block !important; } }
+
+.btn.sm.ref-rec { color: var(--dahong); border-color: var(--dahong); }
+.btn.sm.ref-rec:hover { background: var(--dahong); color: #fff; }
