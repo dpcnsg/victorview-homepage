@@ -48,7 +48,7 @@
     el.type = 'button';
     el.className = 'gift-box gift-box-' + b.id;
     el.setAttribute('aria-pressed', 'false');
-    el.setAttribute('aria-label', b.name + ' 열기: ' + ((cards[b.id] && cards[b.id].querySelector('h3').textContent) || ''));
+    el.setAttribute('aria-label', (stage.dataset.open || '선물 상자 열기') + ': ' + ((cards[b.id] && cards[b.id].querySelector('h3').textContent) || ''));
     el.innerHTML = svg(b);
     el.addEventListener('click', function () { open(b, el); });
     pile.appendChild(el);
@@ -104,7 +104,7 @@
     var n = Object.keys(opened).length;
     if (count) {
       count.hidden = false;
-      count.textContent = n < BOXES.length ? '다섯 상자 가운데 ' + n + '개를 열었습니다.' : '다섯 상자를 모두 여셨습니다. 아래에 세부 내용을 펼쳐 두었습니다.';
+      count.textContent = n < BOXES.length ? (stage.dataset.count || '다섯 상자 가운데 %n개를 열었습니다.').replace('%n', n) : (stage.dataset.done || '다섯 상자를 모두 여셨습니다. 아래에 세부 내용을 펼쳐 두었습니다.');
     }
     if (n === BOXES.length) { stage.classList.add('gift-all'); revealDetail(); }
     // 휴대폰에서는 카드가 상자 아래에 있으므로 카드를 화면 안으로 데려온다.
@@ -140,6 +140,13 @@
   if (more) more.hidden = true;
   revealDetail = reveal;
   if (stage.classList.contains('gift-all')) reveal();
-  [].forEach.call(document.querySelectorAll('a[href="#event-detail"], .gift-acts a[href*="pf.kakao.com"]'), function (a) { a.addEventListener('click', reveal); });
+  [].forEach.call(document.querySelectorAll('a[href="#event-detail"], .gift-go'), function (a) { a.addEventListener('click', reveal); });
   if (location.hash === '#event-detail') reveal();
+  // 카톡 채널은 글을 미리 넣어 열 수 없으므로 "추천 참여"를 복사해 두고 알려 준다.
+  [].forEach.call(document.querySelectorAll('.gift-go[href*="pf.kakao.com"]'), function (a) {
+    a.addEventListener('click', function () {
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText('추천 참여').catch(function () {});
+      if (count) { count.hidden = false; count.textContent = '“추천 참여”를 복사했습니다. 카카오톡 대화창에 붙여 넣어 보내 주세요.'; }
+    });
+  });
 })();

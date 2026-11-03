@@ -1,0 +1,45 @@
+/* 친구가 받는 선물 상자 화면과 보내기 화면 (2026-11-03 시장 지시) */
+:root { --paper: #FBF7EE; --ink: #171A18; --ink-2: #4A4F4C; --line: #D9CFB8; --dahong: #A92D1B; --dahong-press: #8E2416; --green: #1E3A2F; --font-sans: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; --font-serif: "Noto Serif KR", "Batang", serif; --fs-small: 14px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --r: 12px; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--font-sans); background: #10281F; color: #F7F0DF; line-height: 1.65; }
+.fr { position: relative; overflow: hidden; min-height: 100vh; padding: 20px 16px 48px; background: radial-gradient(760px 520px at 50% 34%, #2F6A52 0%, rgba(47,106,82,0) 70%), #10281F; }
+.fr > section, .fr-brand { position: relative; display: block; max-width: 560px; margin-left: auto; margin-right: auto; }
+.fr-brand { color: #FFD98A; font-family: var(--font-serif); font-weight: 700; text-decoration: none; }
+.fr-ad { margin: 14px 0 0; padding: 8px 12px; border: 1px solid rgba(232,195,106,.55); border-radius: 8px; font-size: 13px; line-height: 1.55; color: #F3E9CF; }
+.fr h1 { margin: 18px 0 0; color: #fff; font-family: var(--font-serif); font-size: clamp(27px, 7vw, 38px); line-height: 1.28; word-break: keep-all; }
+.fr-lead { margin: 10px 0 0; font-size: 17px; color: #E8E0CB; word-break: keep-all; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border: 0; border-radius: var(--r); background: var(--dahong); color: #fff; font: 700 16px var(--font-sans); text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--dahong-press); }
+.btn:focus-visible, .fr a:focus-visible, .fr input:focus-visible, .fr select:focus-visible { outline: 3px solid #FFE29A; outline-offset: 2px; }
+.fr-boxwrap { width: min(74vw, 330px); margin: 44px auto 0; }
+.fr-boxwrap .gift-box { position: relative; display: block; width: 100%; --tilt: 0deg; }
+.fr-open { display: flex; width: 100%; max-width: 330px; margin: 22px auto 0; min-height: 56px; font-size: 18px; }
+.fr-gifts { margin-top: 26px; }
+.fr-code { padding: 16px; border-radius: 12px; background: #FFF6DF; color: var(--ink); }
+.fr-code p { margin: 0; }
+.fr-code b { font-size: 24px; letter-spacing: .06em; color: var(--dahong); margin-left: 6px; }
+.fr-copy { margin-top: 10px; min-height: 44px; }
+.fr-small { font-size: 13.5px; line-height: 1.6; }
+.fr-code .fr-small { margin-top: 10px; color: var(--ink-2); }
+.fr-card { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: center; margin-top: 14px; padding: 14px; border-radius: 12px; background: var(--paper); color: var(--ink); }
+.fr-card img { display: block; width: 100%; height: auto; border-radius: 2px; box-shadow: 0 6px 12px -6px rgba(23,26,24,.5); }
+.fr-tag { margin: 0; font-size: 13px; font-weight: 700; color: var(--dahong); }
+.fr-card h2 { margin: 2px 0 0; font-family: var(--font-serif); font-size: 20px; line-height: 1.35; word-break: keep-all; }
+.fr-price { margin: 4px 0 10px; font-size: 14px; color: var(--ink-2); }
+.fr-card .btn { width: 100%; }
+.fr-links { display: flex; gap: 20px; justify-content: center; margin: 22px 0 0; }
+.fr-links a, .fr-nocode a { color: #FFE7B0; }
+.fr-form { display: grid; gap: 14px; margin-top: 22px; }
+.fr-form label { display: grid; gap: 6px; font-weight: 700; }
+.fr-form input, .fr-form select { width: 100%; min-height: 48px; padding: 0 12px; border: 1px solid #E5C98E; border-radius: 10px; background: var(--paper); color: var(--ink); font: 500 16px var(--font-sans); }
+.fr-note { margin: 10px 0 0; color: #E8E0CB; }
+.fr-preview-h { margin: 24px 0 0; font-size: 16px; color: #FFD98A; }
+.fr-preview { margin: 8px 0 0; padding: 14px; border-radius: 4px 14px 14px 14px; background: #FEE500; color: #191600; white-space: pre-wrap; word-break: break-word; font-size: 15px; line-height: 1.55; }
+.fr-acts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.fr-acts .btn { flex: 1 1 200px; }
+.fr-ghost { background: transparent; color: #FFE7B0; border: 1.5px solid #E8C36A; }
+.fr-ghost:hover { background: #E8C36A; color: #10281F; }
+.fr-msg { min-height: 24px; margin: 10px 0 0; font-weight: 700; color: #FFD98A; }
+.fr-nocode { padding: 12px; border: 1px solid #E8C36A; border-radius: 10px; }
+[hidden] { display: none !important; }
