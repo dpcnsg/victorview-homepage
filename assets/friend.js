@@ -95,6 +95,13 @@
       sdk.onload = function () { try { Kakao.init(KAKAO_KEY); } catch (e) {} };
       document.head.appendChild(sdk);
     }
+    // 바로 보내기 창이 없는 곳(PC, 카톡 안 브라우저)에서는 복사를 대표 단추로 보여 준다.
+    var canShare = !!navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!canShare && !KAKAO_KEY) {
+      $('s-share').hidden = true;
+      $('s-copy').classList.remove('fr-ghost');
+      $('s-copy').textContent = '메시지 복사해서 보내기';
+    }
     ready();
     var need = function () {
       if (clean($('s-to').value) && clean($('s-from').value) && cleanWhy($('s-why').value)) return true;
@@ -104,7 +111,7 @@
     };
     $('s-copy').addEventListener('click', function () {
       if (!need()) return;
-      copy(ready().text, function (ok) { $('s-msg').textContent = ok ? '메시지를 복사했습니다. 카카오톡 대화창에 붙여 넣어 보내 주세요.' : '복사하지 못했습니다. 위 메시지를 직접 선택해 복사해 주세요.'; });
+      copy(ready().text, function (ok) { $('s-msg').textContent = ok ? '메시지를 복사했습니다. 카카오톡에서 친구를 고르고 대화창에 붙여 넣어 보내 주세요.' : '복사하지 못했습니다. 위 메시지를 직접 선택해 복사해 주세요.'; });
     });
     $('s-share').addEventListener('click', function () {
       if (!need()) return;
@@ -124,10 +131,10 @@
         });
         return;
       }
-      if (navigator.share) {
+      if (canShare) {
         navigator.share({ title: m.title, text: m.text }).catch(function () {});
       } else {
-        copy(m.text, function (ok) { $('s-msg').textContent = ok ? '이 기기는 바로 보내기를 지원하지 않아 메시지를 복사했습니다. 카카오톡 대화창에 붙여 넣어 보내 주세요.' : '복사하지 못했습니다. 위 메시지를 직접 선택해 복사해 주세요.'; });
+        copy(m.text, function (ok) { $('s-msg').textContent = ok ? '이 기기는 바로 보내기를 지원하지 않아 메시지를 복사했습니다. 카카오톡에서 친구를 고르고 대화창에 붙여 넣어 보내 주세요.' : '복사하지 못했습니다. 위 메시지를 직접 선택해 복사해 주세요.'; });
       }
     });
     return;
