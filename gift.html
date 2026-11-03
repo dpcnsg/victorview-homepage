@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>선물 상자가 도착했습니다 | victorview</title>
+<meta name="description" content="상자를 열면 무료 책, 추천 책 구매 바로가기, 10% 할인 코드가 들어 있습니다.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="victorview 출판사">
+<meta property="og:title" content="선물 상자가 도착했습니다">
+<meta property="og:description" content="상자를 열면 무료 책, 추천 책 구매 바로가기, 10% 할인 코드가 들어 있습니다.">
+<meta property="og:image" content="https://victorview.netlify.app/covers/og-gift.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/referral.css?v=20261103c">
+<link rel="stylesheet" href="assets/friend.css?v=20261103c">
+</head>
+<body>
+<main class="fr" id="fr">
+  <div class="gift-fx" aria-hidden="true"></div>
+  <a class="fr-brand" href="index.html">victorview 출판사</a>
+
+  <section class="fr-receive" id="fr-receive">
+    <p class="fr-ad" id="fr-ad">[광고·추천 보상] 이 코드로 구매하시면 추천한 분께 책 쿠폰으로 바꿀 수 있는 적립액이 생깁니다. 교환 조건과 한도가 있습니다.</p>
+    <h1 id="fr-title">친구가 보낸 선물 상자가 도착했습니다</h1>
+    <p class="fr-lead" id="fr-lead">상자를 열면 무료 책, 추천 책 구매 바로가기, 10% 할인 코드가 들어 있습니다.</p>
+    <div class="fr-boxwrap" id="fr-boxwrap"></div>
+    <button class="btn fr-open" id="fr-open" type="button">상자 열기</button>
+
+    <div class="fr-gifts" id="fr-gifts" hidden>
+      <div class="fr-code" id="fr-code" hidden>
+        <p>추천 코드 <b id="fr-code-val"></b></p>
+        <button class="btn fr-copy" id="fr-copy" type="button">코드 복사</button>
+        <p class="fr-small">Payhip 결제 화면의 쿠폰 칸에 넣으면 한글판 책이 10% 할인됩니다. 이벤트 기간은 2026년 11월 4일~2027년 1월 31일입니다. 코드가 적용되지 않으면 카카오톡 채널로 알려 주세요.</p>
+      </div>
+      <article class="fr-card" id="fr-book" hidden>
+        <img id="fr-book-img" src="" alt="" width="360" height="510">
+        <div><p class="fr-tag" id="fr-book-tag">친구가 고른 책</p><h2 id="fr-book-title"></h2><p class="fr-price" id="fr-book-price"></p><a class="btn" id="fr-book-go" href="#" target="_blank" rel="noopener">구매 바로가기</a></div>
+      </article>
+      <article class="fr-card">
+        <img src="covers/ko/16.jpg" alt="『일곱 날의 시간』 표지" width="360" height="510">
+        <div><p class="fr-tag">무료 책</p><h2>일곱 날의 시간</h2><p class="fr-price">무료, 가입과 결제 없이 시작합니다</p><a class="btn" id="fr-free" href="free-seven-days.html">무료 책 바로가기</a></div>
+      </article>
+      <p class="fr-links"><a href="index.html#books">다른 책 보기</a><a href="index.html#event">이벤트 안내 보기</a></p>
+    </div>
+  </section>
+
+  <section class="fr-send" id="fr-send" hidden>
+    <h1>친구에게 선물 상자 보내기</h1>
+    <p class="fr-lead">누구에게 어떤 책을 추천할지 고르면, 그대로 메시지가 만들어집니다.</p>
+    <form class="fr-form" id="fr-form" autocomplete="off">
+      <label>내 이름 또는 별명<input id="s-from" maxlength="12" placeholder="예: 민수"></label>
+      <label>받는 친구 이름<input id="s-to" maxlength="12" placeholder="예: 지은"></label>
+      <label>추천할 책<select id="s-book"></select></label>
+    </form>
+    <p class="fr-small fr-note">이름·별명은 출판사로 오지 않고, 보내는 링크의 # 뒤에 담겨 받는 분 화면에 표시됩니다. 링크를 전달받은 사람도 볼 수 있으니 실명 대신 별명을 쓰고 민감한 정보는 적지 마세요.</p>
+    <h2 class="fr-preview-h">친구가 받을 메시지</h2>
+    <p class="fr-preview" id="s-preview"></p>
+    <div class="fr-acts"><button class="btn" id="s-share" type="button">카카오톡 등으로 보내기</button><button class="btn fr-ghost" id="s-copy" type="button">메시지 복사</button></div>
+    <p class="fr-msg" id="s-msg" role="status"></p>
+    <p class="fr-small">SNS·블로그에 올릴 때는 메시지 맨 앞의 표시를 지우지 말아 주세요. 사진은 사진 안에, 영상은 시작과 끝에 넣어 주세요.</p>
+    <p class="fr-nocode" id="s-nocode" hidden>추천 코드가 있어야 보낼 수 있습니다. <a href="https://pf.kakao.com/_bxhUmX/chat" target="_blank" rel="noopener noreferrer">카카오톡 채널</a>에 &ldquo;추천 참여&rdquo;라고 보내 주세요.</p>
+  </section>
+</main>
+<script src="assets/ref.js" defer></script>
+<script src="assets/friend.js?v=20261103c" defer></script>
+</body>
+</html>
